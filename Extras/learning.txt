@@ -1,0 +1,297 @@
+
+< - less than
+> - greater than
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Keep index.html page in any folder for not hacking your web pages  
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Class should be used if you want to call multiple or different elements, ID can be used if you want to call a single element  
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+sen!@#hari1
+
+uber@shoppingmega.in
+sen!@#789
+
+snow@shoppingmega.in
+harih@123
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Declaring variable is a must and avoid null values returned at the end of the page, so keep declaring, initializing and use that variable
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CREATING A BUTTON WITH DESIRED COLOR IN THE BACKGROUND
+
+<input type="button" value="Create Album" style="background:url(../img/green_bg.jpg); cursor:pointer; cursor:hand; width:80px; height:25px; color:#fff; text-align:center; border:0px; color:#fff; text-align:center; border:0px;" />
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+FUNCTION TO DISPLAY THE ARRAY IN A PROPER ALIGNMENT
+
+
+function debugerr($value){ 
+    echo "<pre>",print_r($value, true),"</pre>";
+}
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++
+SEO USAGES
+++++++++++
+
+
+keyword proximity
+keyword prominence
+caffeine
+301 redirect
+Internal CSS, inline CSS and external CSS ??  ------------ which is better for seo ??
+divide and rules
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++
+IMPORTANT ONE
++++++++++++++
+
+
+PLEASE LOOK INTO THE FIREBUG LINE, WHICH IS MENTIONING IN THE FIREBUG (ESPECIALLY THE JS ISSUES CAN BE IDENTIFIED BY THE FIREBUG LINE WHICH IS GIVING)
+
+
+$ is not a function means ABSOLUTELY some JS WRITTEN ALREADY OR JS FILE CLASH OR JQUERY FILE CLASH
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+When would you use a hashtable versus an array?"
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+error_reporting(E_ALL ^ E_NOTICE);
+
+All errors except notices are not displayed
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+			<input type="hidden" name="status" value="<?=$filename; ?>" />
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+			<form action="<?php echo OTHERROOTPATH; ?>" method="post" name="fileSuccessForm">
+			<input type="hidden" name="filename" value="<?=$filename; ?>" />
+			</form>
+			<script type="text/javascript">
+			document.forms['fileSuccessForm'].submit();
+			</script>
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+GROUP BY FIRST NEXT COMES ORDER BY
+
+EX:  GROUP BY user_id ORDER by email desc
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+If records are huge, the copying to tmp table will happen in the SHOW PROCESSLIST
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+In PHP, # can be used for single-line commenting
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+IN UPDATE STATEMENT, THE WHERE CLAUSE SHOULD BE ALWAYS ADDS WITH COMMA (,) NOT AND KEYWORD
+
+EX:  GROUP BY user_id ORDER by email desc
+
+UPDATE jt_resume_blast SET blast_status=1 AND tot_receiver='2' WHERE blast_id=552 -- THIS IS WRONG BCOZ 'AND' (AND) KEYWORD IS USED, ONLY COMMA SHOULD BE USED
+
+UPDATE jt_resume_blast SET blast_status=1, tot_receiver='2' WHERE blast_id=552 -- THIS IS CORRECT BCOZ COMMA (,) IS USED
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++
+MAGIC_QUOTES_GPC BOOLEAN
+++++++++++++++++++++++++
+
+Sets the magic_quotes state for GPC (Get/Post/Cookie) operations. When magic_quotes are on, all ' (single-quote), " (double quote), \ (backslash) and NUL's are escaped with a backslash automatically.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+$time = microtime(TRUE);  // get the micro seconds
+$mem = memory_get_usage();  // get the memory usage in seconds
+
+
+print_r(array(
+
+  'memory' => (memory_get_usage() - $mem) / (1024 * 1024),
+
+  'seconds' => microtime(TRUE) - $time
+
+));
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+SELECT USER() WILL GIVE ALL THE USERS FOR THE PARTICULAR DATABASE
+
+SELECT CURRENT_USER() WILL GIVE THE CURRENT USER ACCESING THE DATABASE
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++
+QUERY EXECUTION TIME IN SECONDS
++++++++++++++++++++++++++++++++
+
+$msc=microtime(true);
+
+//$sqljd="SELECT email INTO OUTFILE '".$newcsvfile."' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' FROM jt_login";
+
+$result = mysql_query($sqljd) or die(mysql_error());
+
+$msc=microtime(true)-$msc;
+echo $msc.' seconds'; // QUERY EXECUTION TIME in seconds
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++
+HTACCESS
+++++++++
+
+Enable / Disable directory Listing
+
+To allow a web server to produce a directory listing, whenever you point a directory without index file. Add following line in your .htaccess file.Options +Indexes 
+# or #
+IndexIgnore *
+
+
+
+To disable or prevent the directory access add following line in your .htaccess file. If user points the browsers to a directory which does not have index file then in this case 403 error will be
+
+Options -Indexes 
+
+
+
+Ignore files with specific extension
+
+It may happen that you may need to ignore certain files to get displayed in directory listing. This can be achieved using IndexIgnore directive in .htaccess file.
+Following snippet will not display .zip and .txt file in directory listing.IndexIgnore *.zip *.txt
+
+
+
+ Modify Index File
+
+It is possible to change the default index file from index.html (index.php, index.jsp …) to any other file. Following line will change the index file to Home.html.DirectoryIndex Home.html
+
+
+
+The .htaccess file is a configuration file for the server. If there are errors in the file, the server will display an error message (usually with an error code of "500"). If you are transferring the file to the server using FTP, you must make sure it is transferred using the ASCII mode, rather than BINARY. We use this file to perform 2 simple tasks in this instance - first, to tell Apache to turn on the rewrite engine, and second, to tell apache what rewriting rule we want it to use. We need to add the following to the file:
+
+RewriteEngine On    # Turn on the rewriting engine
+RewriteRule    ^pet-care/?$    pet_care_info_01_02_2008.php    [NC,L]    # Handle requests for "pet-care"
+
+A couple of quick items to note - everything following a hash symbol in an .htaccess file is ignored as a comment, and I'd recommend you use comments liberally; and the "RewriteEngine" line should only be used once per .htaccess file (please note that I've not included this line from here onwards in code example).
+
+The "RewriteRule" line is where the magic happens. The line can be broken down into 5 parts:
+RewriteRule - Tells Apache that this like refers to a single RewriteRule.
+^/pet-care/?$ - The "pattern". The server will check the URL of every request to the site to see if this pattern matches. If it does, then Apache will swap the URL of the request for the "substitution" section that follows.
+
+pet_care_info_01_02_2003.php - The "substitution". If the pattern above matches the request, Apache uses this URL instead of the requested URL.
+
+[NC,L] - "Flags", that tell Apache how to apply the rule. In this case, we're using two flags. "NC", tells Apache that this rule should be case-insensitive, and "L" tells Apache not to process any more rules if this one is used.
+
+NC - not case sensitive
+
+L - no more rules to process
+
+
+# Handle requests for "pet-care" - Comment explaining what the rule does (optional but recommended)
+
+The rule above is a simple method for rewriting a single URL, and is the basis for almost all URL rewriting rules.
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Can't find FULLTEXT index matching the column list
+
+ALTER TABLE products ADD FULLTEXT(brand);
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+SHOW COLUMNS FROM jt_login
+
+Will show Field or Column Name, Type (Datatype), Null or Not, Key (Primary or Unique), Default (Default Value), Extra (it will give auto_increment)
+
+DESCRIBE jt_login
+
+This also shows the same as above
+
+Will show Field or Column Name, Type (Datatype), Null or Not, Key (Primary or Unique), Default (Default Value), Extra (it will give auto_increment)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+chmod('folder name',permission mode here);
+
+chmod('resume_parser',0777);
+
+
+		Owner			Group				Other
+
+Read (4)	Tick			Tick				Tick
+Write (2)	Tick			No Tick				No Tick
+Execute (1)	Tick			Tick				Tick
+		
+Total		4+2+1			4+0+1				4+0+1
+		7			5				5
+
+Folder Permission is 755 code
+
+
+EG: Total = Read (4) + Write (2) + Execute (1) = 7 for each line
+

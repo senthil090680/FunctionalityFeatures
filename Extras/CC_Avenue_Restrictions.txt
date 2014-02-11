@@ -1,0 +1,45 @@
+
+
+INDIA OFFICE ADDRESS
+Avenues India Pvt Ltd.
+Level II, Plaza Asiad, S. V. Road, Santa Cruz (West), Mumbai- 400054, India.
+24 * 6 Support Contact Numbers
+Tel: +91 22 67425555 / 26000816 / 32913622 /         66920419
+Fax: +91 22 67425542/ 26480772
+
+
+CCAvenue
+Restricted Characters
+Please note: Characters listed below have been restricted by PCI DSS 2.0 Standards.
+
+Any two consecutive restricted characters are not allowed.
+CHARACTERS 	MEANING
+& 	(ampersand sign)
+; 	(semicolon sign)
+$ 	(dollar sign)
+% 	(percent sign)
+' 	(single apostrophe)
+" 	(quotation mark)
+\' 	(backslash-escaped apostrophe)
+\" 	(backslash-escaped quotation mark)
+<> 	(triangular parenthesis)
+() 	(parenthesis)
++ 	(plus sign)
+CR 	(Carriage return, ASCII 0x0d)
+LF 	(Line feed, ASCII 0x0a)
+\ 	(backslash)
+< ? 	(triangular parenthesis-question mark)
+? > 	(triangular parenthesis-question mark) 
+//< ?..? > 	made to inject php code
+@@ 	(at)
+<= 	(Less Than or Equal To)
+<> 	(Not Equal To) 
+!< 	(Not Less Than) 
+!=  	(Not Equal To) 
+!> 	(Not Greater Than) 
+ -- 	(Comment)  
+/*...*/ 	(Comment) 
+
+"AND" "OR" "BETWEEN" "IN" "NOT" "UNION" "DESC" "FROM" “ALTER” “INSERT” “DELETE” “DROP” “LOCK” “CONVERT” “CAUSE” “COMMIT” “COUNT” “CREATE” “EXEC” “EXECUTE” “IF” “ELSE” “KILL” “IS” “ISNULL” “LTRIM” “LIKE” “OBJECT” “RETURN” “SET” “SHUTDOWN” “TRUNCATE” “WHILE” “UPDATE”
+
+We apologise for the inconvenience caused because of the above character restrictions. These security measures are important for the overall safety and security of your transaction data and our Payment Gateway systems. We further advise you, not to store these characters in your database as these characters and commands are used by hackers to hack your website databases.

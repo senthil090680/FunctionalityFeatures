@@ -1,0 +1,98 @@
+Components
+
+Cake comes with a built-in e-mail component, but for the sake of the previous example,
+if you were to create an e-mail component of your own, you could name the file email.php
+and place it in the app/controllers/components directory.
+In the file, you would need to create a new component class using the following syntax:
+
+class EmailComponent extends Object {
+
+
+Notice that the name of the class object is camel cased just as in the controller, and it
+extends the class Object. Later, you’ll assemble some customized components to be used in
+more complex applications.
+
+
+
+
+Helper
+
+
+
+class SpecialHelper extends Helper {
+Like controllers and components, the name of the helper class is camel case and includes
+the word Helper, and the class is an extension of the object class Helper. For example, if you
+were to create a custom helper for e-mailing customers, you might create the app/views/
+helpers/email.php file and name its class:
+class EmailHelper extends Helper {
+
+
+
+
+
+Elements
+
+
+Elements are named like controller actions and view files and are stored in the app/views/
+elements directory. For instance, a menu bar could be maintained in an element named
+menu.ctp and called in any of the views. Then, should you need to change a menu item or a
+link in the menu, rather than change it for every view in the application, you would need to
+edit only the menu.ctp file.
+
+
+
+Layouts
+
+Layouts are stored in the app/views/layouts directory and contain presentation output
+like views and elements. They perform minimal logic and mainly serve to wrap HTML around
+changing views. A layout’s file name can be anything but must be lowercase and have the .ctp
+extension.
+
+
+
+Behaviors
+
+
+Behaviors are stored in the app/models/behaviors directory and can be named anything
+following the same rules for naming helper files and components. They must have the .php
+extension. In the file, behavior class names are set with the following syntax:
+class SpecialBehavior extends ModelBehavior {
+By using behaviors to store complex or customized model operations, you give the
+application’s models more consistency.
+
+
+
+DataSource
+In this book I’ve stuck with MySQL as the main choice for database handling because it is
+often bundled with PHP. Many applications, however, need to store data in other sources.
+From PostgreSQL to a customized database engine, Cake is fully capable of handling other
+data sources. Even creating web services and talking with enterprise APIs such as Facebook
+or eBay can be handled in Cake. These types of operations are handled with DataSources, or,
+in other words, files that execute functions that talk with a source that stores or supplies data
+to the application.
+
+
+
+
+
+The DataSource abstracts the sending, retrieving, saving, and deleting data to the model
+so that the model really behaves the same regardless of what external source processes the
+data. Cake comes preinstalled with the following datasources, so you won’t have to write from
+scratch your own if you intend to use one of these to handle your application’s data:
+• MySQL
+• PostgreSQL
+• IBM DB2
+• Microsoft SQL Server 2000
+• Oracle 8
+• SQLite
+• ADOdb
+When creating custom DataSource, make sure the file name is lowercase and has
+_source.php appended. An XML DataSource could be named, for example, xml_source.php
+and would be placed in the app/models/datasources directory. Naming the class object in the
+DataSource file (in this case, for the XML DataSource) is done with the following syntax:
+class XmlSource extends DataSource {
+When retrieving or saving data to a source outside your main database configuration
+source, DataSources can handle all the back-and-forth processing so that the model functions
+don’t have to handle connection or request parameters unique to the DataSource.
+
+

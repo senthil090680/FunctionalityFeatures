@@ -1,0 +1,31 @@
+
++++++++++++++++++++++++++++++++++++++++
+SETTING UP ZEND FRAMEWORK AND ZEND_TOOL
++++++++++++++++++++++++++++++++++++++++
+
+Eg: F:\server\xampp\ is the web server installed location
+
+After download is complete, unzip the folder and take the two files (zf.bat & zf.php) from the bin folder and place it in the below location
+
+F:\server\xampp\php\
+
+and put the LIBRARY FOLDER from the unzip folder of the zend framework to the following location,
+
+F:\server\xampp\htdocs\zend\
+
+Then Open the Environment Variables window by right clicking on “My Computer” , “Properties”,  “Advanced”, “Environment Variables”.
+
+Then add ZEND_TOOL_INCLUDE_PATH in the System Variable and in the System Value add this F:\server\xampp\htdocs\zend\library\
+
+If all the variables are set click “Ok” and head onto the next section.
+
+open cmd, go to the library location, type the below command
+
+
+F:\server\xampp\htdocs\zend\library\
+
+then type zf show version
+
+OUTPUT WILL BE BELOW,
+
+Zend Framework Version: 1.12.3

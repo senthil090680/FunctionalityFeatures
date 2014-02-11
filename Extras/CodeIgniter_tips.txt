@@ -1,0 +1,55 @@
+
+
+++++++++++++++
+CODE IGNITER
+++++++++++++++
+
+
+
+
+
+With MVC, developers can separate their code into distinct parts, making the entire application easier to develop, maintain, and extend.
+
+MVC frameworks are usually pretty structured, allowing the developer to concentrate on what’s important to the client and the project at hand and not worry about other issues that affect every project (such as security and caching).
+
+
+Model - View - Controller , as the name implies, is a design pattern that allows developers to cleanly separate their code into three categories:
+Models maintain data.
+Views display data and user interface elements.
+Controllers handle user events that affect models and views.
+
+
+Because of MVC’s three - part separation, developers can create multiple views and controllers for any given model without forcing changes in the model design. This separation allows for easily maintained, portable, and organized applications that are nothing like anything you’ve worked with before.
+
+
+Another way of thinking about this breakdown of roles is to map it out this way:
+User Input and Traffic Control = Controller
+Processing = Model
+Output = View
+
+
+When you look at CodeIgniter, Symfony, and CakePHP, you ’ ll notice quite a few similarities. For
+example, all three :
+Allow you to create models that bind to a data source, views that display content, and controllers that monitor user action and allow updates of models and views.
+Use structured folders to separate your application’s components from a central core.
+Use configuration files to help you maintain vital metadata, such as the location of the database, base URLs, and the like.
+Use controller callback functions that are surfaced to the GUI. If the user clicks on a link that
+opens /post/view/3, then the view() callback function in the post controller is called, with the
+ID of 3 passed to the model for data retrieval.
+Allow you to extend the core code and build your own libraries and helper functions.
+The next few sections provide an extremely concise summary of the differences between CodeIgniter,
+CakePHP, and Symfony. The intent here is not to list every single difference among them, nor to proclaim
+that any one MVC framework is better than the others. The intent is to discuss the differences briefly,
+thereby giving you a more realistic appraisal of where CodeIgniter fits into the scheme of MVC thinking.
+
+
+
+
+
+Basically, everything you’ve done in the model will become reusable data-fetching functions for the
+controller’s use.
+
+
+When you’re working with a controller, every function or method maps to an address in your
+application. If you want users to view a page with the address of /page/foo , there had better be a Page
+controller and a foo() method inside that controller.

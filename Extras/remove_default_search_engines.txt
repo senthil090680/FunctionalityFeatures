@@ -1,0 +1,160 @@
+
+
+
+Delta search support@delta-search.com
+Remove Delta Search features from Google Chrome:
+Google Chrome
+Chrome User
+
+Remove Delta Toolbar Extension
+
+    Open Chrome.
+    Click the Customize and control button ("3 streaks” icon or wrench icon in older versions) and select Settings.
+    Click Extensions in the left menu.
+    Remove/Disable the Delta Toolbar.
+
+
+Remove Delta Toolbar from Windows programs
+
+    Click on the Start button and select Control Panel.
+    Select Programs and Features.
+    Select the Delta Toolbar from the Programs list and right click to uninstall
+    Click YES on the popup message.
+
+
+Remove Delta Search from default Search engines
+
+    From the Customize and control button ("3 streaks” icon or wrench icon in older versions), select Settings.
+    In the Search section, click Manage search engines and remove Delta Search from the default search engines list.
+    Click OK to save the changes.
+
+
+Remove Delta Search home page
+
+    Open Chrome.
+    Click the Customize and control button ("3 streaks” icon or wrench icon in older versions), select Settings.
+    In the On Startup section, Click on Set Pages and delete the Delta URL (you can set a different home page by entering a URL of your choice).
+    Click Ok to save the changes.
+    In the Appearance section, click on Change and delete the Delta URL (you can set a different home page).
+    Click Ok to save the changes.
+
+
+
+* Restart your computer after completing all the above steps.
+Terms of use Remove from Firefox Remove from Chrome Remove from Explorer
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Delta search support@delta-search.com
+Remove Delta Search features from Mozilla Firefox:
+Google Chrome
+Firefox User
+
+Remove Delta Toolbar from Add-ons manager
+
+    Open Mozilla Firefox.
+    From the Firefox orange button (Or from the standard Tools menu), click Add-ons.
+    In Add-ons manager left side menu bar, make sure Extensions is selected
+    Disable or remove the Delta Toolbar add-on
+    Restart the browser.
+
+
+Remove Delta Toolbar from Windows programs
+
+    Click the Start button and select Control Panel.
+    Select Programs and Features.
+    Select Delta Toolbar from the Programs list and right click to uninstall.
+    Click YES on the popup message.
+
+
+Remove Delta Search from default search engines
+
+    Open Mozilla Firefox.
+    Click inside the Search text field and press the F4 key
+    Select Manage Search Engines from the drop down list
+    Select Delta Search and click the Remove button.
+
+
+Remove Delta Search home page
+
+    Open Mozilla Firefox.
+    From the Firefox orange button (or from the standard Tools menu), select Options.
+    In the General tab, delete the Delta URL from the Home page text box.
+    Click OK to save the changes.
+
+
+Remove Delta Search home page from New Tab
+If you open a new tab in Firefox, and delta Search home page is still there, please do the following:
+
+    Type: about:config in the address bar and press enter
+    Confirm the message.
+    Type: browser.newtab.url in the Search text field
+    Right click on the result and select Toggle (or Reset in older versions)
+
+
+
+* Restart your computer after completing all the above steps.
+Terms of use Remove from Firefox Remove from Chrome Remove from Explorer
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Remove Delta Search features from Internet Explorer:
+Google Chrome
+Explorer User
+
+Remove Delta Toolbar from Add-ons manager
+
+    Open Internet Explorer.
+    Click the Tools icon (Cogwheel) and select Manage add-ons.
+    Under Add-on Types, select Toolbars and Extensions.
+    In the right pane, select Delta Toolbar & Delta helper Object and click the Disable button.
+
+
+Remove Delta Toolbar from Windows programs
+
+    Click the Start button and select Control Panel.
+    Select Programs and Features.
+    Select the Delta Toolbar from the Programs list and right click to uninstall.
+
+
+Remove Delta Search from default search engines
+
+    Open Internet Explorer.
+    Click the Tools icon (Cogwheel) and select Manage add-ons.
+    Under Add-on Types, select Search Providers.
+    Set your preferred default search engine.
+    Select Delta Search and click the Remove button.
+
+
+Remove Delta Search home page
+
+    Open Internet Explorer.
+    Click the Tools icon (Cogwheel) and select Internet Options.
+    In the General tab, delete the Delta URL from the Home page text box.
+    Click OK to save the changes
+
+
+Remove Delta Search home page
+If you open a new tab in Internet Explorer, and Delta Search home page is still there, please do the following:
+
+    Open Internet Explorer, click the Tools icon (Cogwheel) and select Internet Options.
+    In General tab, click the Tabs button (in the Tabs section).
+    In the new window, click the drop down menu (When a new tab is opened, open: ), and select the option: Your first home page.
+    Click OK, Apply and OK in the next window as well.
+    Restart Internet Explorer.
+
+
+
+* Restart your computer after completing all the above steps.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

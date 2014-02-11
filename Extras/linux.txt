@@ -1,0 +1,726 @@
+Linux Informations:
+--------------------
+http://www.linux.org/lessons/beginner/toc.html
+
+*)root' is known as the 'superuser'
+
+Adding users and other commands:
+-------------------------------
+useradd -adding a new User
+comm :useradd bob
+userdel -Deleting a User
+passwd  -users password
+usermod -Modifying Existing User
+
+Files:
+-------
+Users and group informations are stored in,
+vi /etc/passwd
+
+To list all the users:
+======================
+cat /etc/passwd | grep /home
+
+ls -a 
+------
+To display all files including <.> files.
+
+ls -l
+-----
+More Detailed information of the files and directory.
+
+cd /
+----
+Goes into the root directory.
+
+/bin directory
+---------------
+You'll find all of the most used commands there. Right now you should be seeing a lot of red (or green, depending on your version of Linux). Those are programs. 
+						      ----------
+						      
+/etc directory 
+--------------
+Most of configuration files are in the etc directory.
+
+cd /etc/motd
+------------
+You should see 'motd'. This is a file that contains your startup message.
+
+/usr directory
+---------------
+The usr/ directory contains files and programs meant to be used by all of the users on the system. 
+
+
+The /dev directory
+--------------------
+These are the devices that your system uses or can use.
+
+Commands:
+--------
+cd /mnt
+cd /cdrom
+cd /floppy 
+
+Sep 27
+------
+Shutdown Command:
+-----------------
+shutdown -h now  
+
+shutdown -h 20:01
+
+shutdown -h 5
+
+The system will shutdown with in 5 minutes.
+
+Re-boot
+-------
+shutdown -r now  
+
+
+virtual terminals in X-window
+-----------------------------
+CRL-ALT-F6
+ALT-F7
+
+
+
+RunApplication :
+---------------
+ALT+F2
+
+
+Shells in Linux
+================
+Introduction to aliases
+------------------------
+vi .bashrc
+
+alias ls='ls -a'
+
+After entry logout and login into the same user.
+
+'cd' command
+------------
+'cd' means 'change directory'. 
+
+cd /[directory name] will get you into one of the main directories
+
+cd you'll go back to your home directory. 
+
+ls command
+-----------
+'ls a*' to list the names of all the files that begin with the letter 'a'
+ls ->list all the files
+ls -l ->list all files in the below format
+drwxr-xr-x  2 prem prem     4096 2010-04-08 11:13 Public
+
+
+ls -lt listing according to the time with the newest ones. 
+
+Reverse Order:
+
+ls -ltr reverse order
+
+'ls -lS' will list your files from biggest to smallest.
+ls -lX will list your files in alphabetical order
+
+
+To List Only directory in linux 
+--------------------------------
+ls -l | grep ^d
+
+
+To List Only  Files in linux 
+-----------------------------
+ls -l | grep  -v ^d
+
+
+
+The 'file' command
+------------------
+file filname
+Gives information about the file
+
+more' and 'less
+---------------
+more filename
+less filename
+
+press q to stop viewing 
+
+
+
+The 'cp' command
+-----------------
+cp ->Copying Files from one location to another location with different timing.
+cp -p ->Copying Files from one location to another location with Same timing.
+cp -r /home/bob/tonyd/ ./  Copy the directory to home directory.
+
+Copy the file to home directory from any location 
+-----------------------------------------------
+cp -r /home/bob/tonyd/ ~ 
+
+Sep 29
+=======
+The 'mkdir' command
+-------------------
+mkdir foldername
+no whistles or buzzers
+
+mkdir --verbose my_friends
+tell you that you created the directory
+
+rmdir command
+-------------
+It will be used when the directory is empty
+
+rm command
+----------
+It Will remove the files.
+It will ask.
+
+rm -f 
+-----
+It wont ask .
+
+"pipes" in Linux 
+-----------------
+ls -l /proc | more 
+
+Separating two commands
+
+Terminal Shortcut key:
+----------------------
+shift+pageup
+shift+pagedown
+
+
+Get more information with Linux
+--------------------------------
+'man' - manual pages in Linux
+
+man commandname
+info commandname
+commandname --help
+apropos commandname
+These are all man pages related to commandname.
+
+
+The command 'touch'
+-------------------
+To change the time and/or date of a file. 
+
+touch -t 08080715 vishaal.php
+
+0808 ==>8th month 8th date
+0715 ==>Timing
+
+2010-08-08 07:15 vishaal.php
+
+To Create a Empty file using touch command
+
+touch filename
+
+
+Use the 'find' command 
+-----------------------
+This command  will find a file in current directory.
+find -name *hawaii*
+
+Find a file for last modified or created with in last 120 minutes 
+find -mmin +0 -mmin -120
+
+To Find a Particular Word in File 
+---------------------------------
+grep keyword filename
+
+
+Oct 1
+------
+Lesson -10
+-----------
+
+Power User Commands
+
+who	=>Who Are All Using the system
+whoami =>little program that tells you who you are.
+whatis	=>you can find out what a program does.
+ex: whatis grep
+
+whereis
+--------
+The program may need other programs in order to work. If you want to know whether or not you have it, you can type: whereis [program name] and find out. 
+
+whereis java
+
+which
+------
+To show you another tool for locating programs 'which' is similar to 'whereis'. It will give you the location of a program. At times, a program may not find another program it needs to make it run. It will need to know its location or "path". 
+
+which java
+
+
+
+
+'tee', '>', '2>'
+----------------
+ls -l | tee directory_listing
+
+It create a textpad named as [directory_listing] contails a current directory listing
+
+date | tee directory_listing
+
+Append date at the end of the text pad named as directory_listing
+
+
+> same as tee
+-------------
+
+ls -l > directory_listing
+date >> directoyr_listing ==>Appending date at the end
+
+The '2>' command
+----------------
+Creating a file for an error message that you may get.[Not Implemented]
+
+echo 
+-----
+echo hello
+echo is a little command that repeats anything you type
+
+wc
+---
+wc filename
+
+439 6510 197120  filename
+439 =>Lines
+6510=>words
+197120=>Characters
+
+Miscellaneous commands
+-----------------------
+dir,pwd
+
+date Command
+------------
+date	 
+date +%D	10/01/10
+date +%T	13:01:53
+
+cal Command
+------------
+cal =>Shows Current Month
+cal year[Numeric]=>Shows All Months in the current year
+cal month year[Numeric] =>Shows the corresponding Month
+cal -m, the week will start on Monday
+
+exit
+----
+you can get out of a terminal with the exit command.
+Want to work as another user, use logout instead. 
+
+=============================================================================================
+Oct 4
+------
+last
+*****
+The command last will show you the people who have logged into the computer today and the terminals they are/were using. 
+
+
+Nov 17
+======
+/sbin/ifconfig 
+It is used to display ip in linux
+
+
+CHECK THE LINUX MEMEORY INFORMATION
+=================================
+cat /proc/meminfo
+cat /proc/cpuinfo
+free -m
+
+CHANGE GROUP
+============
+chgrp groupname filename
+
+To check the kernel memory
+==========================
+uname -a
+
+Tomcat Intallation
+===================
+yum install tomcat6-webapps tomcat6-admin-webapps
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+MySQL export CSV into OUTFILE triggers “access denied” error
+ April 27, 2011
+By Leonid Mamchenkov 
+
+I came across a weird problem today.  Gladly, the web is full of solutions, but I’m going to post this anyway, just to have it nearby for the next time.  I needed to export the results of some query into a CSV file directly from MySQL.  I prepared my query, made sure that I can see the correct results and than changed it to export into the file. The query looked something like this:1
+2
+3
+4
+5
+6
+7
+8	SELECT id, field1, field2, field3
+INTO OUTFILE '/tmp/data.csv'
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY '\\'
+LINES TERMINATED BY '\n'
+FROM data_table
+WHERE field1 = 0;
+
+
+I was quite surprised to find myself staring at:
+
+ERROR 1045 (28000): Access denied for user ‘db_user’@'localhost’ (using password: YES)
+
+My database user definitely had full access to the database.  I definitely could see the results of the query before the redirect to the file.  And I definitely had enough permissions to create files in /tmp directory.  And on top of that, I’m sure I used MySQL export functionality a gadzillion times and it always worked without any problems.   What’s wrong this time?
+
+A quick search around got me to this Stack Overflow question.  Apparently, database user has to be given a FILE privilege, which is global (not per-database).   Here is what I did to solve the problem (you’ll need to use MySQL root user of course):1
+2
+3	USE mysql;
+UPDATE user SET File_priv = 'Y' WHERE User = 'db_user';
+FLUSH PRIVILEGES;
+
+
+I think that it worked for me before was because I exported as root, who does have this permission set to ‘Y’.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+GRANT USAGE ON *.* TO 'jobtarin_india'@'77.92.87.194' IDENTIFIED BY PASSWORD '*230DFE5FD8C0DFFAA055D1C7B7616B11C53156C4'
+
+GRANT ALL PRIVILEGES ON `jobtarin\_india`.* TO 'jobtarin_india'@'77.92.87.194'
+
+
+SHOW GRANTS; ===========================> it will output what privileges you currently have.
+
+
+
+++++++++++++++++++++++++++++++
+EXPLANATION GIVEN WITH EXAMPLE
+++++++++++++++++++++++++++++++
+
+To Grant privileges for USER root at localhost or IP WITH PASSWORD as HARI, we need to create a Password hash with a 41-digit hexadecimal number.
+
+To create the Password hash with a 41-digit hexadecimal number, we need to run the query as below,
+
+SELECT PASSWORD('hari');
+
+The above query will give the Password hash with a 41-digit hexadecimal number as *E68BB99B3B5475A2D916D70C2B355E06DD8A3ECC
+
+Then with the above PASSWORD, we need to GRANT ALL PRIVILEGES for USER root @ localhost or IP with the above generated password by the below query
+
+GRANT USAGE ON *.* TO 'root'@'localhost' IDENTIFIED BY PASSWORD '*E68BB99B3B5475A2D916D70C2B355E06DD8A3ECC';
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY PASSWORD '*E68BB99B3B5475A2D916D70C2B355E06DD8A3ECC';
+
+And At the end use this command to flush all the previous privileges
+
+FLUSH PRIVILEGES;
+
+
+IF THE PASSWORD ALREADY SET TO CLEAR THE PASSWORD FOR A PARTICULAR USER, THE BELOW QUERY CAN BE EXECUTED
+
+SET PASSWORD FOR root@localhost=PASSWORD('');
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+THE BELOW FILE IS CHANGED TO MAKE THE LOGIN AVAILABLE FOR DB WITH USERNAME AND PASSWORD
+
+
+my phpmyadmin version is 2.6.4-pl3
+
+the config file is config.inc.php
+
+and the exact line is :
+$cfg['Servers'][$i]['auth_type']     = 'http';      // Authentication method (config, http or cookie based)
+$cfg['Servers'][$i]['user']          = 'root';      // MySQL user
+$cfg['Servers'][$i]['password']      = '';          // MySQL password (only needed
+                                                    // with 'config' auth_type)
+
+
+IF YOU WANT TO MAKE A LOGIN FROM A FORM, GO INTO CONFIG.INC.PHP AND CHANGE
+
+$cfg['Servers'][$i]['auth_type'] = 'config';
+
+to
+
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+
+Now restart the appache server and if you goto phpmyadmin it will prompt you for a username and a password.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can have SSH run up with an empty configuration file (usually on port 22) by browsing to:
+
+Code:
+http://11.22.33.44:2086/scripts2/doautofixer?autofix=safesshrestart
+If you need to flush iptables, you can also:
+
+Code:
+http://11.22.33.44:2086/scripts2/doautofixer?autofix=iptablesflush
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+To Change Folder Permission
+
+
+
+Value	Meaning
+
+777	
+(rwxrwxrwx) No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
+
+755	
+(rwxr-xr-x) The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
+
+700	
+(rwx------) The file's owner may read, write, and execute the file. Nobody else has any rights. This setting is useful for programs that only the owner may use and must be kept private from others.
+
+666	
+(rw-rw-rw-) All users may read and write the file.
+
+644	
+(rw-r--r--) The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
+
+600	
+(rw-------) The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
+
+
+chmod 777 foldername
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Going back to previous folder or directory
+
+cd -
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Listing by date wise
+
+ls -lrt -------------> Listing by date wise
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+VIM EDITOR COMMANDS
+
+
+About vi
+
+Originally developed by  William Joy, vi is a screen-oriented (visual) display editor based on ex.
+
+Syntax
+
+vi [ -| -s ] [-l] [-L] [-R] [ -r [ filename ] ] [-S] [-t tag] [-v] [-V] [-x] [-w] [-n ] [-C] [+command | -c command ] filename- | -s	Suppress all interactive user feedback. This is useful when processing editor scripts.
+-l	Set up for editing LISP programs.
+-L	List the name of all files saved as the result of an editor or system crash.
+-R	Readonly mode; the readonly flag is set, preventing accidental overwriting of the file.
+-r filename	Edit filename after an editor or system crash. (Recovers the version of filename that was in the buffer when the crash occurred.)
+-S	This option is used in conjunction with the -t tag option to tell vi that the tags file may not be sorted and that, if the binary search (which relies on a sorted tags file) for tag fails to
+find it, the much slower linear search should also be done. Since the linear search is slow, users of large tags files should ensure that the tags files are sorted rather than use this flag. Creation of tags files normally produces sorted tags files. See ctags for more information on tags files.
+-t tag	Edit the file containing the tag, tag, and position the editor at its definition.
+-v	Start up in display editing state using vi . You can achieve the same effect by typing the vi command itself.
+-V	Verbose. When ex commands are read by means of standard input, the input will be echoed to standard error. This may be useful when processing ex commands within shell scripts.
+-x	Encryption option; when used, vi simulates the X command of ex and prompts the user for a key. This key is used to encrypt and decrypt text using the algorithm of the crypt command. The X command makes an educated guess to determine whether text read in is encrypted or not. The temporary buffer file is encrypted also, using a transformed version of the key typed in for the -x option. If an empty encryption key is entered (that is, if the return key is pressed right after the prompt), the file will not be encrypted. This is a good way to decrypt a file erroneously encrypted with a mistyped encryption key, such as a backspace or undo key.
+-wn	Set the default window size to n. This is useful when using the editor over a slow speed line.
+-C	Encryption option; same as the -x option, except that vi simulates the C command of ex . The C command is like the X command of ex , except that all text read in is assumed to have been encrypted.
++command | -c command	Begin editing by executing the specified editor
+command (usually a search or positioning command).
+filename	The file to be edited.
+
+
+User commandArrow keys	Move cursor
+hjkl	Same as arrow keys
+itextESC	Insert text
+cwnewESC	Change word to new
+easESC	pluralize word (end of word; append s; escape from input state)
+x	delete a character
+dw	delete a word
+dd	delete a line
+3dd	deletes 3 lines
+u	undo previous change
+ZZ	exit vi , saving changes
+:q!CR	quit, discarding changes
+/textCR	search for text
+^U ^D	scroll up or down
+:cmdCR	any ex or ed command
+ESC	end insert or incomplete command
+DEL	(delete or rubout) interrupts
+:wCR	write back changes
+:w!CR	forced write, if permission originally not valid
+:qCR	quit
+:q!CR	quit, discard changes
+:e nameCR	edit file name
+:e!CR	reedit, discard changes
+:e + nameCR	edit, starting at end
+:e +nCR	edit, starting at line n
+:e #CR	edit alternate file
+:e! #CR	edit alternate file, discard changes
+:w nameCR	write file name
+:w! nameCR	overwrite file name
+:shCR	run shell, then return
+:!cmdCR	run cmd, then return
+:nCR	edit next file in arglist
+:n argsCR	specify new arglist
+^G	show current file and line
+:ta tagCR	position cursor to tag
+F	forward screen
+^B	backward screen
+^D	scroll down half screen
+^U	scroll up half screen
+nG	go to the beginning of the specified line (end default), where n is a line number
+/pat	next line matching pat
+?pat	previous line matching pat
+n	repeat last / or ? command
+N	reverse last / or ? command
+/pat/+n	nth line after pat
+?pat?-n	nth line before pat
+]]	next section/function
+[[	previous section/function
+(	beginning of sentence
+)	end of sentence
+{	beginning of paragraph
+}	end of paragraph
+%	find matching ( ) or { }
+^L	clear and redraw window
+^R	clear and redraw window if ^L is -> key
+zCR	redraw screen with current line at top of window
+z-CR	redraw screen with current line at bottom of window
+z.CR	redraw screen with current line at center of window
+/pat/z-CR	move pat line to bottom of window
+zn.CR	use n-line window
+^E	scroll window down one line
+^Y	scroll window up one line
+``	move cursor to previous context
+''	move cursor to first non-white space in line
+mx	mark current position with the ASCII lower-case letter x
+`x	move cursor to mark x
+'x	move cursor to first non-white space in line marked by x
+H	top line on screen
+L	last line on screen
+M	middle line on screen
++	next line, at first non-white space character
+-	previous line, at first non-white space character
+CR	return, same as +
+down-arrow or j	next line, same column
+up-arrow or k	previous line, same column
+^	first non-white space character
+0	beginning of line
+$	end of line
+l or ->	forward
+h or <-	backward
+^H	same as <- (backspace)
+space	same as -> (space bar)
+fx	find next x
+Fx	find next x
+tx	move to character following the next x
+Tx	move to character following the previous x
+;	repeat last f, F, t, or T
+,	repeat inverse of last f, F, t, or T
+n|	move to column n
+%	find matching ( ) or { }
+w	forward a word
+b	back a word
+e	end of word
+)	to next sentence
+}	to next paragraph
+(	back a sentence
+{	back a paragraph
+W	forward a blank-delimited word
+B	back a blank-delimited word
+E	end of a blank-delimited word
+^H	erase last character (backspace)
+^W	erase last word
+erase	your erase character, same as ^H (backspace)
+kill	your kill character, erase this line of input
+\	quotes your erase and kill characters
+ESC	ends insertion, back to command mode
+CTRL-C	interrupt, suspends insert mode
+^D	backtab one character; reset left margin of autoindent
+^^D	caret (^) followed by control-d (^D); backtab to beginning of line; do not reset left margin of autoindent
+0^D	backtab to beginning of line; reset left margin of autoindent
+^V	quote non-printable character
+a	append after cursor
+A	append at end of line
+i	insert before cursor
+I	insert before first non-blank
+o	open line below
+O	open line above
+rx	replace single character with x
+RtextESC	replace characters
+d	delete
+c	change
+y	yank lines to buffer
+>	left shift
+<	right shift
+!	filter through command
+C	change rest of line (c$)
+D	delete rest of line (d$)
+s	substitute characters (cl)
+S	substitute lines (cc)
+J	join lines
+x	delete characters (dl)
+X	delete characters before cursor dh)
+Y	yank lines (yy)
+3yy	yank 3 lines
+3yl	yank 3 characters
+p	put back text after cursor
+P	put back text before cursor " .nr )I xp"n
+put from buffer x " .nr )I xy"n
+yank to buffer x " .nr )I xd"n
+delete into buffer x
+u	undo last change
+U	restore current line
+.	repeat last change " .nr )I dp"n
+retrieve d'th last delete
+
+
+Examples
+
+vi myfile.txt
+
+Edits the file myfile.txt.
+
+:q!
+
+Typing the above command would exit the vi edit done with the above command.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Listing by files by matching keywords
+
+To find files in the directory with the matching words, can be follows
+
+Eg:  find . -name file_\*
+
+Will give all the files which starts with 'file_' file name
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++
+TO FIND ERROR LOGS IN APACHE
+++++++++++++++++++++++++++++
+
+ErrorLog /etc/httpd/logs/error_log
+CustomLog etc/httpd/logs/access_log
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

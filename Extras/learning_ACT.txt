@@ -1,0 +1,1187 @@
+
+< - less than
+> - greater than
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Keep index.html page in any folder for not hacking your web pages  
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Class should be used if you want to call multiple or different elements, ID can be used if you want to call a single element  
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+sen!@#hari1
+
+uber@shoppingmega.in
+sen!@#789
+
+snow@shoppingmega.in
+harih@123
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Declaring variable is a must and avoid null values returned at the end of the page, so keep declaring, initializing and use that variable
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CREATING A BUTTON WITH DESIRED COLOR IN THE BACKGROUND
+
+<input type="button" value="Create Album" style="background:url(../img/green_bg.jpg); cursor:pointer; cursor:hand; width:80px; height:25px; color:#fff; text-align:center; border:0px; color:#fff; text-align:center; border:0px;" />
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+FUNCTION TO DISPLAY THE ARRAY IN A PROPER ALIGNMENT
+
+
+function debugerr($value){ 
+    echo "<pre>",print_r($value, true),"</pre>";
+}
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++
+SEO USAGES
+++++++++++
+
+
+keyword proximity
+keyword prominence
+caffeine
+301 redirect
+Internal CSS, inline CSS and external CSS ??  ------------ which is better for seo ??
+divide and rules
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++
+IMPORTANT ONE
++++++++++++++
+
+
+PLEASE LOOK INTO THE FIREBUG LINE, WHICH IS MENTIONING IN THE FIREBUG (ESPECIALLY THE JS ISSUES CAN BE IDENTIFIED BY THE FIREBUG LINE WHICH IS GIVING)
+
+
+$ is not a function means ABSOLUTELY some JS WRITTEN ALREADY OR JS FILE CLASH OR JQUERY FILE CLASH
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+When would you use a hashtable versus an array?"
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+error_reporting(E_ALL ^ E_NOTICE);
+
+All errors except notices are not displayed
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+			<input type="hidden" name="status" value="<?=$filename; ?>" />
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+			<form action="<?php echo OTHERROOTPATH; ?>" method="post" name="fileSuccessForm">
+			<input type="hidden" name="filename" value="<?=$filename; ?>" />
+			</form>
+			<script type="text/javascript">
+			document.forms['fileSuccessForm'].submit();
+			</script>
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+GROUP BY FIRST NEXT COMES ORDER BY
+
+EX:  GROUP BY user_id ORDER by email desc
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+If records are huge, the copying to tmp table will happen in the SHOW PROCESSLIST
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+In PHP, # can be used for single-line commenting
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+IN UPDATE STATEMENT, THE WHERE CLAUSE SHOULD BE ALWAYS ADDS WITH COMMA (,) NOT AND KEYWORD
+
+EX:  GROUP BY user_id ORDER by email desc
+
+UPDATE jt_resume_blast SET blast_status=1 AND tot_receiver='2' WHERE blast_id=552 -- THIS IS WRONG BCOZ 'AND' (AND) KEYWORD IS USED, ONLY COMMA SHOULD BE USED
+
+UPDATE jt_resume_blast SET blast_status=1, tot_receiver='2' WHERE blast_id=552 -- THIS IS CORRECT BCOZ COMMA (,) IS USED
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++
+MAGIC_QUOTES_GPC BOOLEAN
+++++++++++++++++++++++++
+
+Sets the magic_quotes state for GPC (Get/Post/Cookie) operations. When magic_quotes are on, all ' (single-quote), " (double quote), \ (backslash) and NUL's are escaped with a backslash automatically.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+$time = microtime(TRUE);  // get the micro seconds
+$mem = memory_get_usage();  // get the memory usage in seconds
+
+
+print_r(array(
+
+  'memory' => (memory_get_usage() - $mem) / (1024 * 1024),
+
+  'seconds' => microtime(TRUE) - $time
+
+));
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+SELECT USER() WILL GIVE ALL THE USERS FOR THE PARTICULAR DATABASE
+
+SELECT CURRENT_USER() WILL GIVE THE CURRENT USER ACCESING THE DATABASE
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++
+QUERY EXECUTION TIME IN SECONDS
++++++++++++++++++++++++++++++++
+
+$msc=microtime(true);
+
+//$sqljd="SELECT email INTO OUTFILE '".$newcsvfile."' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' FROM jt_login";
+
+$result = mysql_query($sqljd) or die(mysql_error());
+
+$msc=microtime(true)-$msc;
+echo $msc.' seconds'; // QUERY EXECUTION TIME in seconds
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++
+HTACCESS
+++++++++
+
+Enable / Disable directory Listing
+
+To allow a web server to produce a directory listing, whenever you point a directory without index file. Add following line in your .htaccess file.Options +Indexes 
+# or #
+IndexIgnore *
+
+
+
+To disable or prevent the directory access add following line in your .htaccess file. If user points the browsers to a directory which does not have index file then in this case 403 error will be
+
+Options -Indexes 
+
+
+
+Ignore files with specific extension
+
+It may happen that you may need to ignore certain files to get displayed in directory listing. This can be achieved using IndexIgnore directive in .htaccess file.
+Following snippet will not display .zip and .txt file in directory listing.IndexIgnore *.zip *.txt
+
+
+Modify Index File
+
+It is possible to change the default index file from index.html (index.php, index.jsp …) to any other file. Following line will change the index file to Home.html.DirectoryIndex Home.html
+
+
+++++++++++++++++++++++++++++++++++++++++++++
+OVERRIDING PHP.INI FILE USING .HTACCESS FILE
+++++++++++++++++++++++++++++++++++++++++++++
+
+php_value upload_max_filesize 100G
+php_value post_max_size 100G
+php_value max_file_uploads 100
+php_value max_execution_time 10000
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SYNTAXERROR IN JAVASCRIPT : UNTERMINATED STRING LITERAL
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Unterminated String literal is nothing but linebreaks not accepting in Javascript
+
+You can remove that using php and then send it to Javascript by the below lines.
+
+
+$var = "This is a good one
+I am fine, how are you, you are good I think";
+
+The above php value can be changed as below to send to javascript function parameter
+
+$var = str_replace(array("\r", "\n"), '', $var);
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++
+UNKNOWN COLUMN IN MYSQL
++++++++++++++++++++++++
+
+
+The unknown column error in mysql is nothing but the column mentioned by us is a keyword for mysql, like example below,
+
+exp_year, this column is a mysql keyword, so using this as a column name will give you error as unknown column
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++
+DIFFERENCE BETWEEN LOCAL VALUE AND MASTER VALUE
++++++++++++++++++++++++++++++++++++++++++++++++
+
+What is the difference between Local Value and Master Value that i always see in the phpmyadmin in the PHP Core section?
+
+The master value is the value set in the php.ini. The local value is usually set within the .htaccess file. Or by an external custom php.ini file. The local value can override the master value. 
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+� � 
+
+ï¿½ ï¿½
+
+
+Search for this � in the full script, it will available in the page and remove this � and above error will go off
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Using UTF-8 is just fine, but here is few checkpoints.
+
+If you are using MySQL, set database/tables/fields collations in utf8_unicode_ci
+
+and If you are using php, do mysql_query('SET NAMES utf8'); before query
+
+and in HTML output use
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++
+ERRORS IN PHP
++++++++++++++
+
+
+E_ALL = 32767  All errors and warnings, as supported, except of level E_STRICT prior to PHP 5.4.0. 
+
+E_COMPILE_ERROR = 64  Fatal compile-time errors. This is like an E_ERROR, except it is generated by the Zend Scripting Engine.
+
+E_COMPILE_WARNING = 128  Compile-time warnings (non-fatal errors). This is like an E_WARNING, except it is generated by the Zend Scripting Engine.
+
+E_CORE_ERROR = 16  Fatal errors that occur during PHP's initial startup. This is like an E_ERROR, except it is generated by the core of PHP.
+
+E_CORE_WARNING = 32  Warnings (non-fatal errors) that occur during PHP's initial startup. This is like an E_WARNING, except it is generated by the core of PHP.
+
+E_DEPRECATED = 8192  Run-time notices. Enable this to receive warnings about code that will not work in future versions.
+
+E_ERROR = 1  Fatal run-time errors. These indicate errors that can not be recovered from, such as a memory allocation problem. Execution of the script is halted.
+
+E_NOTICE = 8  Run-time notices. Indicate that the script encountered something that could indicate an error, but could also happen in the normal course of running a script.
+
+E_PARSE = 4  Compile-time parse errors. Parse errors should only be generated by the parser.
+
+E_RECOVERABLE_ERROR = 4096  Catchable fatal error. It indicates that a probably dangerous error occured, but did not leave the Engine in an unstable state. If the error is not caught by a user defined handle (see also set_error_handler), the application aborts as it was an E_ERROR.
+
+E_STRICT = 2048  Enable to have PHP suggest changes to your code which will ensure the best interoperability and forward compatibility of your code.
+
+E_USER_DEPRECATED = 16384  User-generated warning message. This is like an E_DEPRECATED, except it is generated in PHP code by using the PHP function trigger_error.
+
+E_USER_ERROR = 256  User-generated error message. This is like an E_ERROR, except it is generated in PHP code by using the PHP function trigger_error.
+
+E_USER_NOTICE = 1024  User-generated notice message. This is like an E_NOTICE, except it is generated in PHP code by using the PHP function trigger_error.
+
+E_USER_WARNING = 512  User-generated warning message. This is like an E_WARNING, except it is generated in PHP code by using the PHP function trigger_error.
+
+E_WARNING = 2  Run-time warnings (non-fatal errors). Execution of the script is not halted.
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++
+HTTPD.CONF
+++++++++++
+
+
+Folder named conf, bin, lib, or var.
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++
+ROOT FOLDER
++++++++++++
+
+
+This root folder will depend on how your localhost is configured. It may be named webroot, www, or public_html
+(these are some of the most common folder names for the server root directory).
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++
+CRUD FUNCTIONS OR OPERATIONS
+++++++++++++++++++++++++++++
+
+
+In computer programming, create, read, update and delete (CRUD) are the four basic functions of persistent storage.[1] Sometimes CRUD is expanded with the words retrieve instead of read, modify instead of update or destroy instead of delete. It is also sometimes used to describe user interface conventions that facilitate viewing, searching, and changing information
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++
+PARSE ERROR IN CAKE PHP
++++++++++++++++++++++++
+
+Parse error: syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in C:\zend\Apache2\htdocs\portal\app\app_controller.php on line 38
+
+
+We get the above error mainly because the var is missed, when initializing any variable as a class attribute.
+
+
+EG: 
+
+$helpers = array('Html','Form','Ajax','Javascript'); // NOT CORRECT
+
+
+var $helpers = array('Html','Form','Ajax','Javascript'); // CORRECT ONE
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++
+INTERNAL SERVER ERROR BECAUSE OF .HTACCESS
+++++++++++++++++++++++++++++++++++++++++++
+
+
+If you have suPHP enabled, then you cannot use php_value in .htaccess file, then you will get INTERNAL SERVER ERROR. You have to upload a custom php.ini file in the home directory of the website and modify any settings required.
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++
+VALUES EMPTY IN ONSUBMIT
+++++++++++++++++++++++++
+
+
+Hmm... so it's empty on submit? Try adding this to the top of your php file:
+if(empty($_SERVER['CONTENT_TYPE']))
+{ 
+  $_SERVER['CONTENT_TYPE'] = "application/x-www-form-urlencoded"; 
+}
+
+Okay, now check your php.ini (normally requires sudo or root in /etc):
+post_max_size = 8M
+variables_order = "EGPCS"
+
+Do you have those two rules set? If so, be careful of how much memory you're allocating. Anything over 2048MB could start to give you trouble, depending on your system specs.
+
+NOTE: If you make changes to your php.ini file and PHP is running as an apache module, you'll need to restart apache. Something along the lines of:
+sudo /etc/init.d/httpd restart
+
+
+search following in php.ini
+post_max_size
+
+The maximum value this variable accept is 14000M which is again a bug and should be 2047M
+ So replace this varible with
+post_max_size = 2047M
+
+Value greater than 2047M is useless because $_POST can't save more than 2047M but due to bug this variable can accept the value for more than 2047M till to 14000M but remember assigning value for more than 2047M is useless.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++
+SETTING MYSQL PASSWORD IN LOCALHOST
++++++++++++++++++++++++++++++++++++
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+
+ where 'some_pass' is the password you want to use
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++
+SYNTAX ERROR, UNEXPECTED T_OBJECT_OPERATOR
+++++++++++++++++++++++++++++++++++++++++++
+
+syntax error, unexpected T_OBJECT_OPERATOR in C:\zend\Apache2\htdocs\chapter4\app\controllers\books_controller.php on line 24
+
+This is because if we miss $ symbol before the method or member function
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++
+INTERNAL SERVER ERROR
++++++++++++++++++++++
+
+
+It is mainly because we do not close or open the php tags correctly or miss it, we will get the internal server error
+
+Also, if we get this error after correcting the error because of caching, so we make the debug to 2 in core.php in config folder to see the exact errors
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+NO JS ERROR OR PHP ERROR OR ANY ERROR SHOWN IN FORM SUBMIT
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+IF YOU IGNORE OR MISS THE FORM OPENING OR CLOSING TAGS, YOU WILL NEVER GET ANY ERROR IN FORM SUBMIT
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CAKEPHP ==== AFTER LOGIN SUBMIT, IT IS NOT COMING TO LOGIN FUNCTION AT ALL, RATHER GOING TO
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The solution: Remove all the white space after the end of } tag in controllers and models. Now, it works.
+
+The reason(found in Google Search): ' the issue is a PHP issue with whitespace being output after some headers are sent, and typically occurs when a redirect is requested further down in the code from the whitespace. This issue has nothing to do specifically with CakePHP as implied in the post title.'
+
+Thanks for help...
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ARGUMENTS FIND IN FUNCTION AND ARGUMENT VALUE USING PHP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+function abc($a,$b) {
+	$funccnt	=	func_num_args();  // This is used to find number of arguments in a function
+	
+	$lengthfind	=	0;
+	for($i=0; $i<$funccnt; $i++){
+		$length = strlen(func_get_arg($i));  // This is used to value of the arguments in a function one by one
+		if($lengthfind == 0){
+			$lengthfind	= $length;
+		} else if ($lengthfind	== $length) {
+
+		}
+	}
+}
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++
+HASH STRING LENGTH USING PHP
+++++++++++++++++++++++++++++
+
+
+alg       strlen hash (cropped)
+
+md2           32 a9046c73e00331af68917d3804f70655                  
+md4           32 866437cb7a794bce2b727acc0362ee27
+md5           32 5d41402abc4b2a76b9719d911017c592
+sha1          40 aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+sha256        64 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e730
+sha384        96 59e1748777448c69de6b800d7a33bbfb9ff1b463e44354c3553
+sha512       128 9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2d
+ripemd128     32 789d569f08ed7055e94b4289a4195012
+ripemd160     40 108f07b8382412612c048d07d13f814118445acd
+ripemd256     64 cc1d2594aece0a064b7aed75a57283d9490fd5705ed3d66bf9a
+ripemd320     80 eb0cf45114c56a8421fbcb33430fa22e0cd607560a88bbe14ce
+whirlpool    128 0a25f55d7308eca6b9567a7ed3bd1b46327f0f1ffdc804dd8bb
+tiger128,3    32 a78862336f7ffd2c8a3874f89b1b74f2
+tiger160,3    40 a78862336f7ffd2c8a3874f89b1b74f2f27bdbca
+tiger192,3    48 a78862336f7ffd2c8a3874f89b1b74f2f27bdbca39660254
+tiger128,4    32 1c2a939f230ee5e828f5d0eae5947135
+tiger160,4    40 1c2a939f230ee5e828f5d0eae5947135741cd0ae
+tiger192,4    48 1c2a939f230ee5e828f5d0eae5947135741cd0aefeeb2adc
+snefru        64 7c5f22b1a92d9470efea37ec6ed00b2357a4ce3c41aa6e28e3b
+gost          64 a7eb5d08ddf2363f1ea0317a803fcef81d33863c8b2f9f6d7d1
+adler32        8 062c0215
+crc32          8 3d653119
+crc32b         8 3610a686
+haval128,3    32 85c3e4fac0ba4d85519978fdc3d1d9be
+haval160,3    40 0e53b29ad41cea507a343cdd8b62106864f6b3fe
+haval192,3    48 bfaf81218bbb8ee51b600f5088c4b8601558ff56e2de1c4f
+haval224,3    56 92d0e3354be5d525616f217660e0f860b5d472a9cb99d6766be
+haval256,3    64 26718e4fb05595cb8703a672a8ae91eea071cac5e7426173d4c
+haval128,4    32 fe10754e0b31d69d4ece9c7a46e044e5
+haval160,4    40 b9afd44b015f8afce44e4e02d8b908ed857afbd1
+haval192,4    48 ae73833a09e84691d0214f360ee5027396f12599e3618118
+haval224,4    56 e1ad67dc7a5901496b15dab92c2715de4b120af2baf661ecd92
+haval256,4    64 2d39577df3a6a63168826b2a10f07a65a676f5776a0772e0a87
+haval128,5    32 d20e920d5be9d9d34855accb501d1987
+haval160,5    40 dac5e2024bfea142e53d1422b90c9ee2c8187cc6
+haval192,5    48 bbb99b1e989ec3174019b20792fd92dd67175c2ff6ce5965
+haval224,5    56 aa6551d75e33a9c5cd4141e9a068b1fc7b6d847f85c3ab16295
+haval256,5    64 348298791817d5088a6de6c1b6364756d404a50bd64e645035f
+
+
+$a = "NULL";
+
+//echo !empty($a); //Ans: 1
+
+//chr(27); //Ans : Ascii
+
+//print 4<<5; Ans: 128 4 is multipled by 2 five times, 4*2=8*2=16*2=32*2=64*2=128
+
+echo 50 >> 4; //Ans: 128 50 is divided by by 2 four times, 50/2=25/2=12/2=6/2=3
+
+echo 64 >> 7; //Ans: 0 64 is divided by by 2 seven times, 64/2=32/2=16/2=8/2=4/2=2/2=1/2=0
+
+//$le/1 = 'a'; // invalid variable name
+
+//$le-1 = 'a'; // invalid variable name
+
+//echo $le-1  // invalid
+
+//$foo = 5 + "10 things"; // Ans: 15, here 10 is considered as integer and just adds to the 5, so 10 + 5 = 15
+
+//echo $foo; //Ans: 15, here 10 is considered as integer and just adds to the 5, so 10 + 5 = 15
+
+//$foo = 5 + "10"; // Ans: 15, here 10 is considered as integer and just adds to the 5, so 10 + 5 = 15
+
+$Rent = 250;
+
+function Expenses($Other) {
+	$Rent = 250 + $Other;
+	return $Rent;
+}
+
+Expenses(50);
+//echo $Rent;  //ans: 250
+
+$a = "print";
+
+//$a ('hello');  //ans: fatal error
+
+//echo 0x500; //Ans: 1280 //
+
+//print null == NULL; //Ans: 1
+
+//single quoted, double quoted, heredoc, and nowdoc are string literals
+
+//echo (2) . (3 * (print 3)); //Ans : 323
+
+$a = 0x01;
+$b = 0x02;
+
+//echo $a === $b >> $a; // Ans : 1
+
+$a = (1<<0);
+$b = (1<<1);
+
+//echo ($b | $a) << 2; // ans : 12
+
+
+function fn(&$var) {
+	$var = $var - ($var/10*5);
+	return $var;
+}
+
+//echo fn(100); // Ans: Fatal error: Only variables can be passed by reference in php
+
+$var	=	100;
+
+//echo fn($var); // Ans: This will give no erro
+
+//str_replace // ans : array & string
+
+//echo "5.0" == "5"; //Ans: 1
+
+//echo !!!0;  //Ans: 1
+
+while(expr)
+
+statement;
+
+while(expr)
+
+statement;
+
+endwhile;
+
+Both are correct;
+
+htmlspecialchars();
+
+
+
+bitwise 
+
+
+ 50 >> 4
+
+
+
+1• Which of the following statement is not correct for PHP?
+ a. It is a server side scripting language
+ b. A php file may contain text, html tags or scripts
+ c. It can run on windows and Linux systems only
+ d. It is compatible with most of the common servers used today
+
+ 2• Which of the following is a PHP resource?
+ a. Domxml document
+ b. Odbc link
+ c. File
+ d. All of the above
+
+ 3• You need to count the number of parameters given in the URL by a POST operation. The correct way is:
+ a. count($POST_VARS);
+ b. count($POST_VARS_PARAM);
+ c. count($_POST);
+ d. count($HTTP_VARS_PARAM);
+
+ 4• Which of the following regular expressions can be used to check the validity of an e-mail addresss?
+ a. ^[^@]+@[^@]+\.[^@]+$
+ b. ^[^@]+@[^@]+.[^@]+$
+ c. $[^@]+@[^@]+\.[^@]+^
+ d. $[^@]+@[^@]+.[^@]+^
+
+ 5• What is true regarding $a + $b where both of them are arrays?
+ a. Duplicated keys are NOT overwritten
+ b. $b is appended to $a
+ c. The + operator is overloaded
+ d. This produces a syntax error
+
+ 6• You are using sessions and session_register() to register objects. These objects are serialized automatically at the end of each PHP page and are de-serialized automatically on each of the following pages. Is this true or false?
+ a. True
+ b. False
+
+ 7• How would you start a session?
+ a. session(start);
+ b. session();
+ c. session_start();
+ d. begin_ session();
+
+ 8• Dose PHP provide the goto keyword in latest version?
+ a. Yes
+ b. No
+
+
+
+ 9• What will be the output of the following code?
+ $Rent = 250;
+ function Expenses($Other)
+ {
+ $Rent = 250 + $Other;
+ return $Rent;
+ }
+ Expenses(50);
+ echo $Rent;
+ a. 300
+ b. 250
+ c. 200
+ d. Program will not compile
+
+ 10• You need to keep an eye on the existing number of objects of a given class without introducing a non-class member variable. Which of the following makes this happen?
+ a. Add a number variable that gets incremented in the default constructor and decremented in the destructor
+ b. Add a local variable that gets incremented in each constructor and decremented in the destructor
+ c. Add a static variable that gets incremented in each constructor and decremented in the destructor
+ d. This cannot be accomplished since the creation of objects done dynamic via “new.”
+
+
+ 11• Which of the following variables is not related to file uploads?
+ a. max_file_size
+ b. _max_exeucution_time
+ c. post_max_size
+ d. input_time_max
+
+ 12• Which of the following variables are supported by ‘str_replace()‘ function?
+ a. Integer
+ b. String
+ c. Boolean
+ d. Array
+
+ 13• What will be the result of following operation?
+ print 4<<5;
+ a. 3
+ b. 128
+ c. 120
+ d. 6
+
+ 14• What will be the output of following code?
+ $a = 10;
+ echo ” value of a = $a”;
+ a. Value of a = 10
+ b. Value of a = $a
+ c. Undefined
+ d. Syntax Error
+
+ 15• Which of the following printing construct/function accepts multiple parameters?
+ a. echo
+ b. print
+ c. printf
+ d. All or the above
+
+ 16• The following php variables are declared:
+ $company = ‘ABS Ltd’;
+ $$company = ‘,Sydney’;
+ ?>
+ Which of the following is not a correct way of printing ’ABS Ltd’?
+ a. Echo “$company $$company”;
+ b. Echo “$company ${$company}”;
+ c. Echo “$company ${‘ABS Ltd’}”;
+ d. Echo “$company {$$company}”;
+17 • The value of a local variable of a function has to be retained over multiple calls to that function. How should that variable be declared?
+ a. Local
+ b. Global
+ c. Static
+ d. None of the above
+ 18• Which of the following are not considered as Boolean False?
+ a. FALSE
+ b. 0
+ c. “0”
+ d. “FALSE”
+ e. 1
+ f. NULL
+ 19• Variable/functions is PHP don’t work directly with:
+ a. echo()
+ b. isset()
+ c. print()
+ d. All of the above
+1 year ago Report Abuse 
+
+ 
+danish h 
+Best Answer - Chosen by Asker
+1.it does not run on windows server.
+ 2.all of d above
+ 3.c
+ 4.b
+ 5.b
+ 6.false
+ 7.b
+ 8.no
+ 9.not compile
+ 10.d
+ 11.d
+ 12.a,b
+ 13.a
+ 14.b
+ 15.echo,print
+ 16.
+ 17.none of the above;
+ 18.false
+ 19.isset
+
+
+
+
+What is the output of the following code?
+<?php echo 0x500; ?>
+Choice 1      500
+Choice 2      0500
+Choice 3      1280
+Choice 4      0x500
+
+The classes are defined as follows:
+<?php
+abstract class BaseCls {
+protected abstract function getName();
+}
+class ChildCls extends BaseCls{
+}
+Which of the following implementations of getName() is invalid in ChildCls?
+Choice 1      protected function getName(){}
+Choice 2      function getName(){}
+Choice 3      private function getName(){}
+Choice 4      public function getName(){}
+
+Which of the following is not true for a persistent connection?
+
+Choice 1      These can't be converted to non-persistent connections
+Choice 2      These are not closed even after the execution of the script
+Choice 3      These are mainly used to increase the efficiency of the system
+Choice 4      These are preferably not used in the scripts involving transactions
+
+What is the output of the following code?
+<?php echo (2) . (3 * (print 3));?>
+
+Choice 1      29
+Choice 2      323
+Choice 3      329
+Choice 4      233
+
+Which of the following text manipulation functions is not supported by PHP?
+Choice 1      strtoupper()
+Choice 2      strtolower()
+Choice 3      strsplit()
+Choice 4      ucfirst()
+
+Analyze the following code snippet that uses the preg_match() PHP Regular Expression method:
+<?php
+$string = 'ball';
+echo preg_match("/b[aoiu]l/", $string, $matches);
+?>
+What will be the output of the above code?
+
+Choice 1      1
+Choice 2      An array of all matching strings found
+Choice 3      The last match found
+Choice 4      Only the first matching element
+
+What will be the output of the following code?
+<?php
+$a = 0.0;
+for ($i = 0; $i < 10; $i++) $a += 0.1;
+print "$a ";
+print ($a == 1.0) ? "Equals":"Not Equals";
+?>
+Choice 1      0.9 Not Equals
+Choice 2      1 Equals
+Choice 3      1 Not Equals
+Choice 4      1.1 Not Equals
+
+Which of the following is/are invalid data type/s in PHP?
+Choice 1      String
+Choice 2      Integer
+Choice 3      Float
+Choice 4      Char
+Choice 5      Array
+Choice 6      Object
+
+You need to check the size of a file in PHP function.
+<?php $size=X(filename); ?>
+Which function will suitably replace 'X'?
+Choice 1      sizeofFile
+Choice 2      filesize
+Choice 3      getSize
+Choice 4      size
+
+What will be the output of the following code?
+<?php
+var_dump (3*4);
+?>
+Choice 1      int(12)
+Choice 2      int(3*4)
+Choice 3      12
+Choice 4      3*4
+
+When comparing two arrays, what is the difference between == and === ?
+Choice 1      === compares the array references
+Choice 2      They are identical
+Choice 3      == compares keys while === compares keys and values
+Choice 4      === also compares the order and types of the objects
+
+What does the array_unshift () function do?
+
+Choice 1      It undo what array_shift does
+Choice 2      It shifts all bits of the array to the left
+Choice 3      None of the above
+Choice 4      It inserts an array at the beginning of another array
+
+How can you hide the fact that web pages are written in PHP?
+Choice 1      By using .htaccess directive in Apache
+Choice 2      All of the above
+Choice 3      By using AddType application/x-httpd-php asp
+Choice 4      Specify all file names without any dot and extension
+
+Which of the following is not a SQL operator?
+Choice 1      Between..and..
+Choice 2      Like
+Choice 3      Is
+Choice 4      In null
+
+What is empty() ?
+Choice 1      A variable
+Choice 2      A language construct
+Choice 3      A function
+Choice 4      A reference
+
+What will be the output of the following code?
+<?
+$a = "NULL";
+echo !empty ($a);
+?>
+Choice 1      1
+Choice 2      0
+Choice 3      NULL
+Choice 4      TRUE
+
+Is the FROM clause necessary in every SELECT statement?
+Choice 1      Yes
+Choice 2      No
+
+Which of the following statements is correct with regard to final and abstract?
+Choice 1      An abstract class cannot have final methods
+Choice 2      An abstract class cannot have non abstract methods
+Choice 3      A final class cannot have abstract methods
+Choice 4      A final class cannot have final methods
+
+Which of the following statements is correct with regard to final and abstract?
+Choice 1      An abstract class cannot have final methods
+Choice 2      An abstract class cannot have non abstract methods
+Choice 3      A final class cannot have abstract methods
+Choice 4      A final class cannot have final methods
+
+What enctype is required for file uploads to work?
+Choice 1      multipart/form-data
+Choice 2      file
+Choice 3      application/octect-stream
+Choice 4      multipart
+
+What is the output of the following code?
+<?php
+$a = 3;
+$b = 2;
+echo (int)$a / (int)$b
+?>
+Choice 1      1
+Choice 2      1.5
+Choice 3      2
+Choice 4      3
+Choice 5      Error
+
+in the following list, which one is not a string literal definition?
+Choice 1      heredoc syntax
+Choice 2      double quoted
+Choice 3      nowdoc syntax
+Choice 4      single quoted
+
+Which of the following are not String column types?
+Choice 1      SET
+Choice 2      ENUM
+Choice 3      TEXT
+Choice 4      BLOB
+
+Which of the following is the operator with the highest precedence?
+
+Choice 1      new
+Choice 2      =
+Choice 3      +
+Choice 4      instance of
+
+You have two strings, which you want to concatenate.
+
+$str1 = 'Have a  ';
+
+$str2 = 'Nice Day';
+
+The fastest way would be:
+Choice 1      $str1.Concat($str2);
+Choice 2      "$str1$str2";
+Choice 3      None of the above
+Choice 4      $str1.$str2;
+
+What will be the output of the following code?
+<?
+$a = 0x01;
+$b = 0x02;
+printf ("%x", ($a << $b.$b));
+?>
+
+Choice 1      800000
+Choice 2      10000
+Choice 3      1
+Choice 4      400000
+
+How can you hide the fact that web pages are written in PHP?
+Choice 1      By using .htaccess directive in Apache
+Choice 2      By using AddType application/x-httpd-php asp
+Choice 3      Specify all file names without any dot and extension
+Choice 4      All of the above
+
+Can feof () be used with a file opened by fsockopen () ?
+Choice 1      No
+Choice 2      Yes
+
+Consider the following two statements:
+I while (expr) statement
+II while (expr): statement ... endwhile;
+Which of the following are true in context of the given statements?
+Choice 1      Both I & II are wrong
+Choice 2      I is wrong and II is correct
+Choice 3      I is correct and II is wrong
+Choice 4      Both I & II are correct
+
+What is the output of the following code?
+<?
+$a = (1 << 0);
+$b = (1 << 1);
+echo $b | $a;
+?>
+Choice 1      0
+Choice 2      1
+Choice 3      8
+Choice 4      32
+
+What will be the output of the following code?
+<?php
+$a = (1 << 0);
+$b = (1 << $a);
+$c = (1 << $b);
+echo ($c || $b) << 2 * $a | $a;
+?>
+
+Choice 1      1
+Choice 2      32
+Choice 3      5
+Choice 4      12
+Choice 5      27
+Choice 6      3
+
+What will be the output of the following code?
+$var = 10;
+function fn() {
+$var = 20;
+return $var;
+}
+fn();
+echo $var;
+Choice 1      10
+Choice 2      20
+Choice 3      Error
+Choice 4      Undefined Variable
+
+Which of the following printing construct/function accepts multiple parameters?
+Choice 1      printf
+Choice 2      All of the above
+Choice 3      echo
+Choice 4      print
+
+If the session_cache_expire() is not set, then by default the session cache will expire after:
+Choice 1      2 hrs
+Choice 2      3 hrs
+Choice 3      4 hrs
+Choice 4      1 hr
+
+
+What function should you use to join array elements with a glue string?
+
+Choice 1      implode
+Choice 2      make_array
+Choice 3      join_str
+Choice 4      connect
+
+What do you infer from the following code?
+<?php
+$str = 'Dear Customer,nThanks for your query. We will reply very soon.?n Regards.n Customer Service Agent';
+print $str;
+?>
+Choice 1      All the n will work and text will be printed on respective new lines.
+Choice 2      Last n will not be recognised and only first two parts will come in new lines.
+Choice 3      Only first n character will be recognised and new line will be inserted.
+Choice 4      All will be printed on one line irrespective of the n.
+
+
+What is the precedence between && and "and"?
+
+Choice 1      && is higher than "and"
+Choice 2      "and" is higher than &&
+Choice 3      Those operators don't exist
+Choice 4      They have the same precedence
+
+What will be the output of the following code?
+<?php
+$foo = 5 + "10 things";
+print $foo;
+?>
+Choice 1      5 10 things
+Choice 2      15 things
+Choice 3      15
+Choice 4      510 things
+
+What is the correct SQL syntax for returning all the columns from a table named "Persons" sorted REVERSE alphabetically by "FirstName"?
+Choice 1      SELECT * FROM Persons WHERE FirstName ORDER BY FirstName DESC
+Choice 2      SELECT * FROM Persons SORT REVERSE 'FirstName'
+Choice 3      SELECT * FROM Persons ORDER BY -'FirstName'
+Choice 4      SELECT * FROM Persons ORDER BY FirstName DESC
+
+Which of the following is a correct declaration?
+Choice 1      static $varb = array(1,'val',3);
+Choice 2      static $varb = sqrt(81);
+Choice 3      static $varb = new Object;
+Choice 4      static $varb = 1+(2*90);
+
+echo 0x100; // Ans: 256 this is hexadecimal notation which is multipled by 16 for every 0 added, starts with 0x, every 10 six is added as well
+
+echo 0xA; // Ans: 10, 11 for B, 12 for C, 13 for D, 14 for E, after this no values i.e., no value for 0xF
+
+echo 0x10; // Ans: 16 this is hexadecimal notation which is multipled by 16 for every 0 added and 6 added for 10, starts with 0x
+
+echo 010; // Ans: 8 this is octal notation which is multipled by 8 for every 10 added, starts with 0
+
+echo 0100; // Ans: 64 this is octal notation which is multipled by 8 for every 10 added, starts with 0
+
+var_dump(0x100);

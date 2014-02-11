@@ -1,0 +1,207 @@
+Keyboard Shortcut 	Action
+Alt+F 	File
+Open the file menu.
+Ctrl+N / Cmd+N 	New document
+Open a new document for editing.
+Ctrl+O / Cmd+O 	Open
+Open an existing document for editing.
+Ctrl+Shift+O / Cmd+Shift+O 	Open in Frame
+Open an existing document into the selected frame for editing.
+Ctrl+W / Cmd+W 	Close
+Close the current document. If it has not been saved, you will be prompted to save.
+Ctrl+Shift+W / Cmd+Shift+W 	Close All
+Close every open document. If some have not been saved, you will be prompted to save each one.
+Ctrl+S / Cmd+S 	Save
+Save the current document. If it has never been saved, you will be prompted for a file name.
+Ctrl+Shift+S / Cmd+Shift+S 	Save As...
+Save the current document with a new file name.
+Ctrl+P / Cmd+P 	Print
+Print the HTML for the current document.
+F12 	View in Browser
+View the page in your primary Web browser.
+Ctrl+F12 / Cmd+F12 	View in Alternate Browser
+View the page in your alternate Web browser.
+Shift+F8 	Check Links
+Validate the links in the current document.
+Shift+F6 	Validate Markup
+Validate the HTML in the current document.
+Ctrl+Q / Cmd+Q 	Exit
+Quit the program and exit.
+Alt+E 	Edit
+Open the edit menu.
+Ctrl+Z / Cmd+Z 	Undo
+Undo the last change.
+Ctrl+Shift+Z / Cmd+Shift+Z 	Redo
+Redo the last undo.
+Ctrl+X / Cmd+X 	Cut
+Cut the selected text and put it on the clipboard.
+Ctrl+C / Cmd+C 	Copy
+Copy the selected text and put it on the clipboard.
+Ctrl+V / Cmd+V 	Paste
+Paste the text on the clipboard at the cursor location.
+Ctrl+Shift+C / Cmd+Shift+C 	Copy HTML
+Copy the selected HTML and put it on the clipboard.
+Ctrl+Shift+V / Cmd+Shift+V 	Paste HTML
+Paste the HTML on the clipboard at the cursor location.
+Ctrl+A / Cmd+A 	Select All
+Select all the text in the window.
+Ctrl+[ / Cmd+[ 	Select Parent Tag
+Select the containing tag.
+Ctrl+] / Cmd+] 	Select Child Tag
+Select the contained tag.
+Ctrl+F / Cmd+F 	Find and Replace
+Search within the current document for text and replace it with other text if you choose.
+Shift+F3 / Cmd+G 	Find Selection
+Search within the current document for the selected text.
+F3 	Find Next
+Go to the next instance of the searched for string.
+Ctrl+G / ? 	Go to
+Go to the line number or character position you specify.
+Ctrl+Space / Cmd+Space 	Show Code Hints
+Display any information available on the tag at the cursor.
+Ctrl+Shift+> / Cmd+Shift+> 	Indent
+Indent the selected line(s) one tab space.
+Ctrl+Shift+< / Cmd+Shift+<< 	Outdent
+Outdent the selected line(s) one tab space.
+Ctrl+Shift+' / Cmd+Shift+' 	Balance Braces
+Align the braces.
+Ctrl+U / Cmd+U 	Preferences
+Change your preferences for Dreamweaver.
+Alt+V 	View
+Open the View menu.
+Ctrl+` / Cmd+` 	Switch Views
+Switch between code, design, and code & design views.
+F5 	Refresh Design View
+Reload the markup displayed in the design view.
+Ctrl+Shift+H / Cmd+Shift+H 	Head Content
+Display the header content while in design view.
+F6 	Expanded Tables Mode
+View tables expanded.
+Ctrl+F6 / Cmd+F6 	Layout Mode
+View tables in layout mode.
+Ctrl+Shift+I / Cmd+Shift+I 	Hide All Visual Aids
+Turn off all visual aids.
+Ctrl+Alt+R / Cmd+Opt+R 	Show All Rulers
+Display all rulers on the screen.
+Ctrl+Alt+G / Cmd+Opt+G 	Show Grid
+Display grid in design view.
+Ctrl+Alt+Shift+G / Cmd+Opt+Shift+G 	Snap to Grid
+Snap elements to grid.
+Ctrl+Alt+P / Cmd+Opt+P 	Play Plugin
+Play plugin at cursor.
+Ctrl+Alt+X / Cmd+Opt+X 	Stop Plugin
+Stop plugin at cursor.
+Ctrl+Alt+Shift+P / Cmd+Opt+Shift+P 	Play All Plugins
+Play all plugins.
+Ctrl+Alt+Shift+X / Cmd+Opt+Shift+X 	Stop All Plugins
+Stop all plugins.
+F4 	Hide Panels
+Hide all open panels.
+Alt+I 	Insert
+Open the insert menu.
+Ctrl+E / Cmd+E 	Insert Tag
+Insert markup tag at cursor.
+Ctrl+Alt+I / Cmd+Opt+I 	Insert Image
+Insert image at cursor.
+Ctrl+Alt+F / Cmd+Opt+F 	Insert Flash
+Insert Flash animation at cursor.
+Ctrl+Alt+D / Cmd+Opt+D 	Insert Shockwave
+Insert Shockwave object at cursor.
+Ctrl+Alt+T / Cmd+Opt+T 	Insert Table
+Insert table at cursor.
+Ctrl+Alt+A / Cmd+Opt+A 	Insert Named Anchor
+Insert named anchor at cursor.
+Shift+Return / Shift+Return 	Insert Line Break
+Insert line break (<br />) at cursor.
+Ctrl+Shift+Space / Cmd+Shift+Space or Option+Space in Design View 	Non-breaking space
+Insert a non-breaking space (&nbsp;) at cursor.
+Ctrl+Alt+V / Cmd+Opt+V 	Insert Editable Region
+Insert editable region for a template at cursor.
+Alt+M 	Modify
+Open the modify menu.
+Ctrl+J / Cmd+J 	Page Properties
+Modify the properties for the page.
+Ctrl+T / Cmd+T 	Quick Tag Editor
+Add a tag quickly in the design view.
+Ctrl+L / Cmd+L 	Make Link
+Make the highlighted object a link.
+Ctrl+Shift+L / Cmd+Shift+L 	Remove Link
+Remove link from highlighted object.
+Ctrl+Shift+1 / Cmd+Shift+1 	Align Left
+Align object left.
+Ctrl+Shift+3 / Cmd+Shift+3 	Align Right
+Align object right.
+Ctrl+Shift+4 / Cmd+Shift+4 	Align Top
+Align object at top.
+Ctrl+Shift+6 / Cmd+Shift+6 	Align Bottom
+Align object at bottom.
+Ctrl+Alt+Shift+T / Cmd+Opt+Shift+T 	Add Object to Timeline
+Add element to timeline.
+Alt+T 	Text
+Open text menu.
+Shift+F7 	Check Spelling
+Check spelling in document.
+Alt+C 	Commands
+Open commands menu.
+Ctrl+Shift+X / Cmd+Shift+X 	Start Recording
+Record all commands.
+Alt+S 	Site
+Open the site menu.
+Ctrl+Shift+D / Cmd+Shift+D 	Get
+Get all files on remote site and bring them to local drive.
+Ctrl+Alt+Shift+D / Cmd+Opt+Shift+D 	Check Out
+Check out all files on remote site and bring them to local drive.
+Ctrl+Shift+U / Cmd+Shift+U 	Put
+Put all files on remote site from local drive.
+Ctrl+Alt+Shift+U / Cmd+Opt+Shift+U 	Check In
+Check in all files on local drive and put them on remote site.
+Ctrl+F8 / Cmd+F8 	Check Links Sitewide
+Validate all links on the site.
+Alt+W 	Window
+Open the window menu.
+Ctrl+F2 / Cmd+F2 	Insert Menu
+Toggle insert window.
+Ctrl+F3 / Cmd+F3 	Properties Menu
+Toggle properties window.
+Shift+F11 	CSS Styles
+Toggle CSS styles window.
+F2 	Layers Menu
+Toggle layers window.
+Shift+F4 	Behaviors Menu
+Toggle behaviors window.
+Shift+F9 	Snippets Menu
+Toggle snippets window.
+Shift+F1 	Reference Menu
+Toggle reference window.
+Ctrl+Shift+F10 / Cmd+Shift+F10 	Databases Menu
+Toggle databases window.
+Ctrl+F10 / Cmd+F10 	Bindings Menu
+Toggle bindings window.
+Ctrl+F9 / Cmd+F9 	Server Behavior Menu
+Toggle server behavior window.
+Ctrl+F7 / Cmd+F7 	Components Menu
+Toggle components window.
+F8 	Files Menu
+Toggle files window.
+F11 	Assets Menu
+Toggle assets window.
+F9 	Tag Inspector Menu
+Toggle tag inspector window.
+F7 	Results Menu
+Toggle results window.
+Shift+F10 	History Menu
+Toggle history window.
+Shift+F2 	Frames Menu
+Toggle frames window.
+F10 	Code Inspector Menu
+Toggle code inspector window.
+Alt+F9 	Timelines Menu
+Toggle timelines window.
+Alt+H 	Help
+Open the help menu.
+F1 	Using Dreamweaver
+Help with using Dreamweaver.
+Ctrl+F1 / Cmd+F1 	Using ColdFusion
+Help with using ColdFusion.
+Shift+F1 	Reference
+Reference help for Dreamweaver.

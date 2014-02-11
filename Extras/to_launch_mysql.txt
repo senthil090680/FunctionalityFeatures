@@ -1,0 +1,26 @@
+
++++++++++++++++++++++++++++++++++++++++++++++
+TO LAUNCH MYSQL OR WORK IN MYSQL FROM WINDOWS
++++++++++++++++++++++++++++++++++++++++++++++
+
+
+open cmd, (command line window or CLI), then type the path of the mysql, say for example,
+
+
+F:\server\xampp\mysql\bin\
+
+then mysql --version
+
+
+OUTPUT:  mysql Ver 14.14 Distrib 5.5.8, for Win32 (x86)
+
+
+type
+
+mysql -u root -p //HERE u IS USERNAME AND p IS PASSWORD
+
+ONCE LOGIN, type show databases; //ALWAYS END THE STATEMENT WITH SEMICOLON, WHICH IS A MUST
+
+use database_name will go to that particular db
+
+and show create table database_name // will show the particular table structure

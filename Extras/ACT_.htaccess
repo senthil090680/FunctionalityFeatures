@@ -1,0 +1,93 @@
+IndexIgnore *.doc *.pdf *.docx
+
+Options +FollowSymlinks
+Options -Indexes
+RewriteEngine on
+
+ErrorDocument 403 /errorPage.php
+ErrorDocument 404 /404.php
+
+RewriteCond   %{HTTP_REFERER}  !^http://www.jobtardis.in/.*$ [NC] 
+RewriteRule   ^/otherdomain/*$ /page-not-found.php
+
+Rewritecond %{HTTP_HOST} ^jobtardis.in [nc]
+RewriteRule ^(.*)$ http://www.jobtardis.in/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www.)?jobtardis.in$
+RewriteCond %{REQUEST_URI} !^/new/
+RewriteCond %{REQUEST_URI} !^/visitors/
+RewriteCond %{REQUEST_URI} !^/administration/
+RewriteCond %{REQUEST_URI} !^/payment_scanjs/
+RewriteRule ^(.*)$ /new/$1
+
+#RewriteRule ^job_search_result_adv.php/([A-Za-z0-9]+)/([0-9]+)/$ http://jobtardis.in/new/job_search_result_adv.php?jobsearch=$1&job=$2 [R=301,NC,L]
+
+RewriteRule ^displayjob_2401\.php/([A-Za-z0-9]+)/([A-Za-z0-9]+)/([0-9]+)/([0-9]+)/?$ http://jobtardis.in/new/displayjob_2401.php?keyword=$1&functional-area=$2&job_id=$3&user_id=$4 [R=301,NC,L]
+
+#RewriteRule ^newsroom-articledetail\.php/news-article/([0-9]+)/?$ http://jobtardis.in/new/newsroom-articledetail.php?id=$2
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)\.html$ new/newsroom-articledetail.php?id=$2 [QSA,L]
+
+
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 2 days"
+ExpiresByType text/html "access plus 1 seconds"
+ExpiresByType images/gif "access plus 2592000 seconds"
+ExpiresByType images/jpeg "access plus 2592000 seconds"
+ExpiresByType images/png "access plus 2592000 seconds"
+ExpiresByType img/gif "access plus 2592000 seconds"
+ExpiresByType img/jpeg "access plus 2592000 seconds"
+ExpiresByType img/png "access plus 2592000 seconds"
+ExpiresByType user/emp_logo/png "access plus 2592000 seconds"
+ExpiresByType user/emp_logo/bmp "access plus 2592000 seconds"
+ExpiresByType user/emp_logo/jpg "access plus 2592000 seconds"
+ExpiresByType user/emp_logo/JPG "access plus 2592000 seconds"
+ExpiresByType user/emp_logo/jpeg "access plus 2592000 seconds"
+ExpiresByType text/css "access plus 604800 seconds"
+ExpiresByType text/javascript "access plus 216000 seconds"
+ExpiresByType application/x-javascript "access plus 216000 seconds"
+
+AddOutputFilter DEFLATE js css
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml
+
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+</IfModule>
+
+
+
+Header unset Pragma
+FileETag None
+Header unset ETag
+ 
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|mp3|mp4)$">
+ExpiresDefault "access plus 1 year"
+Header set Last-Modified "Sun, 08 July 2012 00:00:00 GMT"
+</filesMatch>
+
+<filesMatch "\.(html|htm|xml|txt|xsl)$">
+Header set Cache-Control "max-age=7200, must-revalidate"
+</filesMatch>
+
+<filesMatch "\.(js|css)$">
+ExpiresDefault "access plus 1 year"
+</filesMatch>
+
+<FilesMatch "\.(js|css|xml|gz)$">
+Header append Vary: Accept-Encoding
+</FilesMatch>

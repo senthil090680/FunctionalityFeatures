@@ -1,0 +1,44 @@
+<html>
+<head>
+<style type="text/css">
+.tooltip{
+    position: relative;
+    border: 1px solid #73a7f0;
+    width: 200px;
+    margin-left: 20px;
+    padding: 5px 14px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .7);
+    -webkit-box-shadow: -0px 0px 6px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .7);
+}
+
+.tooltip:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: -8px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    border-color: #73a7f0;
+    border-width: 1px;
+    border-style: none none solid solid;
+    background-color: #fff;
+    box-shadow: -2px 2px 3.5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: -2px 2px 3.5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: -2px 2px 3.5px rgba(0, 0, 0, .5);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+}
+</style>
+</head>
+<body>
+<div class="tooltip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent augue justo, venenatis non tincidunt sit amet, suscipit eget ligula.</div>
+</body>
+
+
+</html>
