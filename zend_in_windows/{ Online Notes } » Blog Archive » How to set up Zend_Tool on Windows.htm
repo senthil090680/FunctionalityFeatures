@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>{ Online Notes }  » Blog Archive   » How to set up Zend_Tool on Windows.</title>
+	
+	<link rel="alternate" type="application/rss+xml" title="{ Online Notes } RSS Feed" href="http://www.armando.ws/feed/">
+	<link rel="pingback" href="http://www.armando.ws/xmlrpc.php">
+	
+	<link rel="stylesheet" href="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/style.css" type="text/css" media="screen">
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="http://www.armando.ws/wp-content/themes/librio/ie.css" media="screen" /><![endif]-->
+	
+	<link rel="alternate" type="application/rss+xml" title="{ Online Notes } » How to set up Zend_Tool on Windows. Comments Feed" href="http://www.armando.ws/2009/05/how-to-set-up-zend_tool-on-windows/feed/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.armando.ws/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.armando.ws/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Zend Framework 1.8 Released" href="http://www.armando.ws/2009/05/zend-framework-18-released/">
+<link rel="next" title="Killing time while ops pushes new packages." href="http://www.armando.ws/2009/07/killing-time-while-ops-pushes-new-packages/">
+<meta name="generator" content="WordPress 3.6">
+<link rel="canonical" href="http://www.armando.ws/2009/05/how-to-set-up-zend_tool-on-windows/">
+<link rel="shortlink" href="http://www.armando.ws/?p=404">
+</head>
+
+<body>
+
+<div id="container">
+
+	<div id="header">
+		<h1><a href="http://www.armando.ws/">{ Online Notes }</a><span>All things Technical and Personal – Armando Padilla</span></h1>
+		<div id="search">
+			<form method="get" id="searchform" action="http://www.armando.ws/">
+				<input value="Search" name="s" id="s" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='')this.value='Search'" type="text">
+			</form>
+		</div>
+	</div>
+
+	<div id="nav">
+		<ul>
+			<li class="current_page_item"><a href="http://www.armando.ws/">Home</a></li>
+			<li class="page_item page-item-1309"><a href="http://www.armando.ws/thesis-work/">Thesis Work</a></li>
+<li class="page_item page-item-1054"><a href="http://www.armando.ws/web_and_mobile/">Web &amp; Mobile &amp; Other Tech Musings</a></li>
+<li class="page_item page-item-1056"><a href="http://www.armando.ws/personal-rants/">Personal Rants</a></li>
+		</ul>
+				<a href="http://www.armando.ws/feed" id="feed">Subscribe</a>
+	</div>
+	
+	<div id="wrapper">
+<div id="content">
+
+	
+		<div class="post" id="post-404">
+			<h1 class="post-title">How to set up Zend_Tool on Windows.</h1>
+
+			<p>A few people we’re having issues installing Zend_Tool on Windows, 
+hell I was having trouble myself since all of the tutorials out there 
+are either Macs or Red Hat based.&nbsp; So dont feel bad if your reading
+ this <img src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/icon_smile.gif" alt=":-)" class="wp-smiley">
+ .&nbsp; I thought i would take some time and create a tutorial, from 
+the ground up and learn a few things myself along the way.&nbsp; So here
+ we go!</p>
+<p><strong>Step one Installing PHP (if you havent yet)</strong><br>
+If you have PHP already installed skip this section and head over to “An
+ overview of the installation”.&nbsp; Eeryone else, head over to the PHP
+ site,&nbsp; <a href="http://www.php.net/">php.net</a> and download the 
+latest and greatest. As of this writing the latest Windows installer is 
+php-5.2.9-2 msi.&nbsp; Download the executable.&nbsp; Yea so what I use 
+executable and you should too its easier to install and configure on 
+Windows.<br>
+Once the file downloads, double click the installer, click “next” a few 
+times, and stop when you reach the “Choose Items to Install”.</p>
+<p><strong><img class="alignleft size-medium wp-image-411" style="margin: 5px;" title="choose_items" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/choose_items-300x235.jpg" alt="choose_items" height="235" width="300"></strong><strong>Choose Items to Install</strong><br>
+Once you reach this point your going to check off which extensions you 
+want installed.&nbsp; By default the installer has a few modules turned 
+off but you can easily turn them on by checking off the items to 
+install.&nbsp; Make sure that the “CLI Executable” has no red x marks 
+next to it as shown in the neat picture to the left. &nbsp; If it does 
+click on the “X” and select,&nbsp; “Will be installed on local hard 
+drive”.&nbsp; By doing this your going to installed the php.exe file as 
+well as allow the executable to automatically update and create System 
+Variables. Click “Next”, then “Install” and watch it go.</p>
+<p><img class="alignright size-full wp-image-410" style="margin: 5px;" title="system_var" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/system_var.jpg" alt="system_var" height="302" width="268"></p>
+<p><strong>An overview of the Installation and Required System Variables</strong><br>
+When the installation is done you should have a new directory, 
+C:\Program Files\PHP (if you didnt change the default location).&nbsp; 
+This contains the php.exe file along with a number of other 
+things.&nbsp;&nbsp; You should also have some updates to your 
+environment variables.&nbsp; Open the Environment Variables window by 
+right clicking on “My Computer” , “Properties”,&nbsp; “Advanced”, 
+“Environment Variables” .&nbsp; At the bottom of the window you should 
+have 2 System Variables, “Path” and “PHPRC”.&nbsp; Make sure “Path” 
+contains the “C:\Program Files\PHP\;”&nbsp; (Replace with the location 
+of your PHP directory) and make sure PHPRC contains, “C:\Program 
+Files\PHP\” (Location to your php.ini file) . &nbsp;&nbsp; If all the 
+variables are set click “Ok” and head onto the next section.</p>
+<p><strong>Verifying Installation.</strong><br>
+Now to check that the installation went smoothly.&nbsp; Open a command 
+line window.&nbsp; You do this by going to “Start”, “Run”, and then 
+typing in “cmd”, then click “Ok”.&nbsp; Once the command line window 
+appears type in:&nbsp; php –version</p>
+<p>You should see:</p>
+<p><img class="alignnone size-full wp-image-414" title="php_version" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/php_version.jpg" alt="php_version" height="103" width="640"></p>
+<p><strong></strong></p>
+<p>If you do great!&nbsp; Your done with PHP. Let’s install Zend Framework now.</p>
+<p><strong>Installing Zend_Tool</strong><br>
+If all went well,&nbsp; now its time to install Zend_Tool. Download the 
+latest Zend Framework (latest is 1.8.1)&nbsp; and extract the files 
+somewhere onto your system.&nbsp;&nbsp; Move the files</p>
+<ul>
+<li>bin/zf.php</li>
+<li>bin/zf.bat</li>
+</ul>
+<p>into the directory C:\Program Files\PHP and place all the content of 
+the library folder into the C:\zf directory.&nbsp; Many tutorials 
+recommend installing the library in your PHP includes directory but I 
+decided to install it under C:\zf to demonstrate how to use 
+ZEND_TOOL_INCLUDE_PATH environment variable since the library can 
+practically live anywhere when your developing sites.&nbsp;&nbsp;&nbsp; 
+The full path to your Zend Framework instillation is now, 
+C:\zf\library\Zend.</p>
+<p><strong>Setting up ZEND_TOOL_INCLUDE_PATH</strong><br>
+Open the Environment Variable window again and create a new environment 
+variables under the “System Variables”&nbsp; section. &nbsp; In the 
+“Variable Name”&nbsp; text field enter, “ZEND_TOOL_INCLUDE_PATH”&nbsp; 
+and in the “Variable Value” text field enter “C:\Program 
+Files\PHP\includes\library\”&nbsp; (path to the Zend Library minus the 
+Zend portion).&nbsp;&nbsp; Click ok to close out the “New System 
+Variable” window and then click “ok” once again to close the 
+“Environment Variable” wndow.&nbsp; Time to check if Zend_Tool works.</p>
+<p><strong>Verify Installation</strong><br>
+If you have any command line windows open, close them and then reopen one.&nbsp;&nbsp; Type in <em>zf show version</em> you should see the below:</p>
+<p><strong><img class="alignnone size-full wp-image-417" title="zf_command" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/zf_command.jpg" alt="zf_command" height="61" width="640"><br>
+</strong></p>
+<p><strong>Useful commands.</strong><br>
+Your set to create your projects , controller, actions now. Below I added a few commands I tend to use.</p>
+<p><em>Create Project</em><br>
+zf create project helloworld</p>
+<p><em>Create a new controller</em> (below commands must be issued within project directory)<br>
+zf create controller controller1<br>
+zf create controller controller2</p>
+<p><em>Create a few actions</em><br>
+zf create action action1 controller1<br>
+zf create action action2 controller2</p>
+<p>Thats it!<br>
+Armando Padilla</p>
+
+						
+			<div class="post-info">
+				May 18th, 2009 in
+				<a href="http://www.armando.ws/category/tech_dev/" title="View all posts in Tech Dev" rel="category tag">Tech Dev</a>				| tags: <a href="http://www.armando.ws/tag/zend-framework/" rel="tag">Zend Framework</a>, <a href="http://www.armando.ws/tag/zend_tool/" rel="tag">Zend_Tool</a>							</div>
+		</div>
+
+		
+
+	<h1 class="comments-title">9 Comments</h1>
+
+	<div id="comments">
+
+					<div class="comment" id="comment-38067">
+			
+				<div class="comment-avatar">
+									</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span><a href="http://www.zfforums.com/zend-framework-general-discussions-1/general-q-zend-framework-2/cli-php-exe-not-found-2840.html#post10155" rel="external nofollow" class="url">CLI php.exe not found - Zend Framework Forum</a></span>May 18th, 2009 at 5:33 pm </div>
+					
+					
+					<p>[...] i wrote this up today.   { Online Notes } Blog Archive How
+ to set up Zend_Tool on Windows. (no im not spamming :-p )  I started 
+with a fresh clean desktop so hope that helps. If not we’ll [...]</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-38070">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/95b3d82477b1abae0632903e40f65477.jpg" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span><a href="http://blog.ls12style.co.uk/" rel="external nofollow" class="url">Ashley Broadley</a></span>May 19th, 2009 at 4:20 am </div>
+					
+					
+					<p>This is fantastic! Before this, the only way i could get ZT to 
+work was by installing zend server CE. This was very simple and well 
+explained method! Now, if only ZT could create an entry in my HOSTS 
+&amp; vhosts.conf files. </p>
+<p>Great stuff!</p>
+<p>Thanks</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-38082">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/0e5244e7a6a5f119323eedb83bb1fcd3.png" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span>Aad Pouw</span>May 21st, 2009 at 8:41 am </div>
+					
+					
+					<p>Just a question.</p>
+<p>How I’m doing that with ‘xampp’?<br>
+I’m running that on vista.</p>
+<p>Thanks</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-38083">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/84cbdd5822a65660e55b1b9bccc6201a.jpg" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span>admin</span>May 21st, 2009 at 10:36 am </div>
+					
+					
+					<p>Hi Aad, </p>
+<p>I would assume is the same set up.  I will do a clean isntall of xampp and Vista on a virtual box and see what pop up.   </p>
+<p>Armando Padilla</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-38155">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/58951c03c38421388b25919b5be7f49a.png" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span>Zooomer</span>June 8th, 2009 at 9:07 pm </div>
+					
+					
+					<p>Worked great for me on XP.  The only suggestion I would make is 
+to include the path to the PHP folder (in your case: C:\Program 
+Files\PHP) in the Windows PATH variable. Otherwise the ZF command won’t 
+run in your project folder.</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-41477">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/8ccfdb3aeb8d07b62f70d04d7b92979c.png" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span><a href="http://mine/" rel="external nofollow" class="url">Tayo</a></span>August 29th, 2009 at 12:39 pm </div>
+					
+					
+					<p>There is an error on “zf create controller books”…<br>
+it is telling me An error has occurred… A project profile was not found . what do i do</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-42478">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/a590305ea9dcf18878ccb5320d8c8fb7.png" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span>Pradosh</span>September 8th, 2009 at 3:57 pm </div>
+					
+					
+					<p>Hi Armando</p>
+<p>Since i am using windows xp 64bit and localhost never loads up, i 
+tried using easyphp, zendserver CE and wampserver, i don’t know if you 
+could guide me on this. </p>
+<p>So I installed wampserver on a separate machine (older windows xp 
+32bit) in my wireless network. I have mapped C:\wamp\ as Z:\ on my xp64.
+ Not sure how will i set up my Env vars in this instance. On my xp64 i 
+set Env vars which is referring to Z:\bin\php\php5.2.9-2 but it doesn’t 
+work as expected as the associated files refer to C:\wamp\…</p>
+<p>If you could help me how can i get working with Env vars if the server is on a seperate windows machine?</p>
+<p>BTW, congrats on being one of very few early writers of ZF books. Bought yours from Apress, a gr8 reading.</p>
+<p>cheers<br>
+Pradosh</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-46924">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/60eb52f4d15aa5249863f0fb605fc8cb.png" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span>dileep</span>October 21st, 2009 at 10:56 pm </div>
+					
+					
+					<p>Not able to create controller..when i type “zf create action add
+ index” inside the project root dir… iam getting “‘”php.exe”‘ is not 
+recognized as an internal or external command,”</p>
+				</div>
+			</div>
+					<div class="comment" id="comment-51801">
+			
+				<div class="comment-avatar">
+					<img alt="" src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/6adaa42b10b5d9c628f273ec35b93af2.jpg" class="avatar avatar-50 photo" height="50" width="50">				</div>
+				
+				<div class="comment-content">
+					<div class="comment-info"><span>Gaston</span>July 15th, 2010 at 3:13 pm </div>
+					
+					
+					<p>Armando Gracias por esto!! me ayudo mucho!!</p>
+<p>Saludos</p>
+				</div>
+			</div>
+		
+	</div>
+
+
+
+
+
+	<h1 class="comments-title">Leave a comment</h1>
+
+			<form action="http://www.armando.ws/wp-comments-post.php" method="post" id="commentform">
+			Your comment
+			<p><textarea name="comment" id="comment"></textarea></p>
+			
+						
+				<p><input name="author" id="author" class="text" type="text">
+				<label for="author">Name (required)</label></p>
+
+				<p><input name="email" id="email" class="text" type="text">
+				<label for="email">Mail (will not be published) (required)</label></p>
+
+				<p><input name="url" id="url" class="text" type="text">
+				<label for="url">Website</label></p>
+						
+						
+			<p><input name="submit" id="submit" value="Submit Comment" type="submit"><input name="comment_post_ID" value="404" type="hidden"></p>
+			
+			
+
+		</form>
+
+
+
+	
+</div>
+
+<div id="sidebar">
+
+
+
+<div class="block"><h3 class="widgettitle">Author</h3>			<div class="textwidget"><p>PHP developer and general web junkie I spend much of my time reading ZF docs, PHP books, and in academia. :-)</p>
+<p>Contact Info: armando_padilla_81@yahoo.com </p>
+</div>
+		</div><div class="block"><h3 class="widgettitle">Published Books</h3>			<div class="textwidget"><p><a href="http://www.apress.com/9781430218258"><img src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/A9781430218258-3d_9.htm" border="0" width="150"></a><br>
+<br><br>
+<a href="http://www.apress.com/9781430228981"><img src="%7B%20Online%20Notes%20%7D%20%C2%BB%20Blog%20Archive%20%C2%BB%20How%20to%20set%20up%20Zend_Tool%20on%20Windows_files/A9781430228981-3d_8.htm" border="0" width="150"></a></p>
+</div>
+		</div><div class="block"><h3 class="widgettitle">Tag Cloud</h3><div class="tagcloud"><a href="http://www.armando.ws/tag/apc/" class="tag-link-18" title="1 topic" style="font-size: 8pt;">apc</a>
+<a href="http://www.armando.ws/tag/apriori/" class="tag-link-41" title="1 topic" style="font-size: 8pt;">Apriori</a>
+<a href="http://www.armando.ws/tag/compatibility-formulas/" class="tag-link-10" title="1 topic" style="font-size: 8pt;">compatibility formulas</a>
+<a href="http://www.armando.ws/tag/data-mining/" class="tag-link-11" title="2 topics" style="font-size: 11.405405405405pt;">data mining</a>
+<a href="http://www.armando.ws/tag/euclidean-distance/" class="tag-link-9" title="1 topic" style="font-size: 8pt;">euclidean distance</a>
+<a href="http://www.armando.ws/tag/jquery/" class="tag-link-38" title="1 topic" style="font-size: 8pt;">JQuery</a>
+<a href="http://www.armando.ws/tag/memcached/" class="tag-link-17" title="1 topic" style="font-size: 8pt;">memcached</a>
+<a href="http://www.armando.ws/tag/netflix/" class="tag-link-35" title="2 topics" style="font-size: 11.405405405405pt;">netflix</a>
+<a href="http://www.armando.ws/tag/netflix-challenge/" class="tag-link-12" title="1 topic" style="font-size: 8pt;">netflix challenge</a>
+<a href="http://www.armando.ws/tag/pagination/" class="tag-link-31" title="1 topic" style="font-size: 8pt;">Pagination</a>
+<a href="http://www.armando.ws/tag/php/" class="tag-link-20" title="4 topics" style="font-size: 15.567567567568pt;">php</a>
+<a href="http://www.armando.ws/tag/php-architecture/" class="tag-link-16" title="1 topic" style="font-size: 8pt;">php architecture</a>
+<a href="http://www.armando.ws/tag/ruby/" class="tag-link-42" title="1 topic" style="font-size: 8pt;">Ruby</a>
+<a href="http://www.armando.ws/tag/savant/" class="tag-link-28" title="1 topic" style="font-size: 8pt;">savant</a>
+<a href="http://www.armando.ws/tag/set-up/" class="tag-link-40" title="1 topic" style="font-size: 8pt;">Set-Up</a>
+<a href="http://www.armando.ws/tag/smarty/" class="tag-link-19" title="2 topics" style="font-size: 11.405405405405pt;">smarty</a>
+<a href="http://www.armando.ws/tag/zend/" class="tag-link-34" title="2 topics" style="font-size: 11.405405405405pt;">Zend</a>
+<a href="http://www.armando.ws/tag/zend-framework/" class="tag-link-14" title="10 topics" style="font-size: 22pt;">Zend Framework</a>
+<a href="http://www.armando.ws/tag/zend-framework-extension/" class="tag-link-39" title="1 topic" style="font-size: 8pt;">Zend Framework Extension</a>
+<a href="http://www.armando.ws/tag/zendx_jquery/" class="tag-link-37" title="1 topic" style="font-size: 8pt;">ZendX_JQuery</a>
+<a href="http://www.armando.ws/tag/zend_db/" class="tag-link-32" title="1 topic" style="font-size: 8pt;">Zend_Db</a>
+<a href="http://www.armando.ws/tag/zend_db_select/" class="tag-link-33" title="1 topic" style="font-size: 8pt;">Zend_Db_Select</a>
+<a href="http://www.armando.ws/tag/zend_form/" class="tag-link-29" title="1 topic" style="font-size: 8pt;">zend_form</a>
+<a href="http://www.armando.ws/tag/zend_paginator/" class="tag-link-30" title="2 topics" style="font-size: 11.405405405405pt;">Zend_Paginator</a>
+<a href="http://www.armando.ws/tag/zend_service_netflix/" class="tag-link-36" title="1 topic" style="font-size: 8pt;">zend_service_netflix</a>
+<a href="http://www.armando.ws/tag/zend_tool/" class="tag-link-47" title="2 topics" style="font-size: 11.405405405405pt;">Zend_Tool</a></div>
+</div><div class="block"><h3 class="widgettitle">Blogroll</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.beginningzendframework.com/" title="Book web site and resource for all things Zend Framework related. " target="_blank">Beginning Zend Framework</a></li>
+<li><a href="http://www.infoq.com/" title="Technology Articles">InfoQ</a></li>
+
+	</ul>
+</div>
+<div class="block"><h3 class="widgettitle">Archives</h3>		<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;"> <option selected="selected" value="">Select Month</option> 	<option value="http://www.armando.ws/2013/02/"> February 2013 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2012/09/"> September 2012 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2011/12/"> December 2011 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2011/10/"> October 2011 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2011/09/"> September 2011 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2011/06/"> June 2011 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2011/03/"> March 2011 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2011/01/"> January 2011 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2010/12/"> December 2010 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2010/11/"> November 2010 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2010/10/"> October 2010 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2010/09/"> September 2010 &nbsp;(10)</option>
+	<option value="http://www.armando.ws/2010/08/"> August 2010 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2010/06/"> June 2010 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2010/05/"> May 2010 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2010/04/"> April 2010 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2010/03/"> March 2010 &nbsp;(6)</option>
+	<option value="http://www.armando.ws/2010/02/"> February 2010 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2010/01/"> January 2010 &nbsp;(6)</option>
+	<option value="http://www.armando.ws/2009/12/"> December 2009 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2009/11/"> November 2009 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2009/10/"> October 2009 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2009/08/"> August 2009 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2009/07/"> July 2009 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2009/05/"> May 2009 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2009/03/"> March 2009 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2009/01/"> January 2009 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2008/11/"> November 2008 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2008/10/"> October 2008 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2008/06/"> June 2008 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2008/05/"> May 2008 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2008/04/"> April 2008 &nbsp;(4)</option>
+	<option value="http://www.armando.ws/2008/03/"> March 2008 &nbsp;(2)</option>
+	<option value="http://www.armando.ws/2008/02/"> February 2008 &nbsp;(5)</option>
+	<option value="http://www.armando.ws/2007/12/"> December 2007 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2007/10/"> October 2007 &nbsp;(5)</option>
+	<option value="http://www.armando.ws/2007/09/"> September 2007 &nbsp;(1)</option>
+	<option value="http://www.armando.ws/2007/08/"> August 2007 &nbsp;(3)</option>
+	<option value="http://www.armando.ws/2007/07/"> July 2007 &nbsp;(5)</option>
+	<option value="http://www.armando.ws/2007/06/"> June 2007 &nbsp;(4)</option>
+	<option value="http://www.armando.ws/2007/05/"> May 2007 &nbsp;(6)</option>
+ </select>
+</div></div>	</div>
+	
+	<div id="footer">
+		<p>
+			Copyright © 2008. All right reserved. 
+			Theme by <a href="http://deniart.ru/">deniart</a>
+		</p>
+	</div>
+</div>
+
+
+</body></html>

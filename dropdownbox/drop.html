@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>jQuery Dropdown CheckList - TESTING</title>
+    <!-- Use a JQuery ThemeRoller theme, in this case 'smoothness' -->
+    <link rel="stylesheet" type="text/css" href="doc/smoothness-1.8.13/jquery-ui-1.8.13.custom.css">
+    <link rel="stylesheet" type="text/css" href="src/ui.dropdownchecklist.themeroller.css">
+
+  <script type="text/javascript" src="doc/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="doc/jquery-ui-1.8.13.custom.min.js"></script>
+    
+    <!-- Include the DropDownCheckList supoprt -->
+    <script type="text/javascript" src="src/ui.dropdownchecklist.js"></script>
+    
+    <!-- Apply dropdown check list to the selected items  -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+	 $("#s9").dropdownchecklist( { textFormatFunction: function(options) {
+                var selectedOptions = options.filter(":selected");
+                var countOfSelected = selectedOptions.size();
+                switch(countOfSelected) {
+                    case 0: return "--Select--";
+                    case 1: return selectedOptions.text();
+                    case options.size(): return "ALL";
+                    default: return " Multiple";
+                }
+	 }   });
+
+
+	 });
+  </script>
+    <meta name="description" 
+    content="The Dropdown Check List jQuery widget TESTCASE page">
+</head>
+<body>
+<select id="s9" class="s9" multiple="multiple">
+	            <option>Alice</option>
+	            <option>Bob</option>
+	            <option>Christian</option>
+	            <option>Daniel</option>
+	        </select>
+</body>
+</html>

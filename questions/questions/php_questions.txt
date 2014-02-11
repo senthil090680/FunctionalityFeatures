@@ -1,0 +1,1661 @@
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                            
+                                            ++++++++++++++++++++++++++
+                                            RICH INTERNET APPLICATIONS
+                                            ++++++++++++++++++++++++++
+
+A Rich Internet Application (RIA) is a Web application that has many of the characteristics of desktop application software, typically delivered by way of a site-specific browser, a browser plug-in, an independent sandbox, extensive use of JavaScript, or a virtual machine.[1] Adobe Flash, JavaFX, and Microsoft Silverlight are currently the three most common platforms, with desktop browser penetration rates around 96%, 76%, and 66% respectively (as of August 2011).[2] Mobile phone penetration of these plugins, however, has remained low even as internet traffic from these devices has grown.[3] Although new Web standards have emerged, they still use the principles behind RIAs.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                                            ++++++++++++++++++
+                                            CREATING A TRIGGER
+                                            ++++++++++++++++++
+
+
+//THIS IS TO CREATE A TRIGGER BEFORE INSERT, CHECKING IF THE activityDesc COLUMN HAS A VALUE, IF NOT THEN INSERT - TO THAT COLUMN
+DELIMITER $$    //DELIMITER IS USED TO CHANGE THE USUAL DELIMITER SEMI-COLON TO SOMETHING ELSE FOR USING MULTIPLY STATEMENTS
+DROP TRIGGER IF EXISTS epub_publish.activity_desc $$
+CREATE TRIGGER activity_desc BEFORE INSERT ON activitylibrary FOR EACH ROW              //activity_desc IS THE                                                  // TRIGGER NAME, BEFORE AN INSERT QUERY OR IT CAN BE                                                          // AFTER AN INSERT QUERY, IT CAN BE UPDATE & DELETE                                                           //AS WELL, ON TABLE_NAME FOR EACH INSERTED ROW OF THAT TABLE
+BEGIN
+IF (new.activityDesc = '') THEN //THIS IS THE IF CONDITION
+SET new.activityDesc= '-';      //ASSIGN SOME VALUES TO THE COLUMN
+END IF;                         //END OF IF CONDITION
+END $$                          
+DELIMITER ;
+
+
+DROP TRIGGER TRIGGER_NAME //FOR DROPPING A TRIGGER
+
+
+
+I started to work on a pet project for tracking deleted/pending domains (myDomainTracker) and after starting development I was facing a big problem: How to do the data validation directly from MySQL ?
+
+Many times I wanted to do data validation directly when inserting into a MySQL table and leave the source code of my application nice, clean and very readable, but support for that was only in Oracle and other SQL servers but not in MySQL.
+
+Beginning with version 5 of MySQL the development team has added ?triggering? to their SQL server engine, to meet the growing demand of users.
+
+But what are triggers ?
+
+A trigger is a database object that is associated with a table and is activated when an event occurs for that table. Can be successfully used for database data validation and any other calculations done directly on the database.
+When is a trigger activated ?
+
+A trigger is activated when changes are made on that table where it is associated with, more precisely on Insert/Update/Deleted execution statements
+
+A simple example:
+
+	Firstly we create a test table
+	CREATE TABLE test (id INT, sum DECIMAL(10,2));
+	now we create the trigger for that table:
+	delimiter//
+	create trigger insert_trg before insert on test
+	for each row
+	begin
+		if new.sum<0 then
+		    set new.sum=0;
+		endif;
+	end//
+	delimiter;
+
+What is this trigger doing ?
+
+It is a simple field validation.
+
+When we will try to insert into the table (ex insert into test values (1,-3)) this field sum will always be greater than 0 because we change negative values to 0.
+How it works:
+
+Create trigger is creating the trigger with the name insert_trg
+
+The keyword BEFORE indicates the trigger action time. In this case, the trigger should activate before each row inserted into the table. You can use the AFTER keyword to activate it after each inserted row in the table.
+
+The Insert keyword stands for the action what will activate the trigger. You can also use Update or Delete.
+
+For each row means this trigger will be activated for each inserted action.
+
+The OLD and NEW keywords enable you to access columns in the rows affected by a trigger. (OLD and NEW are not case sensitive.) In an INSERT trigger, only NEW.col_name can be used as there is no old row. In a DELETE trigger, only OLD.col_name can be used as there is no new row. In an UPDATE trigger, you can use OLD.col_name to refer to the columns of a row before they were updated and NEW.col_name to refer to the columns of the row after they were updated.
+
+By using the BEGIN ? END construct you can define a trigger that executes multiple statements.
+How can a trigger be removed?
+
+Just execute command: Drop trigger trigger_name.
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                            ++++++++++++++
+                                            MYSQL COMMANDS
+                                            ++++++++++++++
+
+SHOW INDEXES FROM epubsetting                               //SHOW all indexes in a table
+
+EXPLAIN epubsetting                                         //EXPLAIN TABLE STRUCTURE OF A TABLE
+
+DESCRIBE epubsetting                                        //EXPLAIN TABLE STRUCTURE OF A TABLE
+
+EXPLAIN SELECT * FROM epubsetting WHERE epubFolder='good'   //EXPLAIN STRUCTURE OF A PARTICULAR QUERY
+
+ALTER TABLE epubsetting ADD INDEX(epubFolder)               //ADDING AN INDEX FOR AN EXISTING TABLE
+
+SHOW TABLES                                                 //SHOW ALL TABLES
+
+SHOW TABLES FROM epub_publish                               //SHOW TABLES OF A PARTICULAR TABLE
+
+SHOW INDEXES FROM epubsetting                               //SHOW INDEXES OF A PARTICULAR TABLE
+
+USE storedprocdb                                            //CHANGE DATABASE
+
+RENAME TABLE OLD_TABLENAME TO NEW_TABLENAME                 //RENAMING THE TABLE NAME
+
+ALTER TABLE TABLENAME DROP INDEX index_name;                //DROPPING A PARTICULAR INDEX FROM A TABLE
+
+ALTER TABLE TABLENAME DROP PRIMARY KEY;                     //DROPPING THE PRIMARY KEY FROM A TABLE
+
+CREATE INDEX INDEX_NAME ON TABLE_NAME(COLUMN_NAME)          //CREATING AN INDEX FOR A PARTICULAR COLUMN
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++
+DROPPING A PROCEDURE IF EXISTS
+++++++++++++++++++++++++++++++
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS GetAllProducts $$
+DELIMITER ;
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++
+DROPPING A PROCEDURE IF EXISTS
+++++++++++++++++++++++++++++++
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS GetAllProducts $$
+DELIMITER ;
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                                    +++++++++++++++++++
+                                    CREATING A PROCEDURE 
+                                    +++++++++++++++++++
+
+//The IN and OUT LENGTH SIZE SHOULD BE VERY LESS
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS epub_publish.getSettingId $$
+CREATE PROCEDURE epub_publish.getSettingId(
+IN setids INT,
+OUT setid INT,OUT prename VARCHAR(200),OUT preset INT,
+OUT epubver VARCHAR(50),OUT output VARCHAR(50),
+OUT booktit VARCHAR(200),OUT coverim VARCHAR(200),
+OUT reso INT,OUT supportd VARCHAR(50),OUT fixedlay VARCHAR(50),
+OUT openspr VARCHAR(50),OUT interac VARCHAR(50),
+OUT specifi VARCHAR(50),OUT fontname VARCHAR(50),
+OUT orilock VARCHAR(50),OUT epubfol VARCHAR(250),
+OUT pdffile VARCHAR(200), OUT pdfpage INT,
+OUT activity LONGBLOB, OUT credate DATETIME
+)
+BEGIN
+SELECT settingId,presetName,presetSet,epubVersion,outputType,
+bookTitle,coverImage,resol,supportDevice,fixedLay,
+openSpread,interActive,specificFont,fontName,oriLock,epubFolder,
+pdfFile,pdfPages,activityFolder,createdDate INTO setid,prename,preset,
+epubver,output,booktit,coverim,reso,supportd,fixedlay,
+openspr,interac,specifi,fontname,orilock,epubfol,
+pdffile,pdfpage,activity,credate FROM epubsetting WHERE settingId = 
+setids;
+END $$
+DELIMITER ;
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                                        +++++++++++++++++
+                                        INDEXING IN MYSQL
+                                        +++++++++++++++++
+
+
+A MySQL index is a separate file that is sorted, and contains only the field/s you're interested in sorting on. If you create an index on employee_number, MySQL can find the corresponding record very quickly (Indexes work in very similar ways to an index in a book. Imagine paging through a technical book (or more often, an scrambled pile of notes!) looking for the topic "Optimizing MySQL". An index saves you an immense amount of time!
+
+This comes up in discussions almost every new project I work on, because it's a very important thing to consider when designing a database.
+
+When deciding when and how to create an index in your MySQL database, it's important to consider how the data is being used.
+
+Let's say you have a database of employees. We will create it like this:
+
+CREATE TABLE employees (
+ID INT,
+name VARCHAR(60),
+salary decimal(10,2),
+date hired(date),
+)
+
+//CREATE INDEX WHEN CREATING A TABLE
+CREATE TABLE Product
+(
+   ID SMALLINT UNSIGNED NOT NULL,
+   ModelID SMALLINT UNSIGNED NOT NULL,
+   PRIMARY KEY (ID),
+   INDEX (ModelID)
+);
+
+//CREATE INDEX BY USING ALTER KEYWORD
+ALTER TABLE TABLENAME ADD INDEX (COLUMN_NAME)               //ADDING AN INDEX FOR AN EXISTING TABLE
+
+//CREATE INDEX BY USING CREATE KEYWORD OF A PARTICULAR TABLE
+CREATE INDEX INDEX_NAME ON TABLE_NAME (COLUMN_NAME)          //CREATING AN INDEX FOR A PARTICULAR COLUMN
+
+So you will notice that this table is pretty simplistic, and doesn't really contain all the info you would need to actually manage employees, but its just for the sake of demonstration, and you could always add more later, or even make another table and use joins if you had really complex needs.
+
+For now we will go over these real quick.
+
+The ID is basically just a number (INT) which can hold a very large number. If this were real world I would probably make it unsigned, since you will never have a negative employee ID ? but either way, you will never reach the number of employees it would take to get to the number that would fill up an INT.
+
+Even unsigned int will hold values up to 2,147,483,647. So if you have 2 billion employees, you would probably not be a developer anymore ;-).
+
+You might want to consider making the field an auto increment, and primary key, the auto increment depending on how data will be entered into this database.
+
+Name is a simple varchar(60) which should cover most people's names.
+
+Salary is a decimal with 10 total digits, two on the right hand side of the decimal point. This would handle a salary of up to 99,999,999.99 ? again, you're not likely to hit this limit.
+
+Date hired will be a date in this format 2010-05-06. YYYY-MM-DD.
+
+So when considering this simple table, where would you expect to need an index?
+If we assign ID as a primary key, we don't need one there.
+
+Indexes are best used on columns that are frequently used in "WHERE CLAUSES", and in any kind of SORTING, such as "ORDER BY".
+
+You should also pay attention to whether or not this information will change frequently, because it will slow down your updates and inserts. Since you wont frequently be adding employees, you don't have to worry about the inserts.
+
+Let's say that you will be looking up the employees with a php web interface and the end user will be typing in the employees name to find them, since remembering the employee ID's would be cumbersome.
+
+It sounds like this situation would be good to use an index.
+
+A ? You won't be updating the employee's name very often, so you don't have to worry about a performance hit there.
+
+B ? You WILL be using the employee in where clauses like this:
+
+select * from employees where name ='smith';
+
+C ? You WILL be generating reports, which will probably be alphabetic, like this:
+
+select * from employees order by name asc;
+
+So in this simple example it's easy to see when it would be important to use indexes.
+
+So, you could do it like this:
+
+create index name_index on employees (name);
+
+You might be working on a more complex database, so it's good to remember a few simple rules.
+
+- Indexes slow down inserts and updates, so you want to use them carefully on columns that are FREQUENTLY updated.
+
+- Indexes speed up where clauses and order by.
+
+Remember to think about HOW your data is going to be used when building your tables.
+
+There are a few other things to remember. If your table is very small, i.e., only a few employees, it's worse to use an index than to leave it out and just let it do a table scan. Indexes really only come in handy with tables that have a lot of rows.
+
+So, if Joe?s Pet Shop was using this database, they would probably be able to leave the index off the "name" column.
+
+If Microsoft was using this database (hah!) they might want to throw and index in there.
+
+Another thing to remember, that is a con in the situation of our employees database, is that if the column is a variable length, indexes (as well as most of MySQL) perform much less efficiently.
+
+
+                        +++++++++++++++++++++++++++++++++++++++++           
+                        The Query Optimizer, OPTIMIZE and ANALYZE
+                        +++++++++++++++++++++++++++++++++++++++++   
+The magic inside MySQL that decides which keys, if any, to use to in the query, is called the query optimizer. It takes a quick glance at the index to see which indexes are the best to use. Compare it to searching for a CD by the artist "Savuka", called "Third World Child", where there are 2 indexes, one alphabetical by artist name, and the other by album name. At a glance, you see that there are 20000 unique artists, and 400000 unique albums, so you decide to search by artist. But if you knew that there were 50 Savuka albums, and that Third World child is the only album starting with "T", your search criteria would change. You can provide similar information for the Optimizer by running
+
+ANALYZE TABLE tablename;
+
+This stores the key distribution for the table (running ANALYZE is equivalent to running myisamchk -a or myismachk --analyze).
+
+Many deletes and updates leave gaps in the table (especially when you're using varchar, or in particular text/blob fields). This means there are more unnecessary disk I/O's, as the head needs to skip over these gaps when reading. Running
+
+OPTIMIZE TABLE tablename
+
+solves this problem. Both of these statements should be run fairly frequently in any well looked after system.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+SQLYOG is a new tool for using mysql database
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Netbeans is a new tool for using PHP IDE
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+How to get javascript value in php variable
+
+How to store array in javascript
+
+How to hide javascript file in a webpage
+
+Stored Procedure, Triggers, Transactions, Rollback
+
+Difference between echo, print, and printf
+
+	Printf returns length of the outputted string
+	Printf can be used with and without parenthesis
+
+	Print returns always 1
+	Print can be used with and without parenthesis
+
+	Echo does not return any value
+	Echo can be used with and without parenthesis
+	Echo is used without parenthesis to add more arguments
+
+Difference between Truncate and Delete
+
+	Truncate will reset the auto_increment
+	Truncate will not return the no of rows affected (mysql_affected_rows)
+	Truncate is faster than the delete because it deletes all the rows in the table
+	In Truncate, rollback is not possible
+	Truncate is a DDL command
+	In Truncate, the Trigger is not fired
+
+	Delete will not reset the auto_increment
+	Delete will return the no of rows affected (mysql_affected_rows)
+	Delete is not faster than the truncate because it deletes the rows one by one in the table
+	Delete is a DML command
+	When Delete the Particular row the Corresponding Delete Trigger(if exists) Fire
+	DELETE will fail if foreign key constraints are broken
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Difference between MYISAM and INNODB
+
+1)MYISAM does not support the foreign key constraint and
+transaction but InnoDB support it.
+
+2)MYISAM is faster then the InnoDB but in case of perforing
+the count operation it takes more time then the InnoDB.
+
+3) MYISAM occupies less memory sapce for tables rather than
+InnoDB tables.
+
+MYISAM supports a full variety of datatypes but innodb not
+
+MyIsam provide full text search which is not supported by 
+Innodb
+
+innodb is ACID (Atomicity, Consistency, Isolation, Durability) engine
+
+innoodb has maximum performance for large databases
+
+myisam supports table level locking where as innoodb
+supports only row level locking when updated
+
+MyISAM don't take more space comparision to the INNODB in mysql
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+array_flip()
+
+array_merge()
+
+array_merge_recursive()
+
+array_combine()
+
+list()
+
+implode() and join() ARE SAME
+
+file upload parameters
+
+What happens when user hit the www.google.co.in
+
+Two ajax request, second one gets the response and not the first
+
+ID IS SINGLE, CLASS CAN BE MANY IN HTML
+
+How to restrict particular user accessing the database using mysql query
+
+Reqular expression ==> PHP is an open source language for producing dynamic web pages. PHP has three sets of functions that allow you to work with regular expressions.
+
+The most important set of regex functions start with preg. These functions are a PHP wrapper around the PCRE library (Perl-Compatible Regular Expressions). Anything said about the PCRE regex flavor in the regular expression tutorial on this website applies to PHP's preg functions. You should use the preg functions for all new PHP code that uses regular expressions. PHP includes PCRE by default as of PHP 4.2.0 (April 2002).
+
+The oldest set of regex functions are those that start with ereg. They implement POSIX Extended Regular Expressions, like the traditional UNIX egrep command. These functions are mainly for backward compatibility with PHP 3, and officially deprecated as of PHP 5.3.0. Many of the more modern regex features such as lazy quantifiers, lookaround and Unicode are not supported by the ereg functions. Don't let the "extended" moniker fool you. The POSIX standard was defined in 1986, and regular expressions have come a long way since then.
+
+The last set is a variant of the ereg set, prefixing mb_ for "multibyte" to the function names. While ereg treats the regex and subject string as a series of 8-bit characters, mb_ereg can work with multi-byte characters from various code pages. If you want your regex to treat Far East characters as individual characters, you'll either need to use the mb_ereg functions, or the preg functions with the /u modifier. mb_ereg is available in PHP 4.2.0 and later. It uses the same POSIX ERE flavor."
+
+Types of cookies in php 
+	temporary cookie, which does not exist after the browser is closed 
+	permanent cookie, which exists for a particular period of time mentioned when creating cookie
+
+Session stored in which path  ==> tmp folder in the SERVER
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Serialize and Unserialize
+
+Arrays certainly are useful. If you’re dealing with associative data, there’s no better tool for the job. Sometimes, you’ll run into cases where it would be useful to store an entire array in a field in a database. It’s not something you want to do if you can avoid it, by structuring your database’s tables more efficiently for example, but there are cases where it’s unavoidable.
+
+That’s where serialize() comes in. You can pass an array to the function, and it will return a string that is essentially the array flattened and mashed down. You can then unserialize() it to obtain the full array once again.
+
+<?php
+$the_array = array( "Lorem", "Ipsum", "Dolor" );
+$serialized = serialize($the_array);
+print $serialized;
+?>
+
+This will output a:3:{i:0;s:5:"Lorem";i:1;s:5:"Ipsum";i:2;s:5:"Dolor";}. It’s the whole array in string form, suitable for insertion into a database field. It will work with more complex arrays, of course, but simple is better for examples.
+
+
+As arrays are complex data types, you cannot see their contents directly. If you try printing out the value of an array, you will see PHP just outputs "Array", which means that passing the value of an array through a link requires a lot of work. Luckily, PHP comes to the rescue with four functions that do all the hard work for you: serialize(), unserialize(), urlencode(), and urldecode().
+
+Serialize() converts an array, given as its only parameter, into a normal string that you can save in a file, pass in a URL, etc. Unserialize() is the opposite of serialize() - it takes a serialize()d string and converts it back to an array.
+
+Urlencode() and urldecode() also work in tandem, and convert the string that is sent to them as their only parameter into a version that is safe to be passed across the web. All characters that aren't letters and numbers get converted into web-safe codes that can be converted back into the original text using urldecode().
+
+Passing arrays across pages is best done using urlencode() and urldecode(), however you should consider using them both on any data you pass across the web, just to make sure there are no incompatible characters in there.
+
+Take a look at this next script:
+<?php
+    $array["a"] = "Foo";
+    $array["b"] = "Bar";
+    $array["c"] = "Baz";
+    $array["d"] = "Wom";
+
+    $str = serialize($array);
+    $strenc = urlencode($str);
+    print $str . "\n";
+    print $strenc . "\n";
+?>
+
+That will output two lines (the second of which I've forced to wrap so that it appears properly!):
+a:4:{s:1:"a";s:3:"Foo";s:1:"b";s:3:"Bar";s:1:"c";s:3:"Baz";s:1:"d";s:3:"Wom";}
+a%3A4%3A%7Bs%3A1%3A%22a%22%3Bs%3A3%3A%22Foo%22%3Bs%3A1%3A%22b%22%3Bs%3A0%3A%22 %22%3Bs%3A1%3A%22c%22%3Bs%3A3%3A%22Baz%22%3Bs%3A1%3A%22d%22%3Bs%3A3%3A%22Wom%22%3B%7D
+
+The first is the direct, serialize()d output of our array, and you can see how it works by looking through the text inside there. The second line contains the urlencode()d serialize()d array, and is very hard to read. Despite being hard to read, the latter is wholly web safe, and there much better to use.
+
+Once your array is in text form, you can do with it as you please. To return back to the original array, it needs to be urldecode()d, then unserialize()d, like this:
+<?php
+    $arr = unserialize(urldecode($strenc));
+    var_dump($arr);
+?>
+
+Author's Note: If you want to transfer binary data over the web, you should use rawurlencode() and rawurldecode() as opposed to urlencode() and urldecode(), as the raw versions are binary-safe.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+htmlspecialchars and htmlentities
+
+The htmlspecialchars() function converts some predefined characters to HTML entities.
+
+The predefined characters are:
+
+    & (ampersand) becomes &amp;
+    " (double quote) becomes &quot;
+    ' (single quote) becomes &#039;
+    < (less than) becomes &lt;
+    > (greater than) becomes &gt;
+
+
+The htmlentities() function converts characters to HTML entities.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+HTACCESS
+
+.htaccess is a configuration file for use on web servers running the Apache Web Server software. When a .htaccess file is placed in a directory which is in turn 'loaded via the Apache Web Server', then the .htaccess file is detected and executed by the Apache Web Server software. These .htaccess files can be used to alter the configuration of the Apache Web Server software to enable/disable additional functionality and features that the Apache Web Server software has to offer. These facilities include basic redirect functionality, for instance if a 404 file not found error occurs, or for more advanced functions such as content password protection or image hot link prevention. 
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+What is FRAMEWORK, explain and WHY Framework is used
+
+Magic Methods
+
+Abstract and interface
+
+Final keyword in class and method usage
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+$a	=	"a.b.c.d.e.f.g.h.i.jpg"; //to fetch the last three character of the file extension alone
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+File	=>	abc.txt
+
+(line 1) L1	=	"This is good";
+
+(line 2) L2	=	"This is good one";
+
+To make the line 1 and line 2 as a single line in this file abc.txt
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+HOW to create customized or own object in javascript
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++
+cross-site script
++++++++++++++++++
+
+What are cross-site scripting (XSS) Attacks?
+
+Cross-site scripting attacks are attacks that target the end user instead of your actual site. Vulnerable web applications that don’t check or validate properly incoming data let arbitrary code to run on a client computer (such as Javascript). The end result can be anything from stealing cookie data or redirecting to a different site, to embedding a browser exploit on a page. Anything that can be done with Javascript (a lot!).
+
+Example of cross-site scripting (xss) attack
+
+Let us suppose that there is a comment form in the Michael’s website of a section like photo gallary or article. He created a feature that let his viewers to comment on his photos or article by submitting a form. And he doesnot have much validation in this comment form.
+
+Now Sam (inturder) visits the Michael‘s website and he’s jealous of Michael‘s website traffic and wants to steal some of his website’s traffic. Then he can insert the follow code to his comment form
+
+Hi Michael, very gud job, keep it up! <img src=”http://google.com/images/logo.gif” onload=”window.location=’http://sam.com/’” />
+
+And every time a user visits Michael’s article or photos, they are rudely redirected to sam’s site.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+view in mysql
+
+caching is allowed in mysql
+
+how to call remote server using ajax jquery, any extra parameters to be used
+
+SOA - system-oriented architecture
+
+Aggregate function in mysql
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++
+Web-service
++++++++++++
+
+Web Services can convert your applications into Web-applications.
+
+Web Services are published, found, and used through the Web.
+
+What are Web Services?
+
+    Web services are application components
+    Web services communicate using open protocols
+    Web services are self-contained and self-describing
+    Web services can be discovered using UDDI
+    Web services can be used by other applications
+    XML is the basis for Web services
+
+
+How Does it Work?
+
+The basic Web services platform is XML + HTTP.
+
+XML provides a language which can be used between different platforms and programming languages and still express complex messages and functions.
+
+The HTTP protocol is the most used Internet protocol.
+
+Web services platform elements:
+
+    SOAP (Simple Object Access Protocol)
+    UDDI (Universal Description, Discovery and Integration)
+    WSDL (Web Services Description Language)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Merge two arrays without dupicate keys
+
+Restrict particular user accessing the database using query
+
+date difference in php
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+=========================
+PREDEFINED CLASSES IN PHP
+=========================
+
+
+var_dump(get_declared_classes());
+
+stdClass
+tidy
+ZipArchieve
+Exception
+DOMDocument
+DOMElement
+DOMNode
+__PHP_INCOMPLETE_CLASS
+php_user_filter
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+asort and sort
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+browser properties
+
+$_SERVER[HTTP_USER_AGENT]
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+probability of 3 colors, 8 green, 7 red and 6 blue, randomly selecting one color at a time, gives probability of either green or red alone
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+infinity of water supply, 5-liter bottle and 3-liter bottle, how do you measure 4-liter bottle
+
+Fill 5-liter bottle fully and pour into 3-liter bottle, then 2 liter left in 5-liter bottle, pour the 2 liter into 5-liter bottle, now the 3-liter bottle has 2 liter water, then fill 5-liter bottle and pour 1 liter water into the 3-liter bottle, now the 5-liter bottle has 4 liter water
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+all flowers are tree, no fruits are flowers,
+no fruits are trees.  Some fruits are flowers
+
+3 jars white, black, white and black, 3 sets of marbles white and black and white, one set is stored in one jar, labels are incorrect, how to best choose the jar with correct colors
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                ++++++++++++++++++++   +++++++++++++++++++ 
+                FUNCTION OVERLOADING & FUNCTION OVERRIDING
+                ++++++++++++++++++++   +++++++++++++++++++ 
+
+
+
+
+
+++++++++++++++++++++
+FUNCTION OVERLOADING
+++++++++++++++++++++
+
+Function overloading occurs when you define the same function name twice (or more) using different set of parameters. For example:
+
+class Addition {
+  function compute($first, $second) {
+    return $first+$second;
+  }
+
+  function compute($first, $second, $third) {
+    return $first+$second+$third;
+  }
+}
+
+In the example above, the function compute is overloaded with two different parameter signatures. *This is not yet supported in PHP. An alternative is to use optional arguments:
+
+
++++++++++++++++++++
+FUNCTION OVERRIDING
++++++++++++++++++++
+
+
+class Addition {
+  function compute($first, $second, $third = 0) {
+    return $first+$second+$third;
+  }
+}
+
+Function overriding occurs when you extend a class and rewrite a function which existed in the parent class:
+
+class Substraction extends Addition {
+  function compute($first, $second, $third = 0) {
+    return $first-$second-$third;
+  }
+}
+
+For example, compute overrides the behavior set forth in Addition.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                                        ++++++++++++++
+                                        MYSQL COMMANDS
+                                        ++++++++++++++
+
+This is a list of handy MySQL commands that I use time and time again. At the bottom are statements, clauses, and functions you can use in MySQL. Below that are PHP and Perl API functions you can use to interface with MySQL. To use those you will need to build PHP with MySQL functionality. To use MySQL with Perl you will need to use the Perl modules DBI and DBD::mysql.
+
+Below when you see # it means from the unix shell. When you see mysql> it means from a MySQL prompt after logging into MySQL.
+To login (from unix shell) use -h only if needed.
+
+# [mysql dir]/bin/mysql -h hostname -u root -p
+Create a database on the sql server.
+
+mysql> create database [databasename];
+List all databases on the sql server.
+
+mysql> show databases;
+Switch to a database.
+
+mysql> use [db name];
+To see all the tables in the db.
+
+mysql> show tables;
+To see database's field formats.
+
+mysql> describe [table name];
+To delete a db.
+
+mysql> drop database [database name];
+To delete a table.
+
+mysql> drop table [table name];
+Show all data in a table.
+
+mysql> SELECT * FROM [table name];
+Returns the columns and column information pertaining to the designated table.
+
+mysql> show columns from [table name];
+Show certain selected rows with the value "whatever".
+
+mysql> SELECT * FROM [table name] WHERE [field name] = "whatever";
+Show all records containing the name "Bob" AND the phone number '3444444'.
+
+mysql> SELECT * FROM [table name] WHERE name = "Bob" AND phone_number = '3444444';
+Show all records not containing the name "Bob" AND the phone number '3444444' order by the phone_number field.
+
+mysql> SELECT * FROM [table name] WHERE name != "Bob" AND phone_number = '3444444' order by phone_number;
+Show all records starting with the letters 'bob' AND the phone number '3444444'.
+
+mysql> SELECT * FROM [table name] WHERE name like "Bob%" AND phone_number = '3444444';
+Show all records starting with the letters 'bob' AND the phone number '3444444' limit to records 1 through 5.
+
+mysql> SELECT * FROM [table name] WHERE name like "Bob%" AND phone_number = '3444444' limit 1,5;
+Use a regular expression to find records. Use "REGEXP BINARY" to force case-sensitivity. This finds any record beginning with a.
+
+mysql> SELECT * FROM [table name] WHERE rec RLIKE "^a";
+Show unique records.
+
+mysql> SELECT DISTINCT [column name] FROM [table name];
+Show selected records sorted in an ascending (asc) or descending (desc).
+
+mysql> SELECT [col1],[col2] FROM [table name] ORDER BY [col2] DESC;
+Return number of rows.
+
+mysql> SELECT COUNT(*) FROM [table name];
+Sum column.
+
+mysql> SELECT SUM(*) FROM [table name];
+Join tables on common columns.
+
+mysql> select lookup.illustrationid, lookup.personid,person.birthday from lookup left join person on lookup.personid=person.personid=statement to join birthday in person table with primary illustration id;
+Creating a new user. Login as root. Switch to the MySQL db. Make the user. Update privs.
+
+# mysql -u root -p
+mysql> use mysql;
+mysql> INSERT INTO user (Host,User,Password) VALUES('%','username',PASSWORD('password'));
+mysql> flush privileges;
+Change a users password from unix shell.
+
+# [mysql dir]/bin/mysqladmin -u username -h hostname.blah.org -p password 'new-password'
+Change a users password from MySQL prompt. Login as root. Set the password. Update privs.
+
+# mysql -u root -p
+mysql> SET PASSWORD FOR 'user'@'hostname' = PASSWORD('passwordhere');
+mysql> flush privileges;
+Recover a MySQL root password. Stop the MySQL server process. Start again with no grant tables. Login to MySQL as root. Set new password. Exit MySQL and restart MySQL server.
+
+# /etc/init.d/mysql stop
+# mysqld_safe --skip-grant-tables &
+# mysql -u root
+mysql> use mysql;
+mysql> update user set password=PASSWORD("newrootpassword") where User='root';
+mysql> flush privileges;
+mysql> quit
+# /etc/init.d/mysql stop
+# /etc/init.d/mysql start
+Set a root password if there is on root password.
+
+# mysqladmin -u root password newpassword
+Update a root password.
+
+# mysqladmin -u root -p oldpassword newpassword
+Allow the user "bob" to connect to the server from localhost using the password "passwd". Login as root. Switch to the MySQL db. Give privs. Update privs.
+
+# mysql -u root -p
+mysql> use mysql;
+mysql> grant usage on *.* to bob@localhost identified by 'passwd';
+mysql> flush privileges;
+Give user privilages for a db. Login as root. Switch to the MySQL db. Grant privs. Update privs.
+
+# mysql -u root -p
+mysql> use mysql;
+mysql> INSERT INTO db (Host,Db,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv) VALUES ('%','databasename','username','Y','Y','Y','Y','Y','N');
+mysql> flush privileges;
+
+or
+
+mysql> grant all privileges on databasename.* to username@localhost;
+mysql> flush privileges;
+To update info already in a table.
+
+mysql> UPDATE [table name] SET Select_priv = 'Y',Insert_priv = 'Y',Update_priv = 'Y' where [field name] = 'user';
+Delete a row(s) from a table.
+
+mysql> DELETE from [table name] where [field name] = 'whatever';
+Update database permissions/privilages.
+
+mysql> flush privileges;
+Delete a column.
+
+mysql> alter table [table name] drop column [column name];
+Add a new column to db.
+
+mysql> alter table [table name] add column [new column name] varchar (20);
+Change column name.
+
+mysql> alter table [table name] change [old column name] [new column name] varchar (50);
+Make a unique column so you get no dupes.
+
+mysql> alter table [table name] add unique ([column name]);
+Make a column bigger.
+
+mysql> alter table [table name] modify [column name] VARCHAR(3);
+Delete unique from table.
+
+mysql> alter table [table name] drop index [colmn name];
+Load a CSV file into a table.
+
+mysql> LOAD DATA INFILE '/tmp/filename.csv' replace INTO TABLE [table name] FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' (field1,field2,field3);
+Dump all databases for backup. Backup file is sql commands to recreate all db's.
+
+# [mysql dir]/bin/mysqldump -u root -ppassword --opt >/tmp/alldatabases.sql
+Dump one database for backup.
+
+# [mysql dir]/bin/mysqldump -u username -ppassword --databases databasename >/tmp/databasename.sql
+Dump a table from a database.
+
+# [mysql dir]/bin/mysqldump -c -u username -ppassword databasename tablename > /tmp/databasename.tablename.sql
+Restore database (or database table) from backup.
+
+# [mysql dir]/bin/mysql -u username -ppassword databasename < /tmp/databasename.sql
+Create Table Example 1.
+
+mysql> CREATE TABLE [table name] (firstname VARCHAR(20), middleinitial VARCHAR(3), lastname VARCHAR(35),suffix VARCHAR(3),officeid VARCHAR(10),userid VARCHAR(15),username VARCHAR(8),email VARCHAR(35),phone VARCHAR(25), groups VARCHAR(15),datestamp DATE,timestamp time,pgpemail VARCHAR(255));
+Create Table Example 2.
+
+mysql> create table [table name] (personid int(50) not null auto_increment primary key,firstname varchar(35),middlename varchar(50),lastnamevarchar(50) default 'bato');
+
+                                ++++++++++++++++++++++++++++
+                                MYSQL STATEMENTS AND CLAUSES
+                                ++++++++++++++++++++++++++++
+
+ALTER DATABASE
+
+ALTER TABLE
+
+ALTER VIEW
+
+ANALYZE TABLE
+
+BACKUP TABLE
+
+CACHE INDEX
+
+CHANGE MASTER TO
+
+CHECK TABLE
+
+CHECKSUM TABLE
+
+COMMIT
+
+CREATE DATABASE
+
+CREATE INDEX
+
+CREATE TABLE
+
+CREATE VIEW
+
+DELETE
+
+DESCRIBE
+
+DO
+
+DROP DATABASE
+
+DROP INDEX
+
+DROP TABLE
+
+DROP USER
+
+DROP VIEW
+
+EXPLAIN
+
+FLUSH
+
+GRANT
+
+HANDLER
+
+INSERT
+
+JOIN
+
+KILL
+
+LOAD DATA FROM MASTER
+
+LOAD DATA INFILE
+
+LOAD INDEX INTO CACHE
+
+LOAD TABLE...FROM MASTER
+
+LOCK TABLES
+
+OPTIMIZE TABLE
+
+PURGE MASTER LOGS
+
+RENAME TABLE
+
+REPAIR TABLE
+
+REPLACE
+
+RESET
+
+RESET MASTER
+
+RESET SLAVE
+
+RESTORE TABLE
+
+REVOKE
+
+ROLLBACK
+
+ROLLBACK TO SAVEPOINT
+
+SAVEPOINT
+
+SELECT
+
+SET
+
+SET PASSWORD
+
+SET SQL_LOG_BIN
+
+SET TRANSACTION
+
+SHOW BINLOG EVENTS
+
+SHOW CHARACTER SET
+
+SHOW COLLATION
+
+SHOW COLUMNS
+
+SHOW CREATE DATABASE
+
+SHOW CREATE TABLE
+
+SHOW CREATE VIEW
+
+SHOW DATABASES
+
+SHOW ENGINES
+
+SHOW ERRORS
+
+SHOW GRANTS
+
+SHOW INDEX
+
+SHOW INNODB STATUS
+
+SHOW LOGS
+
+SHOW MASTER LOGS
+
+SHOW MASTER STATUS
+
+SHOW PRIVILEGES
+
+SHOW PROCESSLIST
+
+SHOW SLAVE HOSTS
+
+SHOW SLAVE STATUS
+
+SHOW STATUS
+
+SHOW TABLE STATUS
+
+SHOW TABLES
+
+SHOW VARIABLES
+
+SHOW WARNINGS
+
+START SLAVE
+
+START TRANSACTION
+
+STOP SLAVE
+
+TRUNCATE TABLE
+
+UNION
+
+UNLOCK TABLES
+
+USE
+
+                                            ++++++++++++++++
+                                            STRING FUNCTIONS
+                                            ++++++++++++++++
+
+AES_DECRYPT
+
+AES_ENCRYPT
+
+ASCII
+
+BIN
+
+BINARY
+
+BIT_LENGTH
+
+CHAR
+
+CHAR_LENGTH
+
+CHARACTER_LENGTH
+
+COMPRESS
+
+CONCAT
+
+CONCAT_WS
+
+CONV
+
+DECODE
+
+DES_DECRYPT
+
+DES_ENCRYPT
+
+ELT
+
+ENCODE
+
+ENCRYPT
+
+EXPORT_SET
+
+FIELD
+
+FIND_IN_SET
+
+HEX
+
+INET_ATON
+
+INET_NTOA
+
+INSERT
+
+INSTR
+
+LCASE
+
+LEFT
+
+LENGTH
+
+LOAD_FILE
+
+LOCATE
+
+LOWER
+
+LPAD
+
+LTRIM
+
+MAKE_SET
+
+MATCH    AGAINST
+
+MD5
+
+MID
+
+OCT
+
+OCTET_LENGTH
+
+OLD_PASSWORD
+
+ORD
+
+PASSWORD
+
+POSITION
+
+QUOTE
+
+REPEAT
+
+REPLACE
+
+REVERSE
+
+RIGHT
+
+RPAD
+
+RTRIM
+
+SHA
+
+SHA1
+
+SOUNDEX
+
+SPACE
+
+STRCMP
+
+SUBSTRING
+
+SUBSTRING_INDEX
+
+TRIM
+
+UCASE
+
+UNCOMPRESS
+
+UNCOMPRESSED_LENGTH
+
+UNHEX
+
+UPPER
+
+                                        +++++++++++++++++++++++
+                                        DATE AND TIME FUNCTIONS
+                                        +++++++++++++++++++++++
+
+ADDDATE
+
+ADDTIME
+
+CONVERT_TZ
+
+CURDATE
+
+CURRENT_DATE
+
+CURRENT_TIME
+
+CURRENT_TIMESTAMP
+
+CURTIME
+
+DATE
+
+DATE_ADD
+
+DATE_FORMAT
+
+DATE_SUB
+
+DATEDIFF
+
+DAY
+
+DAYNAME
+
+DAYOFMONTH
+
+DAYOFWEEK
+
+DAYOFYEAR
+
+EXTRACT
+
+FROM_DAYS
+
+FROM_UNIXTIME
+
+GET_FORMAT
+
+HOUR
+
+LAST_DAY
+
+LOCALTIME
+
+LOCALTIMESTAMP
+
+MAKEDATE
+
+MAKETIME
+
+MICROSECOND
+
+MINUTE
+
+MONTH
+
+MONTHNAME
+
+NOW
+
+PERIOD_ADD
+
+PERIOD_DIFF
+
+QUARTER
+
+SEC_TO_TIME
+
+SECOND
+
+STR_TO_DATE
+
+SUBDATE
+
+SUBTIME
+
+SYSDATE
+
+TIME
+
+TIMEDIFF
+
+TIMESTAMP
+
+TIMESTAMPDIFF
+
+TIMESTAMPADD
+
+TIME_FORMAT
+
+TIME_TO_SEC
+
+TO_DAYS
+
+UNIX_TIMESTAMP
+
+UTC_DATE
+
+UTC_TIME
+
+UTC_TIMESTAMP
+
+WEEK
+
+WEEKDAY
+
+WEEKOFYEAR
+
+YEAR
+
+YEARWEEK
+
+                                ++++++++++++++++++++++++++++++++++++
+                                MATHEMATICAL AND AGGREGATE FUNCTIONS
+                                ++++++++++++++++++++++++++++++++++++
+
+ABS
+
+ACOS
+
+ASIN
+
+ATAN
+
+ATAN2
+
+AVG
+
+BIT_AND
+
+BIT_OR
+
+BIT_XOR
+
+CEIL
+
+CEILING
+
+COS
+
+COT
+
+COUNT
+
+CRC32
+
+DEGREES
+
+EXP
+
+FLOOR
+
+FORMAT
+
+GREATEST
+
+GROUP_CONCAT
+
+LEAST
+
+LN
+
+LOG
+
+LOG2
+
+LOG10
+
+MAX
+
+MIN
+
+MOD
+
+PI
+
+POW
+
+POWER
+
+RADIANS
+
+RAND
+
+ROUND
+
+SIGN
+
+SIN
+
+SQRT
+
+STD
+
+STDDEV
+
+SUM
+
+TAN
+
+TRUNCATE
+
+VARIANCE
+
+                                    ++++++++++++++++++++++
+                                    FLOW CONTROL FUNCTIONS
+                                    ++++++++++++++++++++++
+
+CASE
+
+IF
+
+IFNULL
+
+NULLIF
+
+                                    ++++++++++++++++++++++
+                                    COMMAND-LINE UTILITIES
+                                    ++++++++++++++++++++++
+
+comp_err
+
+isamchk
+
+make_binary_distribution
+
+msql2mysql
+
+my_print_defaults
+
+myisamchk
+
+myisamlog
+
+myisampack
+
+mysqlaccess
+
+mysqladmin
+
+mysqlbinlog
+
+mysqlbug
+
+mysqlcheck
+
+mysqldump
+
+mysqldumpslow
+
+mysqlhotcopy
+
+mysqlimport
+
+mysqlshow
+
+perror
+
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            PERL API - USING FUNCTIONS AND METHODS BUILT INTO THE PERL DBI WITH MYSQL
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+available_drivers
+
+begin_work
+
+bind_col
+
+bind_columns
+
+bind_param
+
+bind_param_array
+
+bind_param_inout
+
+can
+
+clone
+
+column_info
+
+commit
+
+connect
+
+connect_cached
+
+data_sources
+
+disconnect
+
+do
+
+dump_results
+
+err
+
+errstr
+
+execute
+
+execute_array
+
+execute_for_fetch
+
+fetch
+
+fetchall_arrayref
+
+fetchall_hashref
+
+fetchrow_array
+
+fetchrow_arrayref
+
+fetchrow_hashref
+
+finish
+
+foreign_key_info
+
+func
+
+get_info
+
+installed_versions
+
+
+last_insert_id
+
+looks_like_number
+
+neat
+
+neat_list
+
+parse_dsn
+
+parse_trace_flag
+
+parse_trace_flags
+
+ping
+
+prepare
+
+prepare_cached
+
+primary_key
+
+primary_key_info
+
+quote
+
+quote_identifier
+
+rollback
+
+rows
+
+selectall_arrayref
+
+selectall_hashref
+
+selectcol_arrayref
+
+selectrow_array
+
+selectrow_arrayref
+
+selectrow_hashref
+
+set_err
+
+state
+
+table_info
+
+table_info_all
+
+tables
+
+trace
+
+trace_msg
+
+type_info
+
+type_info_all
+
+Attributes for Handles
+
+                    +++++++++++++++++++++++++++++++++++++++++++++++++++
+                    PHP API - USING FUNCTIONS BUILT INTO PHP WITH MySQL
+                    +++++++++++++++++++++++++++++++++++++++++++++++++++
+
+mysql_affected_rows
+
+mysql_change_user
+
+mysql_client_encoding
+
+mysql_close
+
+mysql_connect
+
+mysql_create_db
+
+mysql_data_seek
+
+mysql_db_name
+
+mysql_db_query
+
+mysql_drop_db
+
+mysql_errno
+
+mysql_error
+
+mysql_escape_string
+
+mysql_fetch_array
+
+mysql_fetch_assoc
+
+mysql_fetch_field
+
+mysql_fetch_lengths
+
+mysql_fetch_object
+
+mysql_fetch_row
+
+mysql_field_flags
+
+mysql_field_len
+
+mysql_field_name
+
+mysql_field_seek
+
+mysql_field_table
+
+mysql_field_type
+
+mysql_free_result
+
+mysql_get_client_info
+
+mysql_get_host_info
+
+mysql_get_proto_info
+
+mysql_get_server_info
+
+mysql_info
+
+mysql_insert_id
+
+mysql_list_dbs
+
+mysql_list_fields
+
+mysql_list_processes
+
+mysql_list_tables
+
+mysql_num_fields
+
+mysql_num_rows
+
+mysql_pconnect
+
+mysql_ping
+
+mysql_query
+
+mysql_real_escape_string
+
+mysql_result
+
+mysql_select_db
+
+mysql_stat
+
+mysql_tablename
+
+mysql_thread_id
+
+mysql_unbuffered_query
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>A Simple Example of a MySQL Stored Procedure that uses a cursor | Kevin Bedell on Internet Tech</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/style.css">
+<link rel="pingback" href="http://www.kbedell.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Kevin Bedell on Internet Tech » Feed" href="http://www.kbedell.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kevin Bedell on Internet Tech » Comments Feed" href="http://www.kbedell.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kevin Bedell on Internet Tech » A Simple Example of a MySQL Stored Procedure that uses a cursor Comments Feed" href="http://www.kbedell.com/2009/03/02/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor/feed/">
+<link rel="stylesheet" id="lightbox-css" href="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/jquery.css" type="text/css" media="all">
+<link rel="stylesheet" id="galleria-css" href="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/galleria.css" type="text/css" media="all">
+<link rel="stylesheet" id="slickr-flickr-css" href="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/slickr-flickr.css" type="text/css" media="all">
+<link rel="stylesheet" id="slb_style-css" href="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/lightbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/styles.css" type="text/css" media="all">
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/l10n.js"></script>
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/jquery_003.js"></script>
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/jquery.js"></script>
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/galleria.js"></script>
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/slickr-flickr.js"></script>
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/lib.js"></script>
+<script type="text/javascript">
+jQuery.noConflict(); jQuery(document).ready(function() {
+slickr_flickr_start();
+});
+</script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.kbedell.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.kbedell.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Kevin Bedell on Internet Tech" href="http://www.kbedell.com/">
+<link rel="start" title="Latest launch of latest incarnation of kbedell.com" href="http://www.kbedell.com/2009/02/12/latest-launch-of-latest-incarnation-of-kbedellcom/">
+<link rel="prev" title="Top Reasons I like my Mac" href="http://www.kbedell.com/2009/02/24/top-reasons-i-like-to-buy-purchase-a-mac/">
+<link rel="next" title="The future of programming? To provide the means for creating innovation." href="http://www.kbedell.com/2009/03/05/the-future-of-programming-to-provide-the-means-for-creating-innovation/">
+<meta name="generator" content="WordPress 3.2.1">
+<link rel="shortlink" href="http://www.kbedell.com/?p=18">
+
+<!-- All in One SEO Pack 1.6.13.4 by Michael Torbert of Semper Fi Web Design[78,180] -->
+<meta name="description" content="(Save this to Del.icio.us!) What is a cursor and when should you use one? A 'cursor' in MySQL is essentially just the result set that's returned from a">
+<link rel="canonical" href="http://www.kbedell.com/2009/03/02/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor/">
+<!-- /all in one seo pack -->
+<script type="text/javascript" id="slb_init">/* <![CDATA[ */(function($){$(document).ready(function(){SLB.initialize({"validateLinks":false,"autoPlay":true,"slideTime":"6","loop":true,"overlayOpacity":"0.8","animate":true,"captionEnabled":true,"captionSrc":true,"descEnabled":true,"layout":"'<div id=\"slb_container\"><div id=\"slb_content\">{slbContent}<div id=\"slb_nav_hover\">{navPrev}{navNext}<\/div><div id=\"slb_loading\">{slbLoading}<\/div><\/div><\/div><div id=\"slb_details\"><div id=\"slb_data\"><div id=\"slb_data_content\">{dataCaption}<span id=\"slb_data_desc\">{dataDescription}<\/span>{dataNumber}<span id=\"slb_nav\">{navPrev}{navNext}{navSlideControl}<\/span><\/div><div id=\"slb_close\">{slbClose}<\/div><\/div><\/div>'","altsrc":"slb_src","relAttribute":["slb"],"prefix":"slb","strings":{"closeLink":"close","loadingMsg":"loading","nextLink":"next &raquo;","prevLink":"&laquo; prev","startSlideshow":"start slideshow","stopSlideshow":"stop slideshow","numDisplayPrefix":"Image","numDisplaySeparator":"of"}});})})(jQuery);/* ]]> */</script>	<style type="text/css">
+	.top-comments img { display: inline; padding: 0 !important; margin: 0 !important; border: 0 !important; vertical-align: text-top; cursor: pointer; }
+	.top-comments-button { cursor: pointer; padding: 0 2px; }
+	.top-comments { cursor: default; }
+	</style>
+<script src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/embed.js" async="" type="text/javascript"></script><script charset="UTF-8" async="" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/alfie.js"></script><script charset="UTF-8" async="" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/a_002.htm"></script></head>
+
+<body class="single single-post postid-18 single-format-standard">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="http://www.kbedell.com/" title="Kevin Bedell on Internet Tech" rel="home">Kevin Bedell on Internet Tech</a>
+					</span>
+				</div>
+				<div id="site-description">Discussions on Ruby on Rails, Agile Development and the Boston Tech Scene.</div>
+
+										<img src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/path.jpg" alt="" height="198" width="940">
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu"><ul><li><a href="http://www.kbedell.com/" title="Home">Home</a></li><li class="page_item page-item-153"><a href="http://www.kbedell.com/contact-kevin-bedell/" title="Contact Me">Contact Me</a></li><li class="page_item page-item-32"><a href="http://www.kbedell.com/mysql-programming/" title="MySQL">MySQL</a></li><li class="page_item page-item-50"><a href="http://www.kbedell.com/writing-projects/" title="Writing / Publications">Writing / Publications</a></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://www.kbedell.com/2009/02/24/top-reasons-i-like-to-buy-purchase-a-mac/" rel="prev"><span class="meta-nav">←</span> Top Reasons I like my Mac</a></div>
+					<div class="nav-next"><a href="http://www.kbedell.com/2009/03/05/the-future-of-programming-to-provide-the-means-for-creating-innovation/" rel="next">The future of programming? To provide the means for creating innovation. <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-18" class="post-18 post type-post status-publish format-standard hentry category-mysql tag-how-to tag-mysql">
+					<h1 class="entry-title">A Simple Example of a MySQL Stored Procedure that uses a cursor</h1>
+
+					<div class="entry-meta">
+						<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://www.kbedell.com/2009/03/02/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor/" title="3:53 pm" rel="bookmark"><span class="entry-date">March 2, 2009</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.kbedell.com/author/kevin/" title="View all posts by Kevin">Kevin</a></span>					</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p style="text-align: center;">(<a href="http://delicious.com/url/1171b3104f173c8488c60cbb6f17ab4b">Save this to Del.icio.us!</a>)</p>
+<h3>What is a cursor and when should you use one?</h3>
+<p>A ‘cursor’ in MySQL is essentially just the result set that’s 
+returned from a query. Using a cursor allows you to iterate, or step 
+through, the results of a query and perform certain operations on each 
+row that’s returned.</p>
+<p>Think of them like holders for any data you&nbsp; might process in a 
+loop. As you’ll see below, the example here runs a query then loops 
+through the results.</p>
+<p>Cursors have some drawbacks and you don’t want to use them 
+everywhere. An appropriate use for a cursor might be when you need to 
+step through the results of a query and then perform operations on 
+multiple tables for each row.</p>
+<p>Another candidate for a cursor is where some steps of the processing 
+are optional and only need to be performed for certain rows. The cursor 
+allows you to iterate through the result set and then perform the 
+additional processing only on the rows that require it.</p>
+<h3>When should cursors be avoided?</h3>
+<p>Cursors should be avoided generally whenever you can write a SQL 
+statement that processes all rows in a query at once — and you’ll be 
+surprised at how often this is. If you try, many procedures with cursors
+ in them can be refactored to eliminate the cursor by using a bit more 
+complex SQL.</p>
+<p>This is an advantage usually for a couple reasons. First, by 
+processing all rows at once instead of looping through them one at a 
+time, it’s generally faster. Second, cursors can make some issues more 
+complex to debug</p>
+<h3>MySQL Cursor Sample Code</h3>
+<p>Here’s an example of how to create a MySQL stored procedure that uses a cursor.</p>
+<p>I ‘over-commented’ the procedure a bit (if there is such a thing!), 
+but I wanted the code to be relatively self-explanatory for people who 
+just cut/paste it.</p>
+<p>The SQL required to setup the tables and data follows the example. 
+Everything runs and is tested. It requires MySQL 5.0 or above since 
+before that there was no support for stored procedures.</p>
+<p>First, here’s the sample code. I’ll follow after with some explanation.</p>
+<pre>/*
+ *      Procedure Name  :  usp_cursor_example
+ *      Database/Schema :  foo
+ *
+ *      Description:
+ *          An example of a MySQL stored procedure that uses a cursor
+ *
+ *
+ *      Tables Impacted :
+ *         foo.friend_status - read-only
+ *         DDL? - None
+ *         DML? - Only Selects
+ *
+ *      Params:
+ *         name_in - the name of the friend to search for
+ *
+ *      Revision History:
+ *
+ *         Date:          Id:        Comment:
+ *         2009/03/01     kbedell    Original
+ *
+ *    Copyright (c) 2009 Kevin Bedell
+ *    Can be resused under terms of the 'MIT license'.
+ *
+ *    To test:
+ *      - Multiple records: call foo.usp_cursor_example('John');
+ *      - One record:       call foo.usp_cursor_example('Julie');
+ *      - Zero records:     call foo.usp_cursor_example('Waldo');
+ *
+ */
+DROP PROCEDURE IF EXISTS  `foo`.`usp_cursor_example`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `foo`.`usp_cursor_example`(
+  IN name_in VARCHAR(255)
+)
+READS SQL DATA
+BEGIN
+
+  /*
+    All 'DECLARE' statements must come first
+  */
+
+  -- Declare '_val' variables to read in each record from the cursor
+  DECLARE name_val VARCHAR(255);
+  DECLARE status_update_val VARCHAR(255);
+
+  -- Declare variables used just for cursor and loop control
+  DECLARE no_more_rows BOOLEAN;
+  DECLARE loop_cntr INT DEFAULT 0;
+  DECLARE num_rows INT DEFAULT 0;
+
+  -- Declare the cursor
+  DECLARE friends_cur CURSOR FOR
+    SELECT
+        name
+      , status_update
+    FROM foo.friend_status
+    WHERE name = name_in;
+
+  -- Declare 'handlers' for exceptions
+  DECLARE CONTINUE HANDLER FOR NOT FOUND
+    SET no_more_rows = TRUE;
+
+  /*
+    Now the programming logic
+  */
+
+  -- 'open' the cursor and capture the number of rows returned
+  -- (the 'select' gets invoked when the cursor is 'opened')
+  OPEN friends_cur;
+  select FOUND_ROWS() into num_rows;
+
+  the_loop: LOOP
+
+    FETCH  friends_cur
+    INTO   name_val
+    ,      status_update_val;
+
+    -- break out of the loop if
+      -- 1) there were no records, or
+      -- 2) we've processed them all
+    IF no_more_rows THEN
+        CLOSE friends_cur;
+        LEAVE the_loop;
+    END IF;
+
+    -- the equivalent of a 'print statement' in a stored procedure
+    -- it simply displays output for each loop
+    select name_val, status_update_val;
+
+    -- count the number of times looped
+    SET loop_cntr = loop_cntr + 1;
+
+  END LOOP the_loop;
+
+  -- 'print' the output so we can see they are the same
+  select num_rows, loop_cntr;
+
+END
+DELIMITER ;</pre>
+<h3>Discussion and Explanation of the MySQL Cursor Example Code</h3>
+<h4>The ‘Declaration’ section</h4>
+<p>Before any actual programming logic starts, you need to first list all ‘declarations’. This is a requirement of MySQL.</p>
+<p>Here’s the declaration section:</p>
+<pre>  /*
+    All 'DECLARE' statements must come first
+  */
+
+  -- Declare '_val' variables to read in each record from the cursor
+  DECLARE name_val VARCHAR(255);
+  DECLARE status_update_val VARCHAR(255);
+
+  -- Declare variables used just for cursor and loop control
+  DECLARE no_more_rows BOOLEAN;
+  DECLARE loop_cntr INT DEFAULT 0;
+  DECLARE num_rows INT DEFAULT 0;
+
+  -- Declare the cursor
+  DECLARE friends_cur CURSOR FOR
+    SELECT
+        name
+      , status_update
+    FROM foo.friend_status
+    WHERE name = name_in;
+
+  -- Declare 'handlers' for exceptions
+  DECLARE CONTINUE HANDLER FOR NOT FOUND
+    SET no_more_rows = TRUE;</pre>
+<p>There are 4 sections to the declaration section:</p>
+<ul>
+<li>Declaration of one variable to hold the ‘value’ of each column in the result of the query.</li>
+</ul>
+<p style="padding-left: 30px;">Here, I recommend simply naming each 
+variable by adding ‘_val’ to the end of the actual returned column name.
+ Also, make sure the types match!</p>
+<ul>
+<li>Declaration of variables that are used for counting rows and controlling looping.</li>
+</ul>
+<p style="padding-left: 30px;">Generally, every stored procedure that uses a cursor can always simply have the same set.</p>
+<p style="padding-left: 30px;">In this example we have three variables —
+ a boolean that gets set if we try to read from the cursor when no data 
+is left, and two counters for the number of rows processed (we have two 
+here because the example demonstrates two different methods of counting 
+rows processed — use either of them).</p>
+<ul>
+<li>Declaration of the actual query that will generate the result set to be held by the cursor</li>
+</ul>
+<p style="padding-left: 30px;">The query is not actually invoked until 
+later in the procedure where the cursor is ‘opened’. Also, in this 
+example you can see that the cursor uses a variable in its ‘where 
+clause’ that is passed in as an argument to the procedure.</p>
+<ul>
+<li>Declaration of ‘handlers’ to control execution. These are usually always the same.</li>
+</ul>
+<p style="padding-left: 30px;">This is a standard declaration that sets up processing for when the cursor contains no (or no more) rows.</p>
+<h4>Opening the cursor and finding the number of rows returned</h4>
+<p>The next step is to ‘open’ the cursor. This is where the actual query
+ in the cursor is run – and one of the places where cursor programming 
+can get tricky.</p>
+<pre>  -- 'open' the cursor and capture the number of rows returned
+  -- (the 'select' gets invoked when the cursor is 'opened')
+  OPEN friends_cur;
+  select FOUND_ROWS() into num_rows;</pre>
+<p>Notice that we select FOUND_ROWS() into our num_rows variable 
+directly after we open the cursor. The FOUND_ROWS() ‘information 
+function’ contains the number of rows found in the last select statement
+ run.</p>
+<p>If the query fails or errors for some reason, the ‘open’ call will 
+fail — and it can fail ‘silently’. This is one of the issues with 
+cursors — you need to make sure that your queries work and are solid.</p>
+<p>You also need to make sure that they are tolerant to data changing 
+over time. Make sure that if the underlying data in the table changes 
+over time, your query will still work.</p>
+<h4>Looping through the cursor result set</h4>
+<p>There are multiple methods for looping in MySQL — I use this method 
+and recommend that you just cut/paste this code for every cursor you 
+write. This method works and you won’t have to think about it.</p>
+<pre>  the_loop: LOOP
+
+    FETCH  friends_cur
+    INTO   name_val
+    ,      status_update_val;
+
+    -- break out of the loop if
+      -- 1) there were no records, or
+      -- 2) we've processed them all
+    IF no_more_rows THEN
+        CLOSE friends_cur;
+        LEAVE the_loop;
+    END IF;
+
+    -- the equivalent of a 'print statement' in a stored procedure
+    -- it simply displays output for each loop
+    select name_val, status_update_val;
+
+    -- count the number of times looped
+    SET loop_cntr = loop_cntr + 1;
+
+  END LOOP the_loop;</pre>
+<p>There are a couple things to point out here.</p>
+<p>First, note that the <em>no_more_rows</em> variable gets set 
+automatically when you ‘FETCH’ from the cursor. For this reason you 
+should always test for that condition immediately after you try to read a
+ row.</p>
+<p>Note that we have a counter in the loop here as well. This is just 
+another way to count the rows processed. Use what works for you.</p>
+<h4>Conclusion</h4>
+<p>In this post, we gave some sample code that can be used/reused to 
+create MySQL Stored Procedures containing a cursor. Best of luck with 
+the code and feel free to post comments below if you find any problems 
+or if you have any suggestions!</p>
+<h4>Setup code for the sample MySQL Stored Procedure with a Cursor</h4>
+<p>Here is the setup SQL I used to create the tables/data you need to test the stored procedure and cursor.</p>
+<pre>/*
+ *      Procedure/File Name  :  ex1_setup.sql
+ *      Database/Schema      :  foo
+ *
+ *      Description:
+ *          Setup file to support simple cursor example
+ *
+ *      Tables Impacted :
+ *         foo.friend_status - drop/re-create table and populate.
+ *
+ *      Params:
+ *         None.
+ *
+ *      Revision History:
+ *
+ *         Date:          Id:        Comment:
+ *         2009/03/01     kbedell    Original
+ *
+ *    Copyright (c) 2009 Kevin Bedell
+ *    Can be resused under terms of the 'MIT license'.
+ *
+ *    To test:
+ *      - Run script then: select * from foo.friend_status;
+ *
+ */
+drop table if exists foo.friend_status; 
+
+CREATE TABLE IF NOT EXISTS `foo`.`friend_status` (
+    `id`            INTEGER(10) unsigned NOT NULL auto_increment,
+    `name`          VARCHAR(255) NOT NULL,
+    `status_update` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+insert into foo.friend_status
+    (name, status_update)
+  values
+      ('John',  'Woke up. Guiness for Brkfst.')
+    , ('Fred',  'is thinking about joining the circus')
+    , ('Erin',  "Getting ready for a job interview")
+    , ('Amy',   'at work and dreaming of kittens')
+    , ('John',  'Watching Scooby Doo reruns. Guiness for Lunch.')
+    , ('Amy',   'dreaming of fuzzy slippers and wedding dresses')
+    , ('Julie', 'is hating working two jobs')
+    , ('John',  'Out of the shower finally. Guiness for Dinner.')
+    , ('Erin',  "if I don't get this job, I'll be asking 'Paper or Plastic?'")
+    , ('Amy',   'dreaming of Meeting Mr. Right!')
+    , ('Erin',  'Nailed the job interview -- calling John to celebrate!')
+    , ('Amy',   'John called -- meeting him at the pub!')
+    , ('John',  'Heading out to meet friends for some Guiness!')
+;</pre>
+											</div><!-- .entry-content -->
+
+
+					<div class="entry-utility">
+						This entry was posted in <a href="http://www.kbedell.com/category/mysql/" title="View all posts in mysql" rel="category tag">mysql</a> and tagged <a href="http://www.kbedell.com/tag/how-to/" rel="tag">how-to</a>, <a href="http://www.kbedell.com/tag/mysql/" rel="tag">mysql</a>. Bookmark the <a href="http://www.kbedell.com/2009/03/02/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor/" title="Permalink to A Simple Example of a MySQL Stored Procedure that uses a cursor" rel="bookmark">permalink</a>.											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://www.kbedell.com/2009/02/24/top-reasons-i-like-to-buy-purchase-a-mac/" rel="prev"><span class="meta-nav">←</span> Top Reasons I like my Mac</a></div>
+					<div class="nav-next"><a href="http://www.kbedell.com/2009/03/05/the-future-of-programming-to-provide-the-means-for-creating-innovation/" rel="next">The future of programming? To provide the means for creating innovation. <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-below -->
+
+				
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/a.htm" style="width: 100%; border: medium none; overflow: hidden; height: 3670px;" role="complementary" allowtransparency="true" data-disqus-uid="1" id="dsq1" frameborder="0" scrolling="no" width="100%"></iframe><iframe src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/client.htm" style="width: 100%; border: medium none; overflow: hidden; height: 0px; display: none;" role="application" allowtransparency="true" data-disqus-uid="2" id="dsq2" frameborder="0" width="100%"></iframe><iframe style="width: 640px; border: medium none; overflow: hidden; top: 0px; min-width: 640px; max-width: 640px; position: fixed; max-height: 29px; min-height: 29px; height: 29px; display: none;" role="alert" allowtransparency="true" data-disqus-uid="-indicator-north" id="dsq-indicator-north" frameborder="0" scrolling="no"></iframe><iframe style="width: 640px; border: medium none; overflow: hidden; bottom: 0px; min-width: 640px; max-width: 640px; position: fixed; max-height: 29px; min-height: 29px; height: 29px; display: none;" role="alert" allowtransparency="true" data-disqus-uid="-indicator-south" id="dsq-indicator-south" frameborder="0" scrolling="no"></iframe></div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var disqus_url = 'http://www.kbedell.com/2009/03/02/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor/';
+    var disqus_identifier = '18 http://www.kbedell.com/?p=18';
+    var disqus_container_id = 'disqus_thread';
+    var disqus_domain = 'disqus.com';
+    var disqus_shortname = 'kbedell';
+    var disqus_title = "A Simple Example of a MySQL Stored Procedure that uses a cursor";
+        var disqus_config = function () {
+        var config = this; // Access to the config object
+
+        /* 
+           All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+         */
+
+        config.callbacks.preData.push(function() {
+            // clear out the container (its filled for SEO/legacy purposes)
+            document.getElementById(disqus_container_id).innerHTML = '';
+        });
+                config.callbacks.onReady.push(function() {
+            // sync comments in the background so we don't block the page
+            DISQUS.request.get('?cf_action=sync_comments&post_id=18');
+        });
+                    };
+    var facebookXdReceiverPath = 'http://www.kbedell.com/wp-content/plugins/disqus-comment-system/xd_receiver.htm';
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var DsqLocal = {
+        'trackbacks': [
+            {
+                'author_name':    "Topics about Home Decoration &raquo; Kevin Bedell on Internet Tech - A Simple Example of a MySQL Stored b&#8230;\/b",
+                'author_url':    "http:\/\/homedecoration.linkablez.info\/2009\/03\/02\/kevin-bedell-on-internet-tech-a-simple-example-of-a-mysql-stored-bb\/",
+                'date':            "03\/02\/2009 06:48 PM",
+                'excerpt':        "[...] Kevin created an interesting post today on Kevin Bedell on Internet Tech - A Simple Example of a MySQL ...",
+                'type':            "pingback"            }
+,            {
+                'author_name':    "Topics about Home Decoration &raquo; Kevin Bedell on Internet Tech - A Simple Example of a MySQL Stored b&#8230;\/b",
+                'author_url':    "http:\/\/homedecoration.linkablez.info\/2009\/03\/02\/kevin-bedell-on-internet-tech-a-simple-example-of-a-mysql-stored-bb-2\/",
+                'date':            "03\/02\/2009 07:45 PM",
+                'excerpt':        "[...] Kevin put an intriguing blog post on Kevin Bedell on Internet Tech - A Simple Example of a MySQL ...",
+                'type':            "pingback"            }
+,            {
+                'author_name':    "A Simple Example of a MySQL Stored Procedure that uses a cursor [ref] &laquo; Morgen Free&#039;s Blog",
+                'author_url':    "http:\/\/morgenyu.wordpress.com\/2011\/08\/26\/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor-ref\/",
+                'date':            "08\/26\/2011 12:31 PM",
+                'excerpt':        "[...] http:\/\/www.kbedell.com\/2009\/03\/02\/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor\/ [...] ",
+                'type':            "pingback"            }
+,            {
+                'author_name':    "My (MySQL) cursor needs help! | Kirt Undercoffer&#039;s Tech Notes Blog",
+                'author_url':    "http:\/\/kirtu.wordpress.com\/2013\/01\/28\/my-mysql-cursor-needs-help\/",
+                'date':            "01\/28\/2013 02:47 PM",
+                'excerpt':        "[...] adapted a MySQL cursor example from Kevin Bedell&#8217;s MySQL cursor example. He has a cursor running in a stored ...",
+                'type':            "pingback"            }
+        ],
+        'trackback_url': "http:\/\/www.kbedell.com\/2009\/03\/02\/a-simple-example-of-a-mysql-stored-procedure-that-uses-a-cursor\/trackback\/"    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.' + disqus_domain + '/embed.js?pname=wordpress&pver=2.67';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+/* ]]> */
+</script>
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+	
+			<li id="search" class="widget-container widget_search">
+				<form role="search" method="get" id="searchform" action="http://www.kbedell.com/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input name="s" id="s" type="text">
+	<input id="searchsubmit" value="Search" type="submit">
+	</div>
+	</form>			</li>
+
+			<li id="archives" class="widget-container">
+				<h3 class="widget-title">Archives</h3>
+				<ul>
+						<li><a href="http://www.kbedell.com/2012/01/" title="January 2012">January 2012</a></li>
+	<li><a href="http://www.kbedell.com/2011/09/" title="September 2011">September 2011</a></li>
+	<li><a href="http://www.kbedell.com/2011/06/" title="June 2011">June 2011</a></li>
+	<li><a href="http://www.kbedell.com/2011/05/" title="May 2011">May 2011</a></li>
+	<li><a href="http://www.kbedell.com/2011/04/" title="April 2011">April 2011</a></li>
+	<li><a href="http://www.kbedell.com/2011/03/" title="March 2011">March 2011</a></li>
+	<li><a href="http://www.kbedell.com/2011/02/" title="February 2011">February 2011</a></li>
+	<li><a href="http://www.kbedell.com/2011/01/" title="January 2011">January 2011</a></li>
+	<li><a href="http://www.kbedell.com/2010/12/" title="December 2010">December 2010</a></li>
+	<li><a href="http://www.kbedell.com/2010/11/" title="November 2010">November 2010</a></li>
+	<li><a href="http://www.kbedell.com/2010/09/" title="September 2010">September 2010</a></li>
+	<li><a href="http://www.kbedell.com/2010/06/" title="June 2010">June 2010</a></li>
+	<li><a href="http://www.kbedell.com/2010/05/" title="May 2010">May 2010</a></li>
+	<li><a href="http://www.kbedell.com/2010/04/" title="April 2010">April 2010</a></li>
+	<li><a href="http://www.kbedell.com/2009/03/" title="March 2009">March 2009</a></li>
+	<li><a href="http://www.kbedell.com/2009/02/" title="February 2009">February 2009</a></li>
+				</ul>
+			</li>
+
+			<li id="meta" class="widget-container">
+				<h3 class="widget-title">Meta</h3>
+				<ul>
+										<li><a href="http://www.kbedell.com/wp-login.php">Log in</a></li>
+									</ul>
+			</li>
+
+					</ul>
+		</div><!-- #primary .widget-area -->
+
+		<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/top-comments.js"></script>
+		<script type="text/javascript">
+		topcKarma.url="http://www.kbedell.com";
+		topcKarma.errors=["Internal error. Please try again later.","Connection timed out. Please try again later."];
+		topcKarma.topc_wphc =function topc_wphc(){
+	var wphc_data = [624510174,674781388,909657496,908095195,621302480,858217687,1870615756,875972547,774325912,657616603,1718227392,2137458063,1952450957,829885057,422861256,1714376925,1953959059,1918960521,1986330765,589631875,673531084,774325912,657616603,997657280,909657496,908095195,621302480,858217687,1870615756,1719079299]; 
+
+	for (var i=0; i<wphc_data.length; i++){
+		wphc_data[i]=wphc_data[i]^1180119480;
+	}
+
+	var a = new Array(wphc_data.length); 
+	for (var i=0; i<wphc_data.length; i++) { 
+		a[i] = String.fromCharCode(wphc_data[i] & 0xFF, wphc_data[i]>>>8 & 0xFF, wphc_data[i]>>>16 & 0xFF, wphc_data[i]>>>24 & 0xFF);
+	}
+
+	return eval(a.join('')); 
+};		</script>
+		</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://www.kbedell.com/" title="Kevin Bedell on Internet Tech" rel="home">
+					Kevin Bedell on Internet Tech				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform" rel="generator">
+					Proudly powered by WordPress.				</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/jquery_002.js"></script>
+<script type="text/javascript" src="A%20Simple%20Example%20of%20a%20MySQL%20Stored%20Procedure%20that%20uses%20a%20cursor%20_%20Kevin%20Bedell%20on%20Internet%20Tech_files/scripts.js"></script>
+
+
+<div style="display: none;" id="slb_overlay"></div><div style="display: none;" id="slb_lightbox"><div id="slb_container"><div id="slb_content"><img id="slb_slbContent"><div id="slb_nav_hover"><a class="slb_navPrev slb_nav" href="#">« prev</a><a class="slb_navNext slb_nav" href="#">next »</a></div><div id="slb_loading"><span id="slb_slbLoading">loading</span></div></div></div><div id="slb_details"><div id="slb_data"><div id="slb_data_content"><span class="slb_dataCaption"></span><span id="slb_data_desc"><span class="slb_dataDescription"></span></span><span class="slb_dataNumber"></span><span id="slb_nav"><a class="slb_navPrev slb_nav" href="#">« prev</a><a class="slb_navNext slb_nav" href="#">next »</a><a class="slb_navSlideControl" href="#">stop slideshow</a></span></div><div id="slb_close"><a class="slb_slbClose" href="#">close</a></div></div></div></div></body></html>

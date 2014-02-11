@@ -1,0 +1,53 @@
+The following are some of the many cool NetBeans IDE 6.0 keyboard shortcuts that no programmer will be able to do without, once you know they're there. Not all of these are new in 6.0, some were there before, but deserve to be highlighted because often they're overlooked:
+
+    Move/copy up/down.
+    Press Ctrl-Shift-Up and the current selection is copied to the lines right above the current selection. Press Alt instead of Ctrl and it is moved instead of copied. Press Down instead of Up and the lines of code will be copied below the current selection, as below:
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-copy-down.png
+
+    Capture inner/outer syntactic element.
+    Each time you press Alt-Shift-Period, the selection expands to a successively wider syntactic element. For example, below one statement was selected, the key combination Alt-Shift-Period was pressed, and then the complete content of the surrounding block statement was shown to be selected. The selection expands from the current statement to surrounding block statements to the surrounding method and, from there, to the surrounding class and further. To successively narrow the selection, press Alt-Shift-Comma, instead of Alt-Shift-Period.
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-select-outer.png
+
+    Generate code skeletons.
+    Whenever you want to generate commonly needed pieces of code, such as constructors, getters, and setters, simply click Alt-Insert, and a small popup appears with a list of items from which you can select:
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-generate-code.png
+
+    Inplace rename.
+    If you want to change a variable, method, or other item, of which more than one are used in your code, press Ctrl-R, and you will see that all instances of the item turn blue at the same time, as shown below. Now, when you change the selected item, all the other instances change at the same time, until you press Escape, at which point the inplace rename mode comes to an end.
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-inplace-rename.png
+
+    Add/Remove comment lines.
+    Select one or more lines, press Ctrl-/ and then the selected lines are commented out, as shown below. Press the same keys again and the commented lines will no longer be commented. This was, of course, also possible in previous releases, but previously there were two different keyboard shortcuts, one for commenting and one for uncommenting. Now that they have been combined into one shortcut, you can quickly toggle between comment and uncomment, which makes this activity much faster and more efficient.
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-comment-code.png
+
+    Inspect members/hierarchy.
+    Both the members of the current class as well as its hierarchy can be displayed and then filtered. Press Alt-F12 and the ancestors of the current file are shown. On the other hand, if you press Ctrl-F12, the current file's members are displayed, as shown here:
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-hierarchy2.png
+
+    Switch between documents.
+    When you have multiple documents open at the same time, press Ctrl and Tab, and then a small popup appears. You can scroll through the popup, which displays all the open documents, and then choose the document that you want to open:
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-ctrl-tab.png
+
+    Jump to last edit.
+    Often, you find yourself in a situation where you have edited in one document, while you currently find yourself in a completely different document. How do you get back to the place where you were last editing your code? That is likely to be the place where you want to get back to, in order to do some more editing. Now, whenever you click Ctrl-Q, the last edited document is found, and the cursor lands on the line where the last edit took place. Alternatively, you can click the button shown below, in the top left corner of the Source Editor:
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-last-edit.png
+
+    Bookmarks.
+    When you press Ctrl-Shift-M, the current line is "bookmarked". What this means is that you can later quickly cycle back/forward to it (with Ctrl-Shift-Period and Ctrl-Shift-Comma). The bookmarked line gets a small icon in the left sidebar, as shown below, until you press Ctrl-Shift-M on the line again, to remove the bookmark:
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-bookmark.png
+
+    Highlight exit points.
+    Place the cursor on the return type and you will immediately see all exit points highlighted:
+
+    http://www.javalobby.org/images/postings/geertjan/pics/keyboard-exit-points.png
+
+3 replies so far ( [Reply to this Thread] Post your own)

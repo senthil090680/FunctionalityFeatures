@@ -1,0 +1,34 @@
+/**
+ * jQuery lightBox plugin
+ * This jQuery plugin was inspired and based on Lightbox 2 by Lokesh Dhakar (http://www.huddletogether.com/projects/lightbox2/) and Leandro Vieira Pinho - http://leandrovieira.com
+ * and adapted to use images in a subdirectory of the CSS folder
+ * @name jquery-lightbox-0.5.css
+ * @author Russell Jamieson
+ * @version 1.0
+ * @date Feb 22, 2010
+ * @category jQuery plugin
+ * @copyright (c) 2010 Russell Jamieson (http://www.wordpresswise.com)
+ */
+#jquery-overlay { position: absolute; top: 0; left: 0; z-index: 90; width: 100%; height: 500px; }
+#jquery-lightbox { 	position: absolute; top: 0; left: 0; width: 100%; z-index: 100; text-align: center; line-height: 0; }
+#jquery-lightbox a img { border: none; }
+#lightbox-container-image-box { position: relative; background-color: #fff; width: 250px; height: 250px; margin: 0 auto; }
+#lightbox-container-image { padding: 10px; }
+#lightbox-loading { position: absolute; top: 40%; left: 0%; height: 25%; width: 100%; text-align: center; line-height: 0;
+	background: transparent center url(images/lightbox-ico-loading.gif) no-repeat; }
+#lightbox-nav { position: absolute; top: 0; left: 0; height: 100%; 	width: 100%; z-index: 10; }
+#lightbox-container-image-box > #lightbox-nav { left: 0; }
+#lightbox-nav a { outline: none;}
+#lightbox-nav-btnPrev, #lightbox-nav-btnNext { width: 49%; height: 100%; zoom: 1; display: block;
+	background: transparent url(images/lightbox-blank.gif) no-repeat; /* Trick IE into showing hover */ }
+#lightbox-nav-btnPrev { left: 0; float: left; }
+#lightbox-nav-btnNext { right: 0; float: right; }
+#lightbox-nav-btnPrev.fixedNavigation, #lightbox-nav-btnPrev:hover, #lightbox-nav-btnPrev:visited:hover { background: url(images/lightbox-btn-prev.gif) left 55% no-repeat; }
+#lightbox-nav-btnNext.fixedNavigation, #lightbox-nav-btnNext:hover, #lightbox-nav-btnNext:visited:hover { background: url(images/lightbox-btn-next.gif) right 55% no-repeat; }
+#lightbox-container-image-data-box { font: 10px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%; padding: 0 10px 0; }
+#lightbox-container-image-data { padding: 0 10px; color: #666; }
+#lightbox-container-image-data #lightbox-image-details { width: 70%; float: left; text-align: left; }
+#lightbox-image-details-caption { font-weight: bold; }
+#lightbox-image-details-caption p { margin-bottom: 4px; font-weight: normal; }
+#lightbox-image-details-currentNumber {	display: block; clear: left; padding-bottom: 1.0em; }
+#lightbox-secNav-btnClose { width: 66px; float: right; padding-bottom: 0.7em; padding-top: 1.0em; margin-bottom: 1.0em; background: url(images/lightbox-btn-close.gif) right 55% no-repeat; }

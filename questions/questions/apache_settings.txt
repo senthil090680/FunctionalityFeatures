@@ -1,0 +1,33 @@
+NameVirtualHost 127.0.0.1
+<VirtualHost 127.0.0.1>
+    ServerName live.mobl21
+    DocumentRoot "c:/wamp/www/mobl21_Live/"
+</VirtualHost>
+
+<VirtualHost 127.0.0.1>
+    ServerName sqltopdf
+    DocumentRoot "c:/wamp/www/SQLTOPDF/"
+</VirtualHost>
+
+<VirtualHost 127.0.0.1>
+    ServerName testpdf
+    DocumentRoot "c:/wamp/www/testpdf.php/"
+</VirtualHost>
+
+<VirtualHost 127.0.0.1>
+    ServerName tcpdf
+    DocumentRoot "c:/wamp/www/tcpdf/"
+</VirtualHost>
+
+
+127.0.0.1       live.mobl21
+
+127.0.0.1       SQLTOPDF
+
+127.0.0.1       testpdf
+
+127.0.0.1       tcpdf
+
+127.0.0.1       Severn
+
+#http://services.phpresgroup.org/pdf/public_html/html2ps.php

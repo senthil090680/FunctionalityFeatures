@@ -1,0 +1,24 @@
+<html>
+<body >
+	<img src="" alt="good" onload="document.location='https://www.google.com/'" />
+	<script>alert(document.cookie);</script>
+	<div>Hi Michael, very gud job, keep it up! </div>
+
+
+
+<!--What are cross-site scripting (XSS ) Attacks?
+
+Cross-site scripting attacks are attacks that target the end user instead of your actual site. Vulnerable web applications that don’t check or validate properly incoming data let arbitrary code to run on a client computer (such as Javascript). The end result can be anything from stealing cookie data or redirecting to a different site, to embedding a browser exploit on a page. Anything that can be done with Javascript (a lot!).
+
+Example of cross-site scripting (xss) attack
+
+Let us suppose that there is a comment form in the Michael’s website of a section like photo gallary or article. He created a feature that let his viewers to comment on his photos or article by submitting a form. And he doesnot have much validation in this comment form.
+
+Now Sam (intruder) visits the Michael‘s website and he’s jealous of Michael‘s website traffic and wants to steal some of his website’s traffic. Then he can insert the follow code to his comment form
+
+Hi Michael, very gud job, keep it up! <img src=”http://google.com/images/logo.gif” onload=”window.location=’http://sam.com/’” />
+
+And every time a user visits Michael’s article or photos, they are rudely redirected to sam’s site.-->
+
+</body>
+</html>
