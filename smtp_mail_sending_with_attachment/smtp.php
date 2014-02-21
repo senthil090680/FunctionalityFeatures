@@ -1,11 +1,11 @@
 <?php
 //new function 
-//$to = "senthil_sang24@yahoo.co.in"; 
-//$to = "senthil090680@gmail.com";
-$to = "senthil.kumar@kumanti.in";
+//$to = "XXXXXXXXXX"; 
+//$to = "XXXXXXXXXX";
+$to = "XXXXXXXXXX";
 $nameto = "Who To"; 
-//$from = "senthil.kumar@kumanti.in";
-$from = "noreply@wwcvl.com";
+//$from = "XXXXXXXXXX";
+$from = "XXXXXXXXXX";
 $namefrom = "Who From";
 $subject = "Hello World Again!"; 
 $message = "World, Hello!"; 
@@ -21,10 +21,10 @@ function authSendEmail($from, $namefrom, $to, $nameto, $subject, $message, $file
 { 
 	//SMTP + SERVER DETAILS 
 	/* * * * CONFIGURATION START * * * */
-	$smtpServer = "mail.wwcvl.com"; 
+	$smtpServer = "XXXXXXXXXX"; 
 	$port = "26";
-	$SmtpUser="noreply@wwcvl.com";
-	$SmtpPass="2pQm_lNU_}K1";
+	$SmtpUser="XXXXXXXXXX";
+	$SmtpPass="XXXXXXXXXX";
 
 	$localhost = " ";  //system name
 	$newLine = "\r\n"; 
