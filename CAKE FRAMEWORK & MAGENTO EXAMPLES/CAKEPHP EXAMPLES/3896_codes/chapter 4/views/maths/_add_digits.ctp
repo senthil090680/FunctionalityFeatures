@@ -1,0 +1,1 @@
+<h2>The sum is equal to <?php echo $sum; ?></h2>

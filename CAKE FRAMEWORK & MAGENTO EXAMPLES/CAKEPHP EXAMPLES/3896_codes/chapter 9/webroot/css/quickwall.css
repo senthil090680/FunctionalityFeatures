@@ -1,0 +1,221 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #eee;
+	font-family: 'Lucida Grande', Helvetica, sans-serif;
+}
+
+#content {
+	width: 570px;
+	margin: 0px auto;
+	padding: 0px 15px 11px 15px;
+	background-color: #fff;
+}
+
+a {
+	color: #c00;
+}
+
+h1 {
+	padding: 20px 0px 0px 0px;
+	margin: 0px;
+	text-align: center;
+	font: Bold 55px 'Arial Black', Tahoma, Helvetica, sans-serif;
+	letter-spacing: -2px;
+	line-height: 50px;
+}
+
+h1 a {
+	color:            #444;
+	text-decoration:  none;
+}
+
+p#strapline {
+	font: Bold 28px Helvetica, sans-serif;
+	letter-spacing: -1px;
+	color: #666;
+	text-align: center;
+	padding: 0px 0px 30px 0px;
+}
+
+p#strapline strong {
+	font: Bold 60px Georgia, serif;
+	line-height: 8px;
+	vertical-align: -20px;
+}
+
+form {
+	position: relative;
+	background-color: #eee;
+	border: solid 1px #999;
+	padding: 15px;
+}
+
+form label {
+	position: absolute;
+	width: 150px;
+	text-align: right;
+	left: -166px;
+}
+
+form label.questionlabel {
+	top: 15px;
+}
+
+form label.questionerlabel {
+	top: 50px;
+}
+
+form label.usernamelabel {
+	top: 15px;
+}
+
+form label.emaillabel {
+	top: 50px;
+}
+
+form label.passwordlabel {
+	top: 85px;
+}
+
+form label.passwordrepeatlabel {
+	top: 120px;
+}
+
+form label span {
+	background-color: #ccc;
+	font: Normal 20px Helvetica, sans-serif;
+	letter-spacing: -1px;
+	color: #fff;
+	padding: 0px 5px 0px 5px;
+}
+
+form input.fullwidth {
+	width: 500px;
+	border: solid 1px #ccc;
+	height: 22px;
+	margin: 0px 0px 12px 0px;
+	font-size: 16px;
+}
+
+form span.big {
+	font: Bold 60px Georgia, serif;
+	position: absolute;
+	left: 520px;
+	top: -8px;
+}
+
+form input.halfwidth {
+	width: 200px;
+	border: solid 1px #ccc;
+	height: 22px;
+	font-size: 16px;
+}
+
+form input.submitbutton {
+	width: 202px;
+	height: 24px;
+	border: solid 1px #ccc;
+	margin: 0px 0px 0px 10px;
+	font-size: 16px;
+}
+
+dl {
+	position: relative;
+	padding: 30px 0px;
+}
+
+dl dt {
+	position: absolute;
+	left: -165px;
+	width: 150px;
+	text-align: right;
+}
+
+dl dt span {
+	background-color: #ccc;
+	font: Normal 20px Helvetica, sans-serif;
+	letter-spacing: -1px;
+	color: #fff;
+	padding: 0px 5px 0px 5px;
+}
+
+dl dd {
+	font-size: 16px;
+	color: #444;
+	line-height: 20px;
+	letter-spacing: -1px;
+	padding: 0px 0px 10px 0px;	
+}
+
+dl dd a {
+	font-size: 18px;
+	font-weight: Bold;
+	color: #c00;
+    text-decoration:  none;
+}
+
+div#footer {
+	margin:           0px 0px 0px 0px;
+	text-align:       right;
+	font-size:        12px;
+}
+            
+div#footer a {
+	text-decoration:  none;
+	color:            #444;
+}
+            
+div#footer a:hover {
+	text-decoration:  underline;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: Bold;
+	color: #c00;
+    text-decoration:  none;
+    line-height: 20px;
+	letter-spacing: -1px;
+	margin: 0px 0px 30px 0px;
+}
+
+div#questioner {
+	position: relative;
+}
+
+div#questioner div{
+	position: absolute;
+	left: -165px;
+	top: -53px;
+	text-align: right;
+	width: 150px;
+}
+
+div#questioner div span{
+	background-color: #ccc;
+	font: Normal 20px Helvetica, sans-serif;
+	letter-spacing: -1px;
+	color: #fff;
+	padding: 0px 5px 0px 5px;
+}
+
+p.no_answer {
+	font-size: 16px;
+	color: #444;
+	line-height: 20px;
+	letter-spacing: -1px;
+	margin: 30px 0px;
+}
+
+div.message {
+	width: auto;
+	height: 24px;
+	font-size: 16px;
+}

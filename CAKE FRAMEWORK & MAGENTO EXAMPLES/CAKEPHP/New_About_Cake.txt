@@ -1,0 +1,41 @@
+/*printing error message to the log file starts here */
+
+//make sure debug is set to 2 in config/core.php
+
+//print error messages to the log file like so:
+
+//$this->log(print_r($this->Video->validationErrors, true));
+
+/*printing error message to the log file ends here */
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+//UPDATING QUERY STARTS HERE 
+
+$user_id		=	$this->Auth->user('id');
+
+$this->Hrpostresume->updateAll(array('Hrpostresume.primaryresume' => "'no'"),array('Hrpostresume.employee_id' => $user_id));
+
+FIRST PARAMETER IS FIELDS AND SECOND PARAMETER IS CONDITIONS
+
+//echo mysql_error();
+//exit;
+
+//UPDATING QUERY ENDS HERE 
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+SPACES NOT ALLOWED AT THE END OF THE FILE OR AT THE BEGINNING OF THE FILE
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

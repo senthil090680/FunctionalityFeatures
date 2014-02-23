@@ -1,0 +1,13 @@
+form label {
+	left: -181px;
+}
+form span.big {
+	left: 510px;
+	top: -5px;
+}
+form label.questionlabel {
+	top: 17px;
+}
+form label.questionerlabel {
+	top: 55px;
+}

@@ -1,0 +1,6 @@
+<?php if(empty($user)){ 
+    echo "New user"; 
+} else { 
+    echo "This email address is already found in the database"; 
+} 
+?>

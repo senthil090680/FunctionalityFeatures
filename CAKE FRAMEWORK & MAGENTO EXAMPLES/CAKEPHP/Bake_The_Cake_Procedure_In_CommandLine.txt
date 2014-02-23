@@ -1,0 +1,100 @@
+November 26, 2010
+amilaudana
+Visit CakePHP website
+Download the CakePHP Framework
+You must have setup a local webserver. If not, install Zend Server Community Edition and MySQL. Download Zend server and install it. If you are not installing MySQL as separate installation you can choose it with Zend server installation also. You can install it separately, do this as you wish.
+Create a database called “cakephp”.
+Go to Zend Server web root it will be “C:\Program Files\Zend\Apache2\htdocs”.
+Extract CakePHP Framework to your web root and re name with the version (Eg. cake_1_3 or cakephp, here I used cakephp).
+ Your CakePHP project folder Structure will be as follows,
+ /cakephp 
+
+ /app
+ /cake
+ /vendors
+ /.htaccess
+ /index.php
+ /README
+Open database.php on the cakephp app/config directory, and set host, login, password and save the work.
+Open core.php on the same directory and change Security.salt and Security.cipherSeed values for different (for tests, simply put additional character at the end).
+Now open “C:\Windows\System32\drivers\etc\hosts” file in a notepad and add following at the end,
+127.0.0.2    cakephp
+ Open Apache2 configuration file (httpd.conf) at “C:\Program Files\Zend\Apache2\conf” and add the following virtual host.
+<VirtualHost 127.0.0.2>
+ ServerName cakephp
+ DocumentRoot “C:\Program Files\Zend\Apache2\htdocs\cakephp\app\webroot”
+ <Directory “C:\Program Files\Zend\Apache2\htdocs\cakephp\app\webroot”>
+ AllowOverride all
+ Options All
+ </Directory>
+ </VirtualHost> 
+
+
+
+
+Copy “cake” folder from your cakephp folder and paste it in “C:\Program Files\Zend\ZendServer\share”.
+
+
+In Windows 7, Windows Symbol + E, will open Windows Explorer, then click System Properties, then click Advanced System Settings,
+Then click Advanced Tab, then click Environment Variables...,
+Then Go to path and add the below lines
+
+Open Environmental Variables and change the “path” and add “C:\Program Files\Zend\ZendServer\share\cake\console” at the end of the paths.
+Save all changes and RESTART windows.
+Access http://cakephp on your browser. It should work.
+Now start developing, app folder is the folder you need to work.
+Open Command Prompt and change the directory to your console directory, use following
+
+C:\Program Files\Zend\ZendServer\share\cake\console
+
+and then next enter this command
+
+cake bake -app "c:\program files\apache\htdocs\cake\app"
+
+You should get as follows,
+
+Now you can bake your cake..
+
+
+
+
+COMMANDLINE COMMAND LINE FOR CAKEPHP CAKE PHP CONSOLE CLI IN ZEND SERVER ZENDSERVER
+
+
+<?php
+
+class ProductsController extends AppController
+{
+  var $name = "Products";
+  var $helpers = array('Html', 'Session');
+
+  function index()
+  {
+    $data = $this->Product->find('all');
+    $this->set('data', $data);
+  }
+
+  function add()
+  {
+    $this->Product->set($this->data);
+
+    if ($this->Product->validates()) 
+    {
+      if($this->Product->save($this->data))
+        $this->Session->setFlash('Data Saved Successfully!');        
+    }
+    else 
+    {
+      $errors = $this->Product->invalidFields();
+      $this->Session->setFlash(implode(',', $errors));    
+    }
+
+    $this->redirect(array(
+      'controller' => 'products', 
+      'action' => 'index'
+      )
+    );    
+  }
+}
+
+?>

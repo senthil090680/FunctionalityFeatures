@@ -1,0 +1,24 @@
+<?php  
+if(isset($javascript)) 
+{ 
+    echo $javascript->link('prototype'); 
+    echo $javascript->link('scriptaculous.js'); 
+} 
+?> 
+<style> 
+.errors{ 
+    color:#F00; 
+} 
+</style> 
+<?php $jsvalid->setModel('User'); ?> 
+<?php $jsvalid->required();?> 
+<?php $jsvalid->confirm('User/password',array('User/confirm'=>'The password and confirm do not match'));?> 
+<?php echo $jsvalid->returnScript(); ?> 
+<?php echo $jsvalid->form('/users/validator')?> 
+    <?php echo $jsvalid->server('User/email', 'Email', '/users/validator'); ?> 
+    <?php echo $jsvalid->password('User/password','Password');?> 
+    <?php echo $jsvalid->password('User/confirm','Confrim Password');?> 
+    <?php echo $jsvalid->input('User/fname','First Name');?> 
+    <?php echo $jsvalid->input('User/lname','Last Name');?> 
+    <?php echo $html->submit();?> 
+</form>

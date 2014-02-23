@@ -1,0 +1,19 @@
+AllowOverwrite is Set to All
+We need to make sure that the web root directory, or the directory in which we plan to keep CakePHP has AllowOverwrite set to all. We can do this by checking Apache's main configuration file http.conf. This file should be located in the directory called conf, where we have installed Apache. In this file, there should be <Directory> option for the web root directory. As the following configuration shows, the web root (which is L:/wamp/www for this particular installation) has a Directory entry in which the AllowOverwrite option is set to all. If the directory under web root, in which we plan to keep Cake, has a directory entry, we need to check that one too.
+<Directory "L:/wamp/www">
+Options Indexes FollowSymLinks
+AllowOverride all
+Order Deny,Allow
+Deny from all
+Allow from 127.0.0.1
+</Directory>
+
+
+
+
+
+Mod_rewrite Module is Loaded
+We also need to make sure that the Apache is loading the mod_rewrite module. To do this, we again have to check the http.conf file. There should be a section in the http.conf file named Dynamic Shared Object (DSO) Support, where all the different modules that are loaded by Apache are listed. The modules that are not being loaded are commented out with # in the beginning of the line. So, we need to make sure that the mod_rewrite module line is not commented out. If it is, we just need to remove the # from the beginning of the line:
+LoadModule rewrite_module modules/mod_rewrite.so
+Make sure to restart Apache once you have made the above changes.
+As long as the above configurations are set accordingly, Apache should be running CakePHP applications without any issues at all.
