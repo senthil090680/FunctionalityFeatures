@@ -1,0 +1,29 @@
+SUBREGION	SUBREGION_NAME
+1A	Central Africa
+1B	Eastern Africa
+1C	Indian Ocean
+1D	Northern Africa
+1E	Southern Africa
+1F	Western Africa
+2A	Central America
+2B	North America
+2C	South America
+2D	West Indies
+3A	Antarctica
+3B	Atlantic Ocean
+4A	Central Asia
+4B	East Asia
+4C	Northern Asia
+4D	South Asia
+4E	South East Asia
+4F	South West Asia
+5A	Central Europe
+5B	Eastern Europe
+5C	Northern Europe
+5D	South East Europe
+5E	South West Europe
+5F	Southern Europe
+5G	Western Europe
+6A	North Pacific Ocean
+6B	Pacific
+6C	South Pacific Ocean
