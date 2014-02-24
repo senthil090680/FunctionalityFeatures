@@ -1,0 +1,36 @@
+/* CSS Document */
+
+li.info{
+    position:relative; /*this is the key*/
+    z-index:24; 
+	background-color:#e2fcc8;
+    color:#363a3a;
+    text-decoration:none;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding:5px;
+	border-bottom:1px solid #000000;
+	}
+
+li.info:hover{z-index:25; background-color:#f8f3a8}
+
+li.info div{display: none}
+
+li.info:hover div{ /*the span will display just on :hover state*/
+	display:block;
+	position:absolute;
+	top:-10px;
+	left:300px;
+	width:300px;
+	border:1px solid #011b3b;
+	background-color:#114585;
+	color:#ffffff;
+	text-align: center;
+	font-size:11px;
+	font-weight:normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	padding:10px;
+	line-height: 15px;
+	text-align:justify;
+	}

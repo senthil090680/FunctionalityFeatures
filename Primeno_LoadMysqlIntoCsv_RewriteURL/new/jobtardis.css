@@ -1,0 +1,325 @@
+a:hover{text-decoration:underline}.logoDiv{width:122px;height:40px;float:left;text-align:center}body{font-family:Verdana,Arial,Helvetica,sans-serif;margin-left:0;margin-top:0;margin-right:0;margin-bottom:0;background-color:#363a3a}.whiteContent{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#fff;text-decoration:none}.whiteContent_smallU{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#fff;text-decoration:underline}.warning{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;color:#ce0000;text-decoration:none;margin:5px;border:1px solid #ce0000;background-color:#fdd6d6;padding:10px;font-weight:bold;margin:5px}.indexTxtBox{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#363a3a;text-decoration:none;background-image:url(images/indextxtBoxBG.png);height:17px;border:1px solid #acb8c4;width:190px}.greyContent_b{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#363a3a;text-decoration:none}.greyContent{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#363a3a;text-decoration:none}.genuineStamp{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;color:#2f3649;text-decoration:none;background-image:url(images/genuineStamp.png);background-repeat:no-repeat;height:56px;width:80px;padding-top:45px;padding-left:19px;font-weight:bold}.calcCss{background-color:#fff;border:1px solid #666}.border{border:1px solid #a9bd07}.greyContent_smallI{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#363a3a;text-decoration:none;font-style:italic}.oddCss{border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#bdbdbd;height:30px}.whiteContent_b{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#fff;text-decoration:none;font-weight:bold}.indexTitle{font-family:sylfaen;font-size:18px;color:#fff;text-decoration:none}.btmLine{border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#999}.greenContent{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#419406;text-decoration:none}.referFrnd_link{background-image:url(images/referFrnd_BG.png);background-position:bottom;padding:15px;width:440px;border:1px solid #ccc;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#363a3a;text-decoration:none}.greenContent_b{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#419406;text-decoration:none;font-weight:bold}.inComplete{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#f00;text-decoration:none}.blueContent{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#208abe;text-decoration:none}.cityText{font-family:sylfaen;font-size:15px;color:#363a3a;text-decoration:none}.button{border:0 none;color:#fff;font-family:verdana;font-weight:normal;height:28px;width:81px;text-decoration:none;font-size:11px;background-attachment:scroll;background-color:transparent;background-image:url(http://www.jobtardis.in/images/buttonBG.png);background-repeat:no-repeat;background-position:0 0}
+.mediumButton{
+	background:url(http://www.jobtardis.in/images/mediumBtn.png) no-repeat scroll 0 0 transparent;
+	border:0 none;
+	color:#fff;font-family:verdana;
+	font-weight:normal;
+	height:28px;
+	width:150px;
+	text-decoration:none;
+	font-size:11px;
+	cursor:pointer;
+}
+.mediumButton:active {
+	background:url(http://www.jobtardis.in/images/mediumBtnHover.png) no-repeat scroll 0 0 transparent;
+	color:#FFF;
+}
+.bigButton{border:0 none;color:#fff;font-family:verdana;font-weight:normal;height:28px;width:200px;text-decoration:none;font-size:11px;background-attachment:scroll;background-color:transparent;background-image:url(http://www.jobtardis.in/images/bigBtn.png);background-repeat:no-repeat;background-position:0 0}
+.title{font-family:sylfaen;font-size:25px;color:#849501;text-decoration:none;text-transform: capitalize;}
+.errorMsg{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#f00;text-decoration:none}.star{font-family:verdana;font-size:12px;font-weight:bold;color:#f00;text-decoration:none}.noaction{font-family:verdana;font-size:12px;color:#f00;text-decoration:none}
+.txtBox{background:0;border:0;width:288px;height:19px;margin:0;padding:2px 7px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.textBoxDiv{margin:0;height:23px;width:300px;background-image:url(images/txtBoxBG.png)}.mouseOverCss{background-color:#a8cef8}.txtArea{background:0;overflow: auto;border:0;width:293px;height:55px;margin:0;padding:2px 7px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.textAreaDiv{margin:0;height:60px;width:300px;background-image:url(images/txtAreaBG.png)}.formTitle{font-family:verdana;font-size:13px;font-weight:bold;color:#e2fbce;text-decoration:none;background-color:#469204;width:250px;text-align:center;vertical-align:middle;padding-top:5px;padding-bottom:5px;border-top-width:1px;border-right-width:1px;border-left-width:1px;border-top-style:solid;border-right-style:solid;border-left-style:solid;border-top-color:#d2d2d2;border-right-color:#d2d2d2;border-left-color:#d2d2d2;text-transform:capitalize}.formBox{border:1px solid #d2d2d2;background-color:#f5f4f4}.j_logo{float:left;height:79px;width:225px;padding-left:30px}.marqueeTag{clear:both;color:#363a3a;font-size:9px;font-weight:bold;height:20px;overflow:hidden;width:230px;font-family:Verdana,Arial,Helvetica,sans-serif;padding-left:30px}.evenCss{background-color:#eceeee;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#bdbdbd;height:30px}.deleteLink{font-family:verdana;font-size:10px;color:#849501;text-decoration:underline}
+.blueContent_b{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#208abe;text-decoration:none;font-weight:bold}.blueContent_bu{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#208abe;text-decoration:underline;font-weight:bold}.blueContent_u{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#208abe;text-decoration:underline}.whiteContent_u{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#fff;text-decoration:underline}.greyContent_u{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#363a3a;text-decoration:underline}.verySmallTxtBox{background:0;border:0;width:38px;height:19px;margin:0;padding:2px 7px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.verySmallTextBoxDiv{margin:0;height:23px;width:40px;background-image:url(images/verySmallTxtBG.png)}.success{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#76ae01;text-decoration:none;background-color:#e8fcbe;width:950px;border:1px solid #76ae01;padding:10px;margin:5px}.multiSelect{background:0;border:0;width:288px;height:95px;margin:0;padding:6px 7px 0 ;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.multiSelectDiv{margin:0;height:107px;width:300px;background-image:url(images/multiSelectBG.png)}.List{background:0;border:0;width:300px;margin:0;padding:4px 7px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.selectDivBox{margin:0;height:23px;width:300px;background-image:url(images/txtBoxBG.png)}.smallList{background:0;border:0;width:80px;margin:0;padding:4px 2px 4px 2px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.small2List{background:0;border:0;width:88px;margin:0;padding:4px 2px 4px 2px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.smallselectDivBox{margin:0;height:23px;width:80px;background-image:url(images/smallSelectBG.png)}.small2selectDivBox{margin:0;height:23px;width:88px;background-image:url(images/small2SelectBG.png)}.mediumList{background:0;border:0;width:150px;margin:0;padding:4px 7px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.mediumselectDivBox{margin:0;height:23px;width:150px;background-image:url(images/mediumSelectBox.png)}.imageBorder{border:3px solid #fff}.comments{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-style:italic;color:#403f40;float:right;width:265px}.whiteContent_bu{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#fff;text-decoration:underline;font-weight:bold}.greyContent_small{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#363a3a;text-decoration:none}.dottedLine{border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#ccc}.greyContent_smallU{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#363a3a;text-decoration:underline}.selectedCss{background-color:#ababab;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#bdbdbd;height:30px}.msgBox{background:0;border:0;width:488px;height:103px;margin:0;padding:13px 5px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.msgBoxDiv{
+	margin:0;
+	height:120px;
+	width:499px;
+	background-image:url(images/msgBoxBG.png);
+	padding:5px;
+	background-repeat: no-repeat;
+}.personalAdLine{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none}.personalAdURL{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#928301;text-decoration:underline}.showAdTxtBox{border:1px solid #6d6e02;width:400px;height:19px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;background-color:#fafbcb}.personalAdTitle{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#336f03;text-decoration:none}.backToAccount{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;color:#909191;text-decoration:underline}.blueTitle{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:15px;color:#208abe;text-decoration:none;font-weight:bold}.content{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#363a3a;text-decoration:none}.content_b{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#363a3a;text-decoration:none;font-weight:bold}.content_small{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#363a3a;text-decoration:none}.content_smallB{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#363a3a;text-decoration:none;font-weight:bold}.bidDiv{padding:5px;float:left}.genuineStamp_small{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:7px;color:#2f3649;text-decoration:none;background-image:url(images/genuineStamp_small.png);background-repeat:no-repeat;height:39px;width:60px;padding-top:35px;padding-left:14px;font-weight:bold}.pinkContent{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#f620f9;text-decoration:none}/* .container{height:60px;width:200px;float:left}*/ .smallTxtArea{background:0;border:0;overflow: auto;width:150px;height:55px;margin:0;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;padding-top:2px;padding-right:7px;padding-bottom:0;padding-left:7px}.smallTxtAreaDiv{margin:0;height:60px;width:160px;background-image:url(images/smallTxtBoxBG.png)}
+.unRegisteredFrnd{width:300px;padding:5px;color:#bc0000;font-size:12px;margin-left:20px;background-image:url(images/referFrnd_arrow.png);background-repeat:no-repeat;background-position:left center;padding-left:20px}.registeredFrnd{width:300px;padding:5px;color:#626f00;font-size:12px;font-weight:bold;margin-left:20px;background-image:url(images/referFrnd_arrow.png);background-repeat:no-repeat;background-position:left center;padding-left:20px}.unRegisteredFrndfrnd{width:230px;float:left;padding:5px;color:#2c84bf;font-size:12px;margin-left:200px}.registeredFrndfrnd{width:300px;padding:5px;color:#2c84bf;font-size:12px;font-weight:bold;margin-left:200px;background-image:url(images/referFrnd_arrow.png);background-repeat:no-repeat;background-position:left center;padding-left:20px}.chkBoxDiv{width:320px;padding:5px;float:left}.you{width:230px;padding:5px;color:#ff7400;font-size:15px;font-weight:bold}.greyContent_big{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:15px;color:#363a3a;text-decoration:none;font-weight:bold}
+.verySmallselectDivBox{margin:0;height:23px;width:40px;background-image:url(images/verySmallSelectBG.png)}
+.verySmallList{background:0;border:0;width:40px;margin:0;padding:2px 7px 2px 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.tab {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #038ac9;
+	padding: 10px;
+	width: 125px;
+}
+.tab_selected {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #005C89;
+	padding: 10px;
+	width: 125px;
+}
+.tab_selected1 {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #005C89;
+	padding: 10px;
+	width: 144px;
+}
+
+.tab1 {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #038ac9;
+	padding: 10px;
+	width: 144px;
+}
+.txtBox_small{
+	background:0;
+	border:0;
+	width:135px;
+	height:19px;
+	margin:0;
+	padding:2px 7px 0 7px;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:11px
+}
+.textBoxDiv_small{margin:0;height:23px;width:350px;background-image:url(images/txtBoxBG1.png);
+background-repeat:no-repeat;
+}
+.thineLine {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e8e7e7;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.content_bu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+.commentsName {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #9e0606;
+	text-decoration: none;
+}
+.warning_login
+{
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+	color:#ce0000;
+	text-decoration:none;
+	margin:0 auto;
+	border:1px solid #ce0000;
+	padding:10px;
+	font-weight:bold;
+	width:550px;
+	
+}
+.loginName
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0C459C;
+	text-decoration: none;
+}
+.blackcontent_b
+{
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:14px;
+	color:#363a3a;
+	text-decoration:none;
+	font-weight: bold;
+}
+.txtBoxDiv_smalli
+{margin:0;height:23px;width:150px;background-image:url(images/txtBox_small.png)
+}
+.txtBox_smalli
+{
+	background:0;
+	border:0;
+	width:135px;
+	height:19px;
+	margin:0;
+	padding:2px 7px 0 7px;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:11px
+}
+.blueContent_bold
+{
+	font-family:Verdana,Arial,Helvetica,sans-serif;font-size:13px;color:#208abe;text-decoration:none;font-weight:bold}
+	
+.defaultContent
+{
+	font-family:verdana;font-size:10px;color:#849501;text-decoration:none
+}
+.greyContent_mid
+{
+	font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;color:#363a3a;text-decoration:none
+}
+.bidboxBg
+{
+	
+	background-image: url(images/bg1.png);
+	background-repeat: no-repeat;
+	height: 100;
+	width: auto;
+	margin:0;
+}
+.bidborder
+{border:2px solid #a9bd07
+}
+.midButton
+{
+	border:0 none;color:#fff;font-family:verdana;font-weight:normal;height:28px;width:150px;text-decoration:none;font-size:11px;background-attachment:scroll;background-color:transparent;background-image:url(http://www.jobtardis.in/images/midBtn.png);background-repeat:no-repeat;background-position:0 0;
+}
+.verysmallselectDivBox{margin:0;height:23px;width:60px;background-image:url(images/verysmallSelectBG.png)}
+.verysmallList{background:0;border:0;width:60px;margin:0;padding:2px 7px 2px 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.title_small{font-family:sylfaen;font-size:15px;color:#849501;text-decoration:none;text-transform:capitalize;height:45px}
+.medium2Button{background:url(http://www.jobtardis.in/images/medium2Button.png) no-repeat scroll 0 0 transparent;border:0 none;color:#fff;font-family:verdana;font-weight:normal;height:28px;width:110px;text-decoration:none;font-size:11px}
+.mediumtxtBox{background:0;border:0;width:200px;margin:0;padding:4px 7px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.mediumtxtBoxDiv{margin:0;height:23px;width:212px;background-image:url(images/mediumTxtBoxBG.png)}
+.bigtextAreaDiv{margin:0;height:100px;width:500px;background-image:url(images/bigtxtAreaBG.png)}
+.bigtxtArea {
+    background: none repeat scroll 0 50% transparent;
+	overflow: auto;
+    border: 0 none;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 95px;
+    margin: 0;
+    padding: 2px 5px 0;
+    width: 490px;}
+.btn_bidCreate{border:0 none;color:#ffffff;font-family:verdana;font-weight:normal;height:28px;width:160px;text-decoration:none;font-size:11px;background-attachment:scroll;background-color:transparent;background-image:url(http://www.jobtardis.in/images/createJobBidBG.png);background-repeat:no-repeat;background-position:0 0}
+.informBox{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#76ae01;text-decoration:none;background-color:#e8fcbe;width:400px;border:1px solid #76ae01;padding:10px;margin:0px}
+.biginformBox{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#76ae01;text-decoration:none;background-color:#e8fcbe;width:600px;border:1px solid #76ae01;padding:10px;margin:0px}
+.atsleftbox{
+	font-family:verdana ;
+	font-size:11px ; 
+	font-weight:bold ; 
+	color:#FFF ; 
+	text-decoration:none; 
+	background-color:#1261ad; 
+	width:150px; 
+	text-align:center;
+	vertical-align:middle;
+	padding-top:5px;
+	padding-bottom:5px;
+	border-top-width:1px;
+	border-right-width:1px;
+	border-left-width:1px;
+	border-bottom-width:1px;
+	border-top-style:solid;
+	border-right-style:solid;
+	border-left-style:solid;
+	border-bottom-style:solid;
+	border-top-color:#0c0d0e;
+	border-right-color:#0c0d0e;
+	border-left-color:#0c0d0e;
+	border-bottom-color:#0c0d0e;
+	text-transform:capitalize
+}
+.atsrightbox{
+	font-family:verdana;
+	font-size:11px;
+	font-weight:bold;
+	color:#999;
+	text-decoration :none;
+	background-color:#d5e7f9;
+	width:150px;
+	text-align:center;
+	vertical-align:middle;
+	padding-top:5px;
+	padding-bottom:5px;
+	border-top-width:1px;
+	border-bottom-width:1px;
+	border-right-width:1px;
+	border-left-width:1px;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	border-right-style:solid;
+	border-left-style:solid;
+	border-top-color:#0c0d0e;
+	border-right-color:#0c0d0e;
+	border-left-color:#0c0d0e;
+	border-bottom-color:#0c0d0e;
+	text-transform:capitalize
+}
+.atstitle{font-family:sylfaen;font-size:20px;color:#085197;text-decoration:none;text-transform: capitalize; }
+.atsreport{
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+ 		
+}
+.qualification{background:0;border:0;width:538px;height:112px;margin:0;padding:10px 7px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}.qualificationDiv{margin:0;height:120px;width:550px;background-image:url(images/qualificationBG.png)}
+.medium2selectDivBox{margin:0;height:23px;width:180px;background-image:url(../images/medium2SelectBox.png)}
+.medium2List{background:0;border:0;width:180px;margin:0;padding:4px 5px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.verysmallselectDivBox{margin:0;height:23px;width:50px;background-image:url(../images/verysmallSelectBG.png)}
+.verysmallList{background:0;border:0;width:50px;margin:0;padding:3px 4px 3px 4px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.select2DivBox{margin:0;height:23px;width:280px;background-image:url(../images/txtBoxBG2.png)}
+.List2{background:0;border:0;width:280px;margin:0;padding:3px 6px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.atsbutton{border:0 none;color:#3f403d;font-family:verdana;font-weight:normal;height:28px;width:81px;text-decoration:none;font-size:11px;background-attachment:scroll;background-color:transparent;background-image:url(http://www.jobtardis.in/images/atsbuttonBG.png);background-repeat:no-repeat;background-position:0 0}
+
+.atssubtitle{font-family:sylfaen;font-size:20px;color:#930a24;text-decoration:none;text-transform: capitalize; }
+.atssubtitle2{
+	font-family:sylfaen;
+	font-size:20px;
+	color:#930a24;
+	text-decoration:underline;
+	text-transform: capitalize;
+}
+.atswarning
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #151615;
+	text-decoration: none;
+	margin: 0px;
+	padding:10px;
+	border: 2px solid #2f4c1e;
+	background-color: #cff2ba;
+}
+.rtstitle{font-family:sylfaen;font-size:20px;color:#cf3d0a;text-decoration:none;text-transform: capitalize;}
+.atsblue{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#0750ad;text-decoration:none}
+.atsorange{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#f17e18;text-decoration:none}
+.atsgreen{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#277509;text-decoration:none}
+.atsred{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#f90d1d;text-decoration:none}
+.atssubtitle3{font-family:sylfaen;font-size:20px;color:#930a24;text-decoration:none;text-transform: capitalize; }
+.select3DivBox{margin:0;height:23px;width:207px;background-image:url(../images/txtBoxBG3.png)}
+.List3{background:0;border:0;width:207px;margin:0;padding:4px 5px 0 7px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.mediumButton2{background:url(http://www.jobtardis.in/images/mediumBtn2.png) no-repeat scroll 0 0 transparent;border:0 none;color:#fff;font-family:verdana;font-weight:normal;height:28px;width:100px;text-decoration:none;font-size:11px}
+.button2{border:0 none;color:#fff;font-family:verdana;font-weight:normal;height:28px;width:93px;text-decoration:none;font-size:11px;background-attachment:scroll;background-color:transparent;background-image:url(http://www.jobtardis.co.uk/images/button2.png);background-repeat:no-repeat;background-position:0 0} 
+.success_js{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#76ae01;text-decoration:none;background-color:#e8fcbe;width:650px;border:1px solid #76ae01;padding:10px;margin:5px}
+.warning_js{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;color:#ce0000;text-decoration:none;margin:5px;border:1px solid #ce0000;width:650px;background-color:#fdd6d6;padding:10px;font-weight:bold;margin:5px}
+.box_js
+{width:250px;
+height:30px;
+border:1px solid #999;
+padding:2px;
+}
+.verysmall2selectDivBox{margin:0;height:23px;width:60px;background-image:url(images/verysmall2SelectBG.png)}.verysmall2List{background:0;border:0;width:60px;margin:0;padding:3px 6px 3px 6px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px}
+.smallSELECTDivBox{margin:0;height:23px;width:80px;background-image:url(images/smallSelectBG.png)}
+
+/***************************/
+
+.job-main
+{
+	background-image:url(images/bg.png);background-repeat:no-repeat;background-color:#eeeded;
+}
+.main-cont1{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(0, 153, 204); font-weight: bold; text-align: center;padding:20px 0px;}
+.main-cont2{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(0, 153, 204); font-weight: bold; text-align: left;padding:15px 0px;}
+.job-innercnt{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 13px;color:#363a3a;padding-left:30px;}
+.pers-lft{float:left;width:170px;}
+.persclr1{color:#ff0000;}
+.fleft{float:left;}
+.pers-boxbrd1{border-radius:8px;border:1px solid #3a3a3a;width:250px;height:24px;}
+.pers-lft1{float:left;width:170px;padding-top:10px;}
+.padl3{padding-left:3px;}
+.padl7{padding-left:7px;}
+.padt10{padding-top:10px;}

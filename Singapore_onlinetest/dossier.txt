@@ -1,0 +1,37 @@
+A. Problem Statement
+....................
+
+Create an application whereby we can replicate / copy over information from machine A to machine B , assuming  both machines are in the same network
+
+e.g.;
+
+machine A ip = 192.168.0.100 ( master )
+machine B ip = 192.168.0.200 ( slave) ->in virtualbox
+
+Machine A will have a simple form to take down a products details ( just any 3 fields -customer name, product name , product number 16 digits,). There will be a button/icon at the bottom of the viewing form labelled as "Replicate".
+
+When the user clicks this "Replicate" button, the info  is copied to machine B , the slave machine. But before the info is written to B, it will check whether the data is free of illegal characters, etc to avoid junk/malicious input
+
+B. Required solution
+......................
+
+- You need to create a config file (config.php) from which you can read the ip of machine A or B ( we can change the IP anytime), plus where you can keep any user accessible/definable parameters.
+
+-Create a file called dataentry_a.php to do the data entry into machine A.
+-Create a file called dataview_a.php to view data entered into machine A
+-Create a file called replicate_a2b.php to copy/validate/write data remotely to machine B
+-Create a file called dataview_b.php to view data received at machine B
+
+Use php / sqlitev3.
+
+Assume both machines ( A/B) will already have webservers running with sqlite functionality (opensuse 12.2 with apache, php and sqlite). The files you give us will be dropped into the webroot of machine A and B
+
+C. Evaluation Criteria
+......................
+
+-How you approach the problem
+-How you communicate with us
+-How you code
+-The time you take
+
+Good luck. Start ASAP. Finish by tmrw noon Indian Time ? Should be easily done? MAKE IT HAPPEN BUDDY. WE ARE ON YOUR SIDE AND WE WANT YOU TO PASS. PLS DO THE TEST HONESTLY. YOU CAN ASK FOR HELP BUT YOU NEED TO KNOW WHAT YOUR ARE DOING.WE WILL ASK YOU TO MODIFY SOMETHING LIVE LATER ON.

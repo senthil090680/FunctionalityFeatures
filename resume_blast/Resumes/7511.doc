@@ -1,0 +1,340 @@
+			 <html xmlns:v="urn:schemas-microsoft-com:vml"
+			xmlns:o="urn:schemas-microsoft-com:office:office"
+			xmlns:w="urn:schemas-microsoft-com:office:word"
+			xmlns="http://www.w3.org/TR/REC-html40">
+			
+			<head>
+			<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+			<meta name=ProgId content=Word.Document>
+			<meta name=Generator content="Microsoft Word 9">
+			<meta name=Originator content="Microsoft Word 9">
+			<!--[if !mso]>
+			<style>
+			v\:* {behavior:url(#default#VML);}
+			o\:* {behavior:url(#default#VML);}
+			w\:* {behavior:url(#default#VML);}
+			.shape {behavior:url(#default#VML);}
+			</style>
+			<![endif]-->
+			<title>Kithiri_Resume</title>
+			<!--[if gte mso 9]><xml>
+			 <w:WordDocument>
+			  <w:View>Print</w:View>
+			  <w:DoNotHyphenateCaps/>
+			  <w:PunctuationKerning/>
+			  <w:DrawingGridHorizontalSpacing>9.35 pt</w:DrawingGridHorizontalSpacing>
+			  <w:DrawingGridVerticalSpacing>9.35 pt</w:DrawingGridVerticalSpacing>
+			 </w:WordDocument>
+			</xml><![endif]-->
+			<style>
+			<!--
+			 /* Font Definitions */
+			@font-face
+				{font-family:Verdana;
+				panose-1:2 11 6 4 3 5 4 4 2 4;
+				mso-font-charset:0;
+				mso-generic-font-family:swiss;
+				mso-font-pitch:variable;
+				mso-font-signature:536871559 0 0 0 415 0;}
+			 /* Style Definitions */
+			p.MsoNormal, li.MsoNormal, div.MsoNormal
+				{mso-style-parent:"";
+				margin:0in;
+				margin-bottom:.0001pt;
+				mso-pagination:widow-orphan;
+				font-size:7.5pt;
+			        mso-bidi-font-size:8.0pt;
+				font-family:"Verdana";
+				mso-fareast-font-family:"Verdana";}
+			p.small
+				{mso-style-parent:"";
+				margin:0in;
+				margin-bottom:.0001pt;
+				mso-pagination:widow-orphan;
+				font-size:1.0pt;
+			        mso-bidi-font-size:1.0pt;
+				font-family:"Verdana";
+				mso-fareast-font-family:"Verdana";}
+			@page Section1
+				{size:8.5in 11.0in;
+				margin:1.0in 1.25in 1.0in 1.25in;
+				mso-header-margin:.5in;
+				mso-footer-margin:.5in;
+				mso-paper-source:0;}
+			div.Section1
+				{page:Section1;}
+			-->
+			</style>
+			<!--[if gte mso 9]><xml>
+			 <o:shapedefaults v:ext="edit" spidmax="1032">
+			  <o:colormenu v:ext="edit" strokecolor="none"/>
+			 </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+			 <o:shapelayout v:ext="edit">
+			  <o:idmap v:ext="edit" data="1"/>
+			 </o:shapelayout></xml><![endif]-->
+			 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name='keywords' content='Java,PHP,ajax,javascript,sql' /><meta name='description' content='Java,PHP,ajax,javascript,sql'  /><style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Times New Roman;
+}
+.name {
+	font-size: 18px;
+	font-weight: bold;
+	color: #990000;
+	text-decoration: none;
+}
+.title {
+	font-size: 13px;
+	font-weight: bolder;
+	color: #990000;
+	text-decoration: underline;
+}
+.content {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 18px;
+}
+.topphAddress {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.content_b {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 18px;
+}
+.content_i {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: underline;
+	line-height: 18px;
+	font-style: italic;
+}
+.designation {
+	font-size: 13px;
+	font-weight: bold;
+	color: #e40a0a;
+	text-decoration: none;
+	font-style: italic;
+}
+.line {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #990000;
+}
+.content_italic {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 18px;
+	font-style: italic;
+}
+
+</style>
+
+			</head>
+			<body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<!-- Top Header table Starts here-->
+<table width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="line">
+  <tr>
+    <td width="60%">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="name">Kithiri Riencis</td>
+    <td rowspan="4" valign="top" class="topphAddress" align="right">
+		9 Royal Worcester Drive,<br/>		 
+	     United Kingdom		 - LS11 1B <br />     <span class="content_i">
+	</span> 
+	
+	
+	</td>
+  </tr>
+  <tr>
+    <td class="designation">
+	 	   Developer	</td>
+  </tr>
+  <tr>
+    <td class="topphAddress">
+	 9911224455	
+	</td>
+  </tr>
+  <tr>
+    <td class="content_i">emplogin_1@in.com </td>
+  </tr>
+</table>
+<!-- Top Header table ends here-->
+<!-- Objective data table starts here-->
+<table width="610" border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td class="title">Objective</td>
+  </tr>
+  <tr>
+    <td><div align="justify" class="content">To obtain a challenging position in a reputed organization where I can use my experience for making a significant contribution to the growth and strategy of the concern.</div></td>
+  </tr>
+</table>
+ <!-- Objective data table ends here-->
+
+<!-- Education data table starts here-->
+  
+<table width="610" border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td class="title">
+	 Education	</td>
+  </tr>
+  <tr>
+    <td align="justify"><ul style="margin-top: 0px;margin-bottom:0px">
+	 	<li>
+	 <span class="content_b">MComp - Master of Computing</span> <span class="content_b">(Computer science)</span> 
+	 <span class='content_b'>, First</span> 
+	 
+	</span><span class="content">from</span> <span class="content_b">
+	University of Surrey	  </span> 
+	<span class="content">during</span> <span class="content_b">Oct-2003 - Nov-2004</span><br />
+	 	   
+	</li>
+		  
+	  </ul></td>
+  </tr>
+</table>
+ <!-- Education data table ends here-->
+<!-- Employment data table starts here-->
+<table width="610" border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td class="title">
+	Experience	</td>
+  </tr>
+  <tr>
+    <td align="justify"><ul style="margin-top: 0px;margin-bottom:0px">
+	      <li>
+	    <span class="content">Working as</span> <span class="content_b">Developer</span> <span class="content">in</span> <span class="content_b">McLaren Solutions Ltd.</span><span class="content">,Lancaster,United Kingdom from</span> <span class="content_b">Oct-2006 to 
+		   Till date. 
+		   </span><br />
+			  <span class="content" style="padding-left:20px">Developing the code based on the user consumption.</span><br />
+			  
+		  </li>
+		       </ul></td>
+  </tr>
+</table>
+ 
+<!-- Employment data table ends here-->
+<!-- Skills data table starts here-->
+ 
+<!-- Skills data table ends here-->
+<!-- Biographical data table starts here-->
+<table width="610" border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td class="title">Biographical Data </td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td bgcolor="#990000"><table width="100%" border="0" cellspacing="1" cellpadding="2">
+          <!--<tr>
+            <td width="30%" valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">First Name: </div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">Last Name: </div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">Middle Name: </div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>-->
+		              <tr>
+            <td width="22%" valign="top" bgcolor="#FFFFFF" class="content_b"><div align="left">Date Of Birth:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">10-Jun-1986</td>
+          </tr>
+		  			<tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="left">Gender:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">Female</td>
+          </tr>
+		  <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="left">Marital Status:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">Single</td>
+          </tr>
+			           <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="left">Phone (home):</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">9911224455</td>
+          </tr>
+		  			 			           <!--<tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">Email Address: </div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr> -->
+		          <!--   <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">Address:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">City:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">State:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">Zip:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#FFFFFF" class="content_b"><div align="right">Country:</div></td>
+            <td valign="top" bgcolor="#FFFFFF" class="content">&nbsp;</td>
+          </tr>-->
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<!-- Biographical data table ends here-->
+<!-- Honors data table starts here-->
+ <!-- Honors data table ends here-->
+<!-- References data table starts here-->
+ 
+<!-- References data table ends here-->
+<!-- Personal data table starts here-->
+ <table width="610" border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td class="title">Hobbies</td>
+  </tr>
+  <tr>
+    <td align="justify" class="content">
+	 Reading  Books.	</td>
+  </tr>
+</table>
+ <!-- Personal data table ends here-->
+<!-- Custom Field data table starts here-->
+<!-- Custom Field data table ends here-->
+<table width="610" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="line">&nbsp;</td>
+    <td class="line">&nbsp;</td>
+    <td class="line">&nbsp;</td>
+    <td class="line">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<!--</div>-->
+
+</html>
+</body></html>

@@ -1,0 +1,13 @@
+#This is used to comment the .htaccess files, below is used to deny any folder or file access using download
+#<Files ~ "(.doc)"> 
+#Order allow,deny 
+#Deny from all 
+#This is used to comment the .htaccess files, below is used to deny any folder or file access using download
+#</Files> 
+#This is used to comment the .htaccess files, below is used to deny any folder or file access using download
+
+# Enable mod_rewrite, start rewrite engine
+#Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^([A-Za-z]+)/([0-9]+)/([0-9]+)/?$ http://localhost/senthil/new/prime.php?id=$2 [NC,L]
